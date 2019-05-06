@@ -11,14 +11,22 @@ class SEO extends Component {
     let imgWidth
     let imgHeight
     let pageUrl
+    let keywords
+    let siteName
+    let formatDetection
+    let siteUrl
 
     // Set Default OpenGraph Parameters for Fallback
     title = config.siteTitle
     description = config.siteDescription
+    siteName = config.siteName
     image = config.siteUrl + config.shareImage
     imgWidth = config.shareImageWidth
     imgHeight = config.shareImageHeight
     pageUrl = config.siteUrl
+    keywords = config.siteKeywords
+    formatDetection = config.formatDetection
+    siteUrl = config.siteUrl
 
     if (customTitle) {
       title = postNode.title
@@ -120,6 +128,22 @@ class SEO extends Component {
     return (
       <Helmet>
         {/* General tags */}
+        <meta httpEquiv="X-UA-Compatible" content="IE=Edge" />
+        <title>{title}</title>
+        <meta charset="utf-8" />
+        <link rel="shortcut icon" href={image} type="image/png" />
+        <link rel="apple-touch-icon" href={image} type="image/png" />
+        <meta name="format-detection" content={formatDetection} />
+        <meta
+          id="mobileViewport"
+          name="viewport"
+          content="width=980, user-scalable=yes"
+        />
+        <meta name="fragment" content="!" />
+        <meta name="description" content={description} />
+
+        <link rel="canonical" href={siteUrl} />
+        <meta name="keywords" content={keywords} />
         <meta name="image" content={image} />
         <meta name="description" content={description} />
 
@@ -129,24 +153,14 @@ class SEO extends Component {
         </script>
 
         {/* OpenGraph tags */}
+        <meta property="og:type" content="website" />
         <meta property="og:title" content={title} />
-        {postSEO ? <meta property="og:type" content="article" /> : null}
-
         <meta property="og:url" content={pageUrl} />
         <meta property="og:image" content={image} />
         <meta property="og:image:width" content={imgWidth} />
         <meta property="og:image:height" content={imgHeight} />
+        <meta property="og:site_name" content={siteName} />
         <meta property="og:description" content={description} />
-
-        {/* Twitter Card tags */}
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta
-          name="twitter:creator"
-          content={config.userTwitter ? config.userTwitter : ''}
-        />
-        <meta name="twitter:title" content={title} />
-        <meta name="twitter:image" content={image} />
-        <meta name="twitter:description" content={description} />
       </Helmet>
     )
   }

@@ -6,9 +6,8 @@ import GlobalStyle from '../styles/global'
 import theme from '../styles/theme'
 import config from '../utils/siteConfig'
 import Menu from '../components/Menu'
-import Footer from '../components/Footer'
 
-const Template = ({ children }) => {
+const Layout = ({ children }) => {
   return (
     <div className="siteRoot">
       <Helmet>
@@ -24,7 +23,6 @@ const Template = ({ children }) => {
             <Menu />
             {children}
           </div>
-          <Footer />
         </>
       </ThemeProvider>
       <GlobalStyle />
@@ -32,4 +30,4 @@ const Template = ({ children }) => {
   )
 }
 
-export default Template
+export default Layout

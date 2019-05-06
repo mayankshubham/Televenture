@@ -3,17 +3,25 @@ import { Link } from 'gatsby'
 import styled from 'styled-components'
 
 const Header = styled.header`
+  position: fixed;
   background: ${props => props.theme.colors.base};
   width: 100%;
   padding: 1.5em 0;
+  height: 82px;
+  z-index: 50;
+  transform: matrix(1, 0, 0, 1, 0, 0);
 `
 const Nav = styled.nav`
   width: 100%;
   max-width: ${props => props.theme.sizes.maxWidth};
+  height: 100%;
   margin: 0 auto;
   padding: 0 1.5em;
+  display: flex;
+  align-items: center;
 
   ul {
+    width: 100%;
     display: flex;
     justify-content: space-between;
   }
@@ -21,17 +29,12 @@ const Nav = styled.nav`
   li {
     display: inline-block;
     margin-left: 1em;
-    &:first-child {
-      position: relative;
-      margin: 0;
-      flex-basis: 100%;
-    }
+    text-transform: uppercase;
   }
 
   a {
     text-decoration: none;
-    color: DarkGray;
-    font-weight: 600;
+    color: #eef3f6;
     transition: all 0.2s;
     border-bottom: 2px solid ${props => props.theme.colors.base};
     &:hover {
@@ -41,7 +44,7 @@ const Nav = styled.nav`
 `
 
 const activeLinkStyle = {
-  color: 'white',
+  color: '#D2A756',
 }
 
 const Menu = () => {
@@ -57,6 +60,16 @@ const Menu = () => {
           <li>
             <Link to="/about/" activeStyle={activeLinkStyle}>
               About
+            </Link>
+          </li>
+          <li>
+            <Link to="/funds/" activeStyle={activeLinkStyle}>
+              Funds
+            </Link>
+          </li>
+          <li>
+            <Link to="/investors/" activeStyle={activeLinkStyle}>
+              Investors
             </Link>
           </li>
           <li>
