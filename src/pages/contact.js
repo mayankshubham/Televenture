@@ -3,7 +3,7 @@ import Helmet from 'react-helmet'
 import config from '../utils/siteConfig'
 import Layout from '../components/Layout'
 import Container from '../components/Container'
-import ContactForm from '../components/ContactForm'
+import ContactFooter from '../components/ContactFooter'
 import ContactSection from '../components/ContactSection'
 import SEO from '../components/SEO'
 
@@ -21,7 +21,7 @@ const Contact = ({ data }) => {
 
       <Container>
         <ContactSection />
-        <ContactForm />
+        <ContactFooter />
       </Container>
     </Layout>
   )

@@ -1,0 +1,41 @@
+.header {
+  position: fixed;
+  background: #050733;
+  width: 100%;
+  padding: 1.5em 0;
+  height: 82px;
+  z-index: 50;
+  transform: matrix(1, 0, 0, 1, 0, 0);
+}
+
+.nav {
+  width: 100%;
+  max-width: 1050px;
+  height: 100%;
+  margin: 0 auto;
+  padding: 0 1.5em;
+  display: flex;
+  align-items: center;
+
+  ul {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  li {
+    display: inline-block;
+    margin-left: 1em;
+    text-transform: uppercase;
+  }
+
+  a {
+    text-decoration: none;
+    color: #eef3f6;
+    transition: all 0.2s;
+    border-bottom: 2px solid #050733;
+    &:hover {
+      color: white;
+    }
+  }
+}

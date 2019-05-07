@@ -1,0 +1,36 @@
+.contactContainer {
+  position: relative;
+  height: 620px;
+
+  .innerContainer {
+    display: flex;
+    flex-direction: column;
+
+    .contentBox {
+      display: flex;
+      justify-content: center;
+
+      .menu {
+        position: relative;
+        height: auto;
+        width: 110px;
+
+        nav {
+          padding: 0;
+          align-items: stretch;
+
+          ul {
+            display: flex;
+            flex-direction: column;
+          }
+        }
+      }
+
+      .contactDetails {
+        display: flex;
+        flex-direction: column;
+        width: 340px;
+      }
+    }
+  }
+}
