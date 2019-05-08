@@ -4,7 +4,7 @@ import styles from './contactFooter.module.scss'
 import Menu from './Menu'
 import ContactForm from './ContactForm'
 
-const ContactFooter = () => {
+const ContactDetails = () => {
   const data = useStaticQuery(graphql`
     query ContactFooter {
       contentfulContact {
@@ -19,41 +19,86 @@ const ContactFooter = () => {
   const { email, phone } = data.contentfulContact
   console.log(email, phone)
   return (
+    <div className={styles.contactDetails}>
+      <div className={styles.title}>Contact Us:</div>
+      <div className={styles.details}>
+        <div className={styles.label}>
+          <span>Email:</span>
+          <a
+            href={`mailto:${email}`}
+            target="_self"
+            data-content={email}
+            data-type="mail"
+          >
+            {email}
+          </a>
+        </div>
+        <div className={styles.label}>
+          <span>Telephone:</span>
+          <a
+            href={`tel:${phone}`}
+            target="_self"
+            data-content={phone}
+            data-type="phone"
+          >
+            {phone}
+          </a>
+        </div>
+      </div>
+      <div className={styles.title}>Making Venture Happen</div>
+    </div>
+  )
+}
+
+const activeLinkStyle = {
+  color: '#D2A756',
+}
+
+const NavigationMenu = () => {
+  return (
+    <header className={styles.header}>
+      <nav className={styles.nav}>
+        <ul>
+          <li>
+            <Link to="/" activeStyle={activeLinkStyle}>
+              Home
+            </Link>
+          </li>
+          <li>
+            <Link to="/about/" activeStyle={activeLinkStyle}>
+              About
+            </Link>
+          </li>
+          <li>
+            <Link to="/funds/" activeStyle={activeLinkStyle}>
+              Funds
+            </Link>
+          </li>
+          <li>
+            <Link to="/investors/" activeStyle={activeLinkStyle}>
+              Investors
+            </Link>
+          </li>
+          <li>
+            <Link to="/contact/" activeStyle={activeLinkStyle}>
+              Contact
+            </Link>
+          </li>
+        </ul>
+      </nav>
+    </header>
+  )
+}
+const ContactFooter = () => {
+  return (
     <div className={styles.contactContainer}>
       <div className={styles.innerContainer}>
         <div className={styles.logo}>
           <Link to="/">Televenture</Link>
         </div>
         <div className={styles.contentBox}>
-          <Menu className={styles.menu} />
-          <div className={styles.contactDetails}>
-            <div className={styles.title}>Contact Us:</div>
-            <div className={styles.details}>
-              <div className={styles.label}>
-                <span>Email:</span>
-                <a
-                  href={`mailto:${email}`}
-                  target="_self"
-                  data-content={email}
-                  data-type="mail"
-                >
-                  {email}
-                </a>
-              </div>
-              <div className={styles.label}>
-                <span>Telephone:</span>
-                <a
-                  href={`tel:${phone}`}
-                  target="_self"
-                  data-content={phone}
-                  data-type="phone"
-                >
-                  {phone}
-                </a>
-              </div>
-            </div>
-            <div className={styles.title}>Making Venture Happen</div>
-          </div>
+          <NavigationMenu />
+          <ContactDetails />
           <div className={styles.contactForm}>
             <div className={styles.title}>Contact Form:</div>
             <ContactForm />
