@@ -1,7 +1,6 @@
 import React from 'react'
 import { useStaticQuery, graphql, Link } from 'gatsby'
 import styles from './contactFooter.module.scss'
-import Menu from './Menu'
 import ContactForm from './ContactForm'
 
 const ContactDetails = () => {
@@ -14,10 +13,7 @@ const ContactDetails = () => {
     }
   `)
 
-  console.log(data)
-
   const { email, phone } = data.contentfulContact
-  console.log(email, phone)
   return (
     <div className={styles.contactDetails}>
       <div className={styles.title}>Contact Us:</div>

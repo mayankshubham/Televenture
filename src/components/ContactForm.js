@@ -9,42 +9,6 @@ import styled from 'styled-components'
   https://www.netlify.com/docs/form-handling/
 */
 
-const Form = styled.form``
-
-const Name = styled.input`
-  margin: 0 0 1em 0;
-  width: 100%;
-  @media (min-width: ${props => props.theme.responsive.small}) {
-    width: 49%;
-  }
-`
-
-const Email = styled.input`
-  margin: 0 0 1em 0;
-  width: 100%;
-  @media (min-width: ${props => props.theme.responsive.small}) {
-    width: 49%;
-  }
-`
-
-const Message = styled.textarea`
-  width: 100%;
-  margin: 0 0 1em 0;
-  line-height: 1.6;
-  min-height: 250px;
-  resize: vertical;
-`
-
-const Submit = styled.input`
-  background: ${props => props.theme.colors.base} !important;
-  color: white !important;
-  cursor: pointer;
-  transition: 0.2s;
-  &:hover {
-    background: ${props => props.theme.colors.highlight} !important;
-  }
-`
-
 const Modal = styled.div`
   background: white;
   padding: 2em;
