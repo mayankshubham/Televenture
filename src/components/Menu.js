@@ -16,6 +16,11 @@ const Menu = ({ className }) => {
     >
       <nav className={styles.nav}>
         <ul>
+          {/* <li>
+            <Link to="/" activeStyle={activeLinkStyle}>
+              Home
+            </Link>
+          </li> */}
           <li>
             <Link to="/" activeStyle={activeLinkStyle}>
               Home

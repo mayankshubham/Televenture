@@ -1,5 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import styles from './contactForm.module.scss'
 import styled from 'styled-components'
 
 /*
@@ -8,56 +9,7 @@ import styled from 'styled-components'
   https://www.netlify.com/docs/form-handling/
 */
 
-const Form = styled.form`
-  max-width: ${props => props.theme.sizes.maxWidthCentered};
-  margin: 0 auto;
-  display: flex;
-  flex-flow: row wrap;
-  justify-content: space-between;
-  align-items: flex-start;
-  input,
-  textarea {
-    font-family: inherit;
-    font-size: inherit;
-    border: none;
-    outline: none;
-    background: ${props => props.theme.colors.tertiary};
-    color: ${props => props.theme.colors.base};
-    border-radius: 2px;
-    padding: 1em;
-    &::-webkit-input-placeholder {
-      color: gray;
-    }
-    &::-moz-placeholder {
-      color: gray;
-    }
-    &:-ms-input-placeholder {
-      color: gray;
-    }
-    &:-moz-placeholder {
-      color: gray;
-    }
-    &:required {
-      box-shadow: none;
-    }
-    &:focus {
-      outline: none;
-    }
-  }
-  &::before {
-    content: '';
-    background: black;
-    height: 100%;
-    width: 100%;
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index: 1;
-    transition: 0.2s all;
-    opacity: ${props => (props.overlay ? '.8' : '0')};
-    visibility: ${props => (props.overlay ? 'visible' : 'hidden')};
-  }
-`
+const Form = styled.form``
 
 const Name = styled.input`
   margin: 0 0 1em 0;
@@ -154,6 +106,7 @@ class ContactForm extends React.Component {
     this.state = {
       name: '',
       email: '',
+      phone: '',
       message: '',
       showModal: false,
     }
@@ -194,7 +147,8 @@ class ContactForm extends React.Component {
 
   render() {
     return (
-      <Form
+      <form
+        className={styles.form}
         name="contact"
         onSubmit={this.handleSubmit}
         data-netlify="true"
@@ -210,31 +164,48 @@ class ContactForm extends React.Component {
           </label>
         </p>
 
-        <Name
-          name="name"
-          type="text"
-          placeholder="Full Name"
-          value={this.state.name}
+        <div className={styles.contactDetails}>
+          <input
+            className={styles.name}
+            name="name"
+            type="text"
+            placeholder="Full Name"
+            value={this.state.name}
+            onChange={this.handleInputChange}
+            required
+          />
+          <input
+            className={styles.email}
+            name="email"
+            type="email"
+            placeholder="Email"
+            value={this.state.email}
+            onChange={this.handleInputChange}
+            required
+          />
+        </div>
+        <input
+          className={styles.phone}
+          name="phone"
+          type="phone"
+          placeholder="Phone"
+          value={this.state.phone}
           onChange={this.handleInputChange}
           required
         />
-        <Email
-          name="email"
-          type="email"
-          placeholder="Email"
-          value={this.state.email}
-          onChange={this.handleInputChange}
-          required
-        />
-        <Message
+
+        <textarea
+          className={styles.textarea}
           name="message"
-          type="text"
-          placeholder="Message"
+          placeholder="Write your query here"
           value={this.state.message}
           onChange={this.handleInputChange}
           required
         />
-        <Submit name="submit" type="submit" value="Send" />
+
+        <button className={styles.submit} name="submit" type="submit">
+          Send
+        </button>
 
         <Modal visible={this.state.showModal}>
           <p>
@@ -243,7 +214,7 @@ class ContactForm extends React.Component {
           </p>
           <Button onClick={this.closeModal}>Okay</Button>
         </Modal>
-      </Form>
+      </form>
     )
   }
 }

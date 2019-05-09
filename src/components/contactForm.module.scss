@@ -1,0 +1,96 @@
+.form {
+  max-width: 375px;
+  margin: 0 auto;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: flex-end;
+  align-items: flex-start;
+  input,
+  textarea {
+    font-family: inherit;
+    font-size: inherit;
+    border: none;
+    outline: none;
+    background: #f3f3f3;
+    color: #050733;
+    padding: 1em;
+    &::-webkit-input-placeholder {
+      color: gray;
+    }
+    &::-moz-placeholder {
+      color: gray;
+    }
+    &:-ms-input-placeholder {
+      color: gray;
+    }
+    &:-moz-placeholder {
+      color: gray;
+    }
+    &:required {
+      box-shadow: none;
+    }
+    &:focus {
+      outline: none;
+    }
+  }
+
+  input {
+    height: 36px;
+  }
+  // &::before {
+  //   content: '';
+  //   height: 100%;
+  //   width: 100%;
+  //   position: fixed;
+  //   top: 0;
+  //   left: 0;
+  //   z-index: 1;
+  //   transition: 0.2s all;
+  // }
+
+  .contactDetails {
+    display: flex;
+    margin: 0 0 12px 0;
+
+    .name {
+      width: 100%;
+      @media (min-width: 35em) {
+        width: 50%;
+      }
+    }
+
+    .email {
+      width: 100%;
+      @media (min-width: 35em) {
+        width: 50%;
+      }
+    }
+  }
+
+  .phone {
+    width: 100%;
+    margin: 0 0 12px 0;
+  }
+
+  .textarea {
+    width: 100%;
+    margin: 0 0 1em 0;
+    line-height: 1.6;
+    min-height: 150px;
+    resize: vertical;
+  }
+}
+
+.submit {
+  font: normal normal 700 15px/1.4em worksans-extralight, 'work sans',
+    sans-serif;
+  font-weight: 400;
+  background-color: rgba(210, 167, 86, 1);
+  color: #010025;
+  cursor: pointer;
+  border: 0;
+  min-width: 20%;
+  max-width: calc(50% - 30px);
+  min-height: 36px;
+  padding: 15px;
+}
