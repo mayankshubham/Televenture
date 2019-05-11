@@ -2,6 +2,8 @@ import React from 'react'
 import { useStaticQuery, graphql, Link } from 'gatsby'
 import styles from './contactFooter.module.scss'
 import ContactForm from './ContactForm'
+import BackgroundSection from './ContentFooterBackground'
+import TeleventureLogo from './TeleventureLogo'
 
 const ContactDetails = () => {
   const data = useStaticQuery(graphql`
@@ -88,10 +90,11 @@ const NavigationMenu = () => {
 const ContactFooter = () => {
   return (
     <div className={styles.contactContainer}>
+      <BackgroundSection className={'backgroundImage'}>
+        <div className={'imageOverlay dark'} />
+      </BackgroundSection>
       <div className={styles.innerContainer}>
-        <div className={styles.logo}>
-          <Link to="/">Televenture</Link>
-        </div>
+        <TeleventureLogo className={styles.televentureLogo} />
         <div className={styles.contentBox}>
           <NavigationMenu />
           <ContactDetails />

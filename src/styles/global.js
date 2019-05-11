@@ -89,7 +89,7 @@ const GlobalStyle = createGlobalStyle`
     text-rendering: optimizeLegibility;
     text-shadow: rgba(0, 0, 0, .01) 0 0 1px;
     font-weight: 400;
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    font-family: worksans-extralight,work sans,sans-serif;
   }
 
   img {
@@ -113,6 +113,25 @@ const GlobalStyle = createGlobalStyle`
     }
     &:invalid {
       box-shadow: none;
+    }
+  }
+
+  .backgroundImage {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+  }
+  
+  .imageOverlay {
+    position: absolute;
+    background-color: rgba(1, 0, 37, 0.55);
+    height: 100%;
+    width: 100%;
+    &.dark {
+      background-color: rgba(1, 0, 37, 0.85);
+    }
+    &.hovereffect:hover {
+      background-color: rgba(1, 0, 37, 0.6);
     }
   }
 `

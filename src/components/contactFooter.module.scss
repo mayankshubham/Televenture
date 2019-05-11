@@ -1,13 +1,17 @@
 .contactContainer {
-  top: 100px;
-  background: rgba(8, 17, 99, 0.25);
   position: relative;
   height: 620px;
 
   .innerContainer {
     display: flex;
     flex-direction: column;
-
+    .televentureLogo {
+      width: 169px;
+      height: 17px;
+      object-fit: fill;
+      margin-top: 84px;
+      margin-bottom: 24px;
+    }
     .contentBox {
       display: flex;
       justify-content: space-around;
@@ -33,7 +37,7 @@
         text-transform: uppercase;
         letter-spacing: 0.15em;
         color: #40667c;
-        font-size: 15px;
+        font-size: 17px;
         font-weight: 600;
         line-height: 2.5em;
       }
@@ -50,6 +54,10 @@
           line-height: 2em;
           text-shadow: rgba(0, 0, 0, 0.4) 0px 4px 5px;
           letter-spacing: 0.15em;
+          color: #bfbfbf;
+        }
+
+        a {
           color: #bfbfbf;
         }
       }
@@ -91,7 +99,6 @@
     text-decoration: none;
     color: #eef3f6;
     transition: all 0.2s;
-    border-bottom: 2px solid #050733;
     &:hover {
       color: white;
     }
