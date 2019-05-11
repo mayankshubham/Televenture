@@ -2,6 +2,7 @@ import React from 'react'
 import { Link } from 'gatsby'
 import styles from './menu.module.scss'
 import classnames from 'classnames'
+import TeleventureLogo from './TeleventureLogo'
 
 const activeLinkStyle = {
   color: '#D2A756',
@@ -15,6 +16,9 @@ const Menu = ({ className }) => {
       })}
     >
       <nav className={styles.nav}>
+        <Link to="/">
+          <TeleventureLogo className={styles.televentureLogo} />
+        </Link>
         <ul>
           {/* <li>
             <Link to="/" activeStyle={activeLinkStyle}>
