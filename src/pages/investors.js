@@ -10,13 +10,13 @@ import InvestorsSection from '../components/Investors'
 
 const Investors = () => {
   const postNode = {
-    title: `Investors - ${config.siteTitle}`,
+    title: `INVESTORS | ${config.siteTitle}`,
   }
 
   return (
     <Layout>
       <Helmet>
-        <title>{`Investors - ${config.siteTitle}`}</title>
+        <title>{`INVESTORS | ${config.siteTitle}`}</title>
       </Helmet>
       <SEO postNode={postNode} pagePath="investors" customTitle />
       <Container>

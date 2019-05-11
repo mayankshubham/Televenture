@@ -4,7 +4,7 @@ import styles from './index.module.scss'
 import classNames from 'classnames'
 
 const WithBackgroundCover = (Background, displayName) => {
-  const component = props => {
+  const coverComponent = props => {
     const { content, ...rest } = props
     return (
       <div className={styles.withBackgroundCover}>
@@ -22,8 +22,8 @@ const WithBackgroundCover = (Background, displayName) => {
       </div>
     )
   }
-  component.displayName = displayName
-  return component
+  coverComponent.displayName = displayName
+  return coverComponent
 }
 
 export default WithBackgroundCover
