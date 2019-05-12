@@ -1,7 +1,6 @@
 import React from 'react'
 import { graphql } from 'gatsby'
 import Helmet from 'react-helmet'
-import config from '../utils/siteConfig'
 import Layout from '../components/Layout'
 import Container from '../components/Container'
 import SEO from '../components/SEO'
@@ -10,6 +9,7 @@ import FundSection from '../components/Funds'
 
 const FundsTemplate = ({ data, pageContext }) => {
   const { slug, pages } = pageContext
+  const fundDetails = data.allContentfulFunds.edges
 
   return (
     <Layout>
@@ -19,11 +19,36 @@ const FundsTemplate = ({ data, pageContext }) => {
       <SEO pagePath={slug} />
 
       <Container>
-        <FundSection tabs={pages} />
+        <FundSection tabs={pages} fundDetails={fundDetails} />
         <Footer />
       </Container>
     </Layout>
   )
 }
+
+export const query = graphql`
+  query($slug: String!) {
+    allContentfulFunds(
+      sort: { fields: [order] }
+      filter: { fundName: { eq: $slug } }
+    ) {
+      edges {
+        node {
+          id
+          order
+          fundName
+          title
+          founded
+          url
+          sector
+          orgNo
+          description {
+            description
+          }
+        }
+      }
+    }
+  }
+`
 
 export default FundsTemplate
