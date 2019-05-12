@@ -49,6 +49,16 @@
         letter-spacing: 0.08em;
         font-size: 16px;
 
+        .founded {
+          width: 40%;
+          padding-left: 1em;
+        }
+
+        .sector {
+          width: 60%;
+          padding-left: 1em;
+        }
+
         .heading {
           color: black;
           padding-right: 0.55em;
@@ -56,6 +66,7 @@
 
         .value {
           color: #40667c;
+          text-transform: uppercase;
         }
       }
     }
