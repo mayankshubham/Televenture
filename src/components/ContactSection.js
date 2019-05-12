@@ -3,7 +3,7 @@ import { useStaticQuery, graphql } from 'gatsby'
 import styles from './contactSection.module.scss'
 import ContactBackgroundSection from './ContactBackgroundSection'
 
-const ContactSection = (props) => {
+const ContactSection = props => {
   const thisPage = React.createRef()
 
   const data = useStaticQuery(graphql`
@@ -17,6 +17,7 @@ const ContactSection = (props) => {
     }
   `)
   const { contentfulContact } = data
+  console.log(data)
   return (
     <div ref={thisPage} className={styles.contactSection}>
       <ContactBackgroundSection className={'backgroundImage'}>
