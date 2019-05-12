@@ -1,7 +1,82 @@
 .investorsContainer {
-  position: relative;
-  height: 678px;
   width: 100%;
   top: 82px;
   background-color: #d5dee3;
+
+  .description {
+    font-family: din-next-w01-light, din-next-w02-light, din-next-w10-light, sans-serif;
+    font-size: 21px;
+    line-height: 38px;
+    color: #010025;
+    width: 70%;
+    margin: 0 auto;
+    padding: 150px 0 192px 0;
+  }
+
+  .tableInfo {
+    font-family: worksans-semibold, work sans, sans-serif;
+    font-size: 17px;
+    color: #40667c;
+    display: flex;
+    justify-content: center;
+  }
+  .investorQueriesContainer {
+    padding: 100px 0;
+    .box {
+      width: 70%;
+      display: flex;
+      justify-content: space-between;
+      border: 1px solid rgba(64, 102, 124, 0.38);
+      padding: 42px;
+      margin: 0 auto;
+      box-shadow: 0px 3px 7px 0px rgba(0, 0, 0, 0.18);
+      .detailsSection {
+        flex-grow: 1;
+        padding-left: 16px;
+        .header {
+          color: #40667c;
+          font-size: 17px;
+        }
+        .details {
+          padding-top: 16px;
+          font-family: din-next-w01-light, din-next-w02-light, din-next-w10-light, sans-serif;
+          font-size: 17px;
+          line-height: 32px;
+          color: rgb(1, 0, 37);
+          a {
+            color: rgb(1, 0, 37);
+          }
+        }
+      }
+      .investorImage {
+        border-radius: 50%;
+        width: 190px;
+        height: 100px;
+      }
+    }
+  }
+
+  .eventsInfoTable {
+    margin: 0 auto;
+    margin-top: 38px;
+    thead tr {
+      text-align: center;
+      background-color: rgb(64, 102, 124);
+      color: #b4cad6;
+      font: normal normal 700 17px/1.4em din-next-w01-light, din-next-w02-light, din-next-w10-light, sans-serif;
+      th {
+        padding: 15px 28px;
+      }
+    }
+    tbody tr {
+      color: #40667c;
+      font: normal normal 700 16px/1.4em din-next-w01-light, din-next-w02-light, din-next-w10-light, sans-serif;
+      td {
+        padding: 28px;
+      }
+      &.selected {
+        background-color: rgb(230, 230, 230);
+      }
+    }
+  }
 }
