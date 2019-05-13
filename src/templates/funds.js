@@ -45,6 +45,11 @@ export const query = graphql`
           description {
             description
           }
+          img {
+            fixed(quality: 60, width: 250, height: 170) {
+              ...GatsbyContentfulFixed_withWebp
+            }
+          }
         }
       }
     }

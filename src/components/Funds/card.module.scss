@@ -9,7 +9,6 @@
     position: relative;
     flex-direction: column;
     max-width: 980px;
-    min-height: 340px;
     background-color: white;
     flex: 1 1 auto;
 
@@ -74,18 +73,18 @@
 
     .cardBody {
       display: flex;
-      min-height: 146px;
+      min-height: 250px;
       flex: 1 1 auto;
 
       .cardData {
         display: flex;
         flex-direction: column;
         max-width: 70%;
-        min-height: 146px;
         display: flex;
         justify-content: center;
         align-items: center;
         padding: 0 2em;
+        flex: 1 1 auto;
 
         .description {
           font: normal normal normal 17px/1.4em din-next-w01-light,
@@ -104,6 +103,8 @@
           width: 100%;
           font-size: 15px;
           flex: 1 0 auto;
+          padding-bottom: 2em;
+          align-items: center;
 
           .orgValue {
             font: normal normal normal 40px/1.4em proxima-n-w01-reg, sans-serif;
@@ -125,6 +126,14 @@
       .heroImageContainer {
         width: 270px;
         height: 170px;
+        align-self: center;
+        display: block;
+        overflow: hidden;
+        cursor: pointer;
+
+        .heroImage {
+          filter: grayscale(100%) saturate(100%);
+        }
       }
     }
   }

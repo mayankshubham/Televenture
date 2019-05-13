@@ -1,8 +1,9 @@
 import React from 'react'
+import Image from 'gatsby-image'
 import styles from './card.module.scss'
 
 const Card = ({ details }) => {
-  const { title, founded, sector, description, orgNo, url } = details
+  const { title, founded, sector, description, orgNo, url, img } = details
   return (
     <div className={styles.cardWrapper}>
       <div className={styles.cardContent}>
@@ -22,7 +23,7 @@ const Card = ({ details }) => {
         <div className={styles.cardBody}>
           <div className={styles.cardData}>
             <div className={styles.description}>
-              {description.description ? (
+              {description ? (
                 <p>BUSINESS DESCRIPTION: {description.description}</p>
               ) : null}
             </div>
@@ -37,9 +38,17 @@ const Card = ({ details }) => {
               </h4>
             </div>
           </div>
-          <div className={styles.heroImageContainer}>
-            <div className={styles.heroImage} />
-          </div>
+          <a className={styles.heroImageContainer} href={url}>
+            {img ? (
+              <Image
+                className={styles.heroImage}
+                fixed={img.fixed}
+                objectFit="cover"
+                objectPosition="50% 50%"
+                alt=""
+              />
+            ) : null}
+          </a>
         </div>
       </div>
     </div>
