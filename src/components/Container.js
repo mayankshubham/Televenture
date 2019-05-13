@@ -5,6 +5,8 @@ const Wrapper = styled.section`
   margin: 0 auto auto;
   width: 100%;
   flex-grow: 1;
+  position: relative;
+  top: 82px;
 `
 
 const Container = props => {
