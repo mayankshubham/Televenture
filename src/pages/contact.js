@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useRef } from 'react'
 import Helmet from 'react-helmet'
 import config from '../utils/siteConfig'
 import Layout from '../components/Layout'
@@ -8,7 +8,7 @@ import ContactSection from '../components/ContactSection'
 import SEO from '../components/SEO'
 
 const Contact = ({ data }) => {
-  const footer = React.createRef()
+  const footer = useRef(null)
 
   const postNode = {
     title: `Contact - ${config.siteTitle}`,
