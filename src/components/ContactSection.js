@@ -21,7 +21,7 @@ const ContactSection = props => {
   return (
     <div ref={thisPage} className={styles.contactSection}>
       <ContactBackgroundSection className={'backgroundImage'}>
-        <div className={'imageOverlay hovereffect'} />
+        <div className={'imageOverlay'} />
       </ContactBackgroundSection>
       <div className={styles.card}>
         <div className={styles.header}>{'CONTACT'}</div>
