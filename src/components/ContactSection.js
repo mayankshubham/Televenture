@@ -17,7 +17,7 @@ const ContactSection = props => {
     }
   `)
   const { contentfulContact } = data
-  console.log(data)
+
   return (
     <div ref={thisPage} className={styles.contactSection}>
       <ContactBackgroundSection className={'backgroundImage'}>

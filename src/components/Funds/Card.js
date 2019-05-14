@@ -23,9 +23,9 @@ const Card = ({ details }) => {
         <div className={styles.cardBody}>
           <div className={styles.cardData}>
             <div className={styles.description}>
-              {description ? (
+              {description &&
                 <p>BUSINESS DESCRIPTION: {description.description}</p>
-              ) : null}
+              }
             </div>
             <div className={styles.cardFooter}>
               <h4>
@@ -39,7 +39,7 @@ const Card = ({ details }) => {
             </div>
           </div>
           <a className={styles.heroImageContainer} href={url}>
-            {img ? (
+            {img &&
               <Image
                 className={styles.heroImage}
                 fixed={img.fixed}
@@ -47,7 +47,7 @@ const Card = ({ details }) => {
                 objectPosition="50% 50%"
                 alt=""
               />
-            ) : null}
+            }
           </a>
         </div>
       </div>
