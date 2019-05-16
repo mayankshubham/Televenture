@@ -68,7 +68,7 @@ const NavigationMenu = () => {
             </Link>
           </li>
           <li>
-            <Link to="/funds/" activeStyle={activeLinkStyle}>
+            <Link to="/Funds/" activeStyle={activeLinkStyle} partiallyActive>
               Funds
             </Link>
           </li>
@@ -94,7 +94,9 @@ const Footer = React.forwardRef((props, ref) => {
         <div className={'imageOverlay dark'} />
       </BackgroundSection>
       <div className={styles.innerContainer}>
-        <Link to="/"><TeleventureLogo className={styles.televentureLogo} /></Link>
+        <Link to="/">
+          <TeleventureLogo className={styles.televentureLogo} />
+        </Link>
         <div className={styles.contentBox}>
           <NavigationMenu />
           <ContactDetails />
@@ -106,7 +108,7 @@ const Footer = React.forwardRef((props, ref) => {
       </div>
     </div>
   )
-});
+})
 
 Footer.displayName = 'Footer'
 export default Footer

@@ -36,7 +36,7 @@ const Menu = ({ className }) => {
             </Link>
           </li>
           <li>
-            <Link to="/funds/" activeStyle={activeLinkStyle}>
+            <Link to="/Funds/" activeStyle={activeLinkStyle} partiallyActive>
               Funds
             </Link>
           </li>
