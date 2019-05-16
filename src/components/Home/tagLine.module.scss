@@ -1,0 +1,32 @@
+.tagLineContainer {
+  max-width: 390px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  z-index: 1;
+  position: relative;
+  margin: 8em auto 0;
+
+  .iconImg {
+    max-height: 50px;
+    width: 65px;
+    margin-bottom: 2em;
+  }
+
+  .text {
+    display: flex;
+    flex-wrap: wrap;
+    word-wrap: break-word;
+    text-align: start;
+    text-transform: uppercase;
+    font: normal normal normal 88px/1.4em worksans-extralight, "work sans",
+      sans-serif;
+    color: #fffffe;
+    line-height: 0.9em;
+    letter-spacing: -0.05em;
+
+    .highlight {
+      color: #d2a756;
+    }
+  }
+}

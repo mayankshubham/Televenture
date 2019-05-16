@@ -1,6 +1,13 @@
 .homeContainer {
   position: relative;
   width: 100%;
-  height: calc(100vh - 82px);
+  min-height: 800px;
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 auto;
   background-color: #d5dee3;
+
+  .tagBackground {
+    position: absolute !important;
+  }
 }
