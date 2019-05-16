@@ -1,0 +1,16 @@
+.portFolioContainer {
+  position: relative;
+  height: 882px;
+  display: flex;
+  justify-content: center;
+
+  .backgroundTriangle {
+    position: absolute;
+    height: 0;
+    width: 0;
+    z-index: 1;
+    border-left: 500px solid transparent;
+    border-top: 881px solid #010025;
+    border-right: 500px solid transparent;
+  }
+}
