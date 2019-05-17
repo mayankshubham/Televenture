@@ -1,37 +1,34 @@
-import React from 'react'
-import { useStaticQuery, graphql } from 'gatsby'
-import BackgroundImage from 'gatsby-background-image'
+import React from "react";
+import { useStaticQuery, graphql } from "gatsby";
+import Image from "gatsby-image";
 
-const BackgroundSection = ({
+const TeleventureLogo = ({
   className,
-  children,
   style,
-  tag = 'section',
-  backgroundColor = '#040e18',
+  tag = "div",
+  backgroundColor = "#040e18"
 }) => {
   const data = useStaticQuery(graphql`
     query {
       desktop: file(relativePath: { eq: "televenture_gre_small.png" }) {
         childImageSharp {
-          fluid(quality: 90, maxWidth: 170) {
+          fluid(quality: 90, maxWidth: 250) {
             ...GatsbyImageSharpFluid_withWebp
           }
         }
       }
     }
-  `)
-  const imageData = data.desktop.childImageSharp.fluid
+  `);
+  const imageData = data.desktop.childImageSharp.fluid;
   return (
-    <BackgroundImage
+    <Image
       Tag={tag}
       style={style}
       className={className}
       fluid={imageData}
       backgroundColor={backgroundColor}
-    >
-      {children}
-    </BackgroundImage>
-  )
-}
+    />
+  );
+};
 
-export default BackgroundSection
+export default TeleventureLogo;

@@ -1,26 +1,36 @@
 import React from "react";
 import BackgroundSection from "../ContactBackgroundSection";
-import { useStaticQuery, graphql } from "gatsby";
 import classnames from "classnames";
-import Image from "gatsby-image";
 import styles from "./portFolio.module.scss";
+import TeleventureLogo from "../TeleventureLogo";
+import TeleventureIcon from "../TeleventureIcon";
 
 const PortFolio = () => {
-  // const data = useStaticQuery(graphql`
-  //   query {
-  //     desktop
-  //   }
-  // `)
   return (
     <div className={styles.portFolioContainer}>
-      <BackgroundSection className={"backgroundImage"}>
+      <BackgroundSection
+        className={("backgroundImage", styles.portFolioBackground)}
+      >
         <div className={classnames("imageOverlay", "green")} />
       </BackgroundSection>
       <div className={styles.backgroundTriangle} />
-      <div className={styles.content}>
-        {/* <Image className={styles.logoImage} />
-        <div className={styles.textContent}>Televenture</div>
-        <Image className={styles.logoIcon} /> */}
+      <div className={styles.contentWrapper}>
+        <TeleventureLogo className={styles.logo} />
+        <div className={styles.content}>
+          <div className={styles.textContent}>
+            <div className={styles.contentDescription}>
+              Televenture is one of the leading venture capital companies in
+              Norway. Televenture currently manages an extensive portfolio of
+              companies focusing on:
+            </div>
+            <div className={styles.fields}>
+              <p className={styles.titleField}>INDUSTRIALS / SOFTWARE</p>
+              <p className={styles.titleField}>OIL & GAS​ / CONSUMER</p>
+              <p className={styles.titleField}>Marine</p>
+            </div>
+          </div>
+        </div>
+        <TeleventureIcon className={styles.logoIcon} />
       </div>
     </div>
   );
