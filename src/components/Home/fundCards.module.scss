@@ -1,0 +1,41 @@
+.fundsDetailContainer {
+  display: flex;
+  min-height: 594px;
+  position: relative;
+  background-color: #071f4e;
+  justify-content: center;
+
+  .cardsWrapper {
+    display: flex;
+    position: relative;
+    justify-content: center;
+
+    .card {
+      position: relative;
+      width: 284px;
+
+      .backgroundDiv {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        right: 0;
+        left: 0;
+        background-color: #010024;
+      }
+
+      .cardInner {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        right: 0;
+        left: 0;
+        z-index: 2;
+
+        .icon {
+          width: 30px;
+          height: 20px;
+        }
+      }
+    }
+  }
+}

@@ -1,19 +1,19 @@
-import React from 'react'
-import { graphql } from 'gatsby'
-import Layout from '../components/Layout'
-import CardList from '../components/CardList'
-import Card from '../components/Card'
-import Helmet from 'react-helmet'
-import Container from '../components/Container'
-import Pagination from '../components/Pagination'
-import SEO from '../components/SEO'
-import config from '../utils/siteConfig'
+import React from 'react';
+import { graphql } from 'gatsby';
+import Helmet from "react-helmet";
+import Layout from "../components/Layout";
+import CardList from "../components/CardList";
+import Card from "../components/Card";
+import Container from '../components/Container';
+import Pagination from '../components/Pagination';
+import SEO from '../components/SEO';
+import config from '../utils/siteConfig';
 
 const Index = ({ data, pageContext }) => {
-  const posts = data.allContentfulPost.edges
-  const featuredPost = posts[0].node
-  const { currentPage } = pageContext
-  const isFirstPage = currentPage === 1
+  const posts = data.allContentfulPost.edges;
+  const featuredPost = posts[0].node;
+  const { currentPage } = pageContext;
+  const isFirstPage = currentPage === 1;
 
   return (
     <Layout>
@@ -41,16 +41,12 @@ const Index = ({ data, pageContext }) => {
       </Container>
       <Pagination context={pageContext} />
     </Layout>
-  )
-}
+  );
+};
 
 export const query = graphql`
   query($skip: Int!, $limit: Int!) {
-    allContentfulPost(
-      sort: { fields: [publishDate], order: DESC }
-      limit: $limit
-      skip: $skip
-    ) {
+    allContentfulPost(sort: { fields: [publishDate], order: DESC }, limit: $limit, skip: $skip) {
       edges {
         node {
           title
@@ -74,6 +70,6 @@ export const query = graphql`
       }
     }
   }
-`
+`;
 
-export default Index
+export default Index;
