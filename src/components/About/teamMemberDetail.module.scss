@@ -1,0 +1,17 @@
+.teamMemberContainer {
+  height: 504px;
+  display: flex;
+  max-width: 2070px;
+  &.right {
+    flex-direction: row-reverse;
+    justify-content: flex-end;
+  }
+
+  .description {
+  }
+  .image {
+    width: 359px;
+    height: 100%;
+    flex: 1 0 auto;
+  }
+}

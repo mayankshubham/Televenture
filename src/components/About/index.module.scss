@@ -6,8 +6,8 @@
     display: flex;
     align-items: center;
     flex-direction: column;
-    font-size: 21px;    
-    font-family: din-next-w01-light,din-next-w02-light,din-next-w10-light,sans-serif;
+    font-size: 21px;
+    font-family: worksans-extralight, work sans, sans-serif;
     color: #010025;
     line-height: 32px;
     .mainDescription {
@@ -18,5 +18,10 @@
       margin-top: 40px;
       max-width: 840px;
     }
+  }
+  .teamWrapper {
+    position: relative;
+    width: 100%;
+    background-color: #010025;
   }
 }
