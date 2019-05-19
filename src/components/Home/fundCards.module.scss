@@ -30,10 +30,47 @@
         right: 0;
         left: 0;
         z-index: 2;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
 
-        .icon {
-          width: 30px;
-          height: 20px;
+        .title {
+          width: 219px;
+          min-height: 21px;
+          pointer-events: none;
+          visibility: inherit;
+          position: relative;
+          margin: 0px 0px 10px 0;
+          left: 28px;
+
+          .icon {
+            width: 30px;
+            height: 20px;
+          }
+
+          .label {
+            font-size: 45px;
+            line-height: 1.2em;
+            letter-spacing: 0.15em;
+            color: rgb(188, 155, 93);
+          }
+
+          .fundLabel {
+            font-size: 22px;
+            line-height: 1.2em;
+            font-family: worksans-extralight, work sans, sans-serif;
+            letter-spacing: 0.15em;
+            color: white;
+
+            &.light {
+              color: #40667c;
+            }
+          }
+        }
+
+        .tabButton {
+          align-self: center;
+          margin: 0 auto;
         }
       }
     }

@@ -1,15 +1,21 @@
-import React from 'react'
-import { Link } from 'gatsby'
-import styles from './tab.module.scss'
+import React from "react";
+import { Link } from "gatsby";
+import classnames from "classnames";
+import styles from "./tab.module.scss";
 
-const Tab = ({ slug, children }) => {
+const Tab = ({ slug, className, children }) => {
   return (
-    <div className={styles.tabPill}>
+    <div
+      className={classnames({
+        [styles.tabPill]: true,
+        [className]: className
+      })}
+    >
       <Link className={styles.tabLink} to={slug}>
         {children}
       </Link>
     </div>
-  )
-}
-Tab.displayName = 'Tab'
-export default Tab
+  );
+};
+Tab.displayName = "Tab";
+export default Tab;
