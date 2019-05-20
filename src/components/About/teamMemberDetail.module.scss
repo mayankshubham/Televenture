@@ -1,5 +1,4 @@
 .teamMemberContainer {
-  height: 504px;
   display: flex;
   .iconContainer {
     width: 62px;
@@ -58,5 +57,13 @@
     width: 359px;
     height: 100%;
     flex: 0 0 auto;
+    transition: all 0.8s linear;
+    img {
+      transition: all 0.8s linear;
+      transform: scale3d(1, 1, 1);
+      &:hover {
+        transform: scale3d(1.1, 1.1, 1);
+      }
+    }
   }
 }
