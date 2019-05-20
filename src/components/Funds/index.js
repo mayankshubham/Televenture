@@ -2,8 +2,8 @@ import React from 'react'
 import classnames from 'classnames'
 import FundDetails from './FundDetails'
 import Background from './BackgroundSection'
-import Tabs from './Tabs'
-import TabLink from './Tab'
+import Tabs from '../Tabs'
+import TabLink from '../Tab'
 import styles from './index.module.scss'
 
 const Funds = ({ tabs, fundDetails }) => {

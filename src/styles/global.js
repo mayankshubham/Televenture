@@ -1,4 +1,4 @@
-import { createGlobalStyle } from 'styled-components'
+import { createGlobalStyle } from "styled-components";
 
 const GlobalStyle = createGlobalStyle`
   /* http://meyerweb.com/eric/tools/css/reset/
@@ -128,6 +128,9 @@ const GlobalStyle = createGlobalStyle`
     background-color: rgba(1, 0, 37, 0.55);
     height: 100%;
     width: 100%;
+    &.green {
+      background-color: rgb(33, 61, 77, 0.9);
+    }
     &.dark {
       background-color: rgba(1, 0, 37, 0.85);
     }
@@ -135,5 +138,5 @@ const GlobalStyle = createGlobalStyle`
       background-color: rgba(1, 0, 37, 0.6);
     }
   }
-`
-export default GlobalStyle
+`;
+export default GlobalStyle;

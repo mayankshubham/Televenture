@@ -1,12 +1,12 @@
-import React from 'react'
-import { Link } from 'gatsby'
-import styles from './menu.module.scss'
-import classnames from 'classnames'
-import TeleventureLogo from './TeleventureLogo'
+import React from 'react';
+import { Link } from 'gatsby';
+import classnames from 'classnames';
+import styles from './menu.module.scss';
+import TeleventureLogo from './TeleventureLogo';
 
 const activeLinkStyle = {
   color: '#D2A756',
-}
+};
 
 const Menu = ({ className }) => {
   return (
@@ -53,7 +53,7 @@ const Menu = ({ className }) => {
         </ul>
       </nav>
     </header>
-  )
-}
+  );
+};
 
-export default Menu
+export default Menu;

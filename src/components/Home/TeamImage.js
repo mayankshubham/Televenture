@@ -1,18 +1,20 @@
 import React from "react";
+import styles from "./teamImage.module.scss";
 import { useStaticQuery, graphql } from "gatsby";
-import Image from "gatsby-image";
+import BackgroundImage from "gatsby-background-image";
 
-const TeleventureLogo = ({
+const TeamImage = ({
   className,
+  children,
   style,
-  tag = "div",
+  tag = "section",
   backgroundColor = "#040e18"
 }) => {
   const data = useStaticQuery(graphql`
     query {
-      desktop: file(relativePath: { eq: "televenture_gre_small.png" }) {
+      desktop: file(relativePath: { eq: "Televenture-76.jpg" }) {
         childImageSharp {
-          fluid(quality: 90, maxWidth: 250) {
+          fluid(quality: 90, maxWidth: 1500) {
             ...GatsbyImageSharpFluid_withWebp
           }
         }
@@ -21,14 +23,16 @@ const TeleventureLogo = ({
   `);
   const imageData = data.desktop.childImageSharp.fluid;
   return (
-    <Image
+    <BackgroundImage
       Tag={tag}
       style={style}
-      className={className}
+      className={styles.teamImage}
       fluid={imageData}
       backgroundColor={backgroundColor}
-    />
+    >
+      <div className={"imageOverlay dark"} />
+    </BackgroundImage>
   );
 };
 
-export default TeleventureLogo;
+export default TeamImage;
