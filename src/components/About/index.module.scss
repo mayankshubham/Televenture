@@ -2,4 +2,30 @@
   position: relative;
   width: 100%;
   background-color: #d5dee3;
+  .description {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    font-size: 18px;
+    line-height: 32px;
+    .mainDescription {
+      font-weight: bold;
+      padding-top: 50px;
+    }
+    p {
+      margin-top: 40px;
+      max-width: 840px;
+    }
+  }
+  .teamWrapper {
+    position: relative;
+    width: 100%;
+    background-color: #010025;
+    display: flex;
+    flex-direction: column;
+    margin-top: 80px;
+  }
+  .teamMembersBackground {
+    height: 800px;
+  }
 }
