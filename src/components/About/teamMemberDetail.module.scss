@@ -1,68 +1,106 @@
 .teamMemberContainer {
-  display: flex;
-  .iconContainer {
-    width: 62px;
-    height: 62px;
-    position: absolute;
-    top: 50px;
-    border-radius: 50%;
-    background-color: #050025;
-  }
-  & > div {
-    max-width: 1200px;
-    flex-grow: 1;
     display: flex;
-  }
-  &.left {
-    justify-content: flex-end;
-    .description {
-      margin-left: 80px;
-    }
-    .iconContainer {
-      left: 359px;
-      transform: translate(-50%, 50%);
-    }
-  }
-  &.right > div {
-    flex-direction: row-reverse;
-    .description {
-      text-align: right;
-      margin-right: 80px;
-    }
-    .iconContainer {
-      right: 359px;
-      transform: translate(50%, 50%);
-    }
-  }
-  .description {
-    .header {
-      margin: 50px 0 25px 0;
-      .name {
-        font-size: 20px;
-        font-family: proxima-n-w01-reg, sans-serif;
-        padding-bottom: 8px;
-      }
-    }
-    .info {
-      max-width: 538px;
-      font-size: 19px;
-      line-height: 38px;
-      font-family: din-next-w01-light, din-next-w02-light, din-next-w10-light,
-        sans-serif;
-      padding-bottom: 60px;
-    }
-  }
 
-  .image {
-    width: 359px;
-    height: 100%;
-    flex: 0 0 auto;
-    picture img {
-      transition: all 1s ease !important;
-      transform: scale3d(1, 1, 1);
-      &:hover {
-        transform: scale3d(1.1, 1.1, 1);
-      }
+    .iconContainer {
+        width: 62px;
+        height: 62px;
+        position: absolute;
+        top: 50px;
+        border-radius: 50%;
+        background-color: #050025;
+
+        &:hover {
+            .televentureIcon {
+                display: none;
+            }
+            .messageIcon {
+              display: block;
+            }
+        }
+
+        .televentureIcon {
+            width: 100%;
+            top: 8px;
+            transform: scale(0.4);
+
+        }
+        .messageIcon {
+          cursor: pointer;
+          display: none;
+          position: absolute;
+          height: 20px;
+          bottom: 50%;
+          right: 50%;
+          transform: translate(50%, 50%)
+        }
     }
-  }
+
+    &>div {
+        max-width: 1200px;
+        flex-grow: 1;
+        display: flex;
+    }
+
+    &.left {
+        justify-content: flex-end;
+
+        .description {
+            margin-left: 80px;
+        }
+
+        .iconContainer {
+            left: 359px;
+            transform: translate(-50%, 50%);
+        }
+    }
+
+    &.right>div {
+        flex-direction: row-reverse;
+
+        .description {
+            text-align: right;
+            margin-right: 80px;
+        }
+
+        .iconContainer {
+            right: 359px;
+            transform: translate(50%, 50%);
+        }
+    }
+
+    .description {
+        .header {
+            margin: 50px 0 25px 0;
+
+            .name {
+                font-size: 20px;
+                font-family: proxima-n-w01-reg, sans-serif;
+                padding-bottom: 8px;
+            }
+        }
+
+        .info {
+            max-width: 538px;
+            font-size: 19px;
+            line-height: 38px;
+            font-family: din-next-w01-light, din-next-w02-light, din-next-w10-light,
+                sans-serif;
+            padding-bottom: 60px;
+        }
+    }
+
+    .image {
+        width: 359px;
+        height: 100%;
+        flex: 0 0 auto;
+
+        picture img {
+            transition: all 1s ease !important;
+            transform: scale3d(1, 1, 1);
+
+            &:hover {
+                transform: scale3d(1.1, 1.1, 1);
+            }
+        }
+    }
 }

@@ -1,6 +1,8 @@
 import React from 'react';
 import classNames from 'classnames';
 import Image from 'gatsby-image';
+import TeleventureIconGold from '../TeleventureIconGold';
+import MessageIcon from '../../images/messageIcon.svg';
 import styles from './teamMemberDetail.module.scss';
 
 const colors = [
@@ -39,7 +41,12 @@ const TeamMemberDetail = props => {
         }}
       >
         <Image tag="div" fluid={heroImage.fluid} className={styles.image} />
-        <div className={styles.iconContainer} />
+        <div className={styles.iconContainer}>
+          <a href={`mailto:post@televenture.no?subject=Til ${name}`}>
+            <img className={styles.messageIcon} src={MessageIcon} alt="" />
+          </a>
+          <TeleventureIconGold style={{ position: 'absolute' }} className={styles.televentureIcon} />
+        </div>
         <div className={styles.description}>
           <div className={styles.header}>
             <h6 className={styles.name}>{name}</h6>
