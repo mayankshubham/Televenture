@@ -14,6 +14,6 @@ const theme = {
     medium: '50em',
     large: '70em',
   },
-}
+};
 
-export default theme
+export default theme;

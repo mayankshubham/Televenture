@@ -1,9 +1,9 @@
 import React from 'react';
 import { graphql } from 'gatsby';
-import Helmet from "react-helmet";
-import Layout from "../components/Layout";
-import CardList from "../components/CardList";
-import Card from "../components/Card";
+import Helmet from 'react-helmet';
+import Layout from '../components/Layout';
+import CardList from '../components/CardList';
+import Card from '../components/Card';
 import Container from '../components/Container';
 import Pagination from '../components/Pagination';
 import SEO from '../components/SEO';

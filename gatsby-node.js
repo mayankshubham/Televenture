@@ -1,8 +1,9 @@
-const config = require('./src/utils/siteConfig')
-const path = require(`path`)
+const config = require('./src/utils/siteConfig');
+
+const path = require(`path`);
 
 exports.createPages = ({ graphql, actions }) => {
-  const { createPage, createRedirect } = actions
+  const { createPage, createRedirect } = actions;
 
   // This is to create redirect from /Funds to /Funds/NIK-I
   const getRedirects = new Promise((resolve, reject) => {
@@ -13,8 +14,8 @@ exports.createPages = ({ graphql, actions }) => {
         }
       }
     `).then(result => {
-      const [slug] = result.data.allContentfulFunds.distinct
-      const fundRedirect = `/Funds/${slug.replace(/\s+/g, '-')}`
+      const [slug] = result.data.allContentfulFunds.distinct;
+      const fundRedirect = `/Funds/${slug.replace(/\s+/g, '-')}`;
 
       const redirectPaths = [
         {
@@ -25,19 +26,19 @@ exports.createPages = ({ graphql, actions }) => {
           from: '/Funds/',
           to: fundRedirect,
         },
-      ]
+      ];
 
-      for (var obj of redirectPaths) {
-        const { from, to } = obj
+      for (const obj of redirectPaths) {
+        const { from, to } = obj;
         createRedirect({
           fromPath: from,
           redirectInBrowser: true,
           toPath: to,
-        })
+        });
       }
-      resolve()
-    })
-  })
+      resolve();
+    });
+  });
 
   // const loadPosts = new Promise((resolve, reject) => {
   //   graphql(`
@@ -181,7 +182,7 @@ exports.createPages = ({ graphql, actions }) => {
         }
       }
     `).then(res => {
-      const pages = res.data.allContentfulFunds.distinct
+      const pages = res.data.allContentfulFunds.distinct;
       pages.map(slug => {
         createPage({
           path: `Funds/${slug.replace(/\s+/, '-')}/`,
@@ -190,10 +191,10 @@ exports.createPages = ({ graphql, actions }) => {
             slug,
             pages,
           },
-        })
-      })
-      resolve()
-    })
-  })
-  return Promise.all([getRedirects, loadFunds])
-}
+        });
+      });
+      resolve();
+    });
+  });
+  return Promise.all([getRedirects, loadFunds]);
+};
