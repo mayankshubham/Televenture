@@ -18,6 +18,8 @@ module.exports = {
   rules: {
     'prettier/prettier': ['error', { singleQuote: true, printWidth: 120, trailingComma: 'es5' }],
     'jsx-a11y/href-no-hash': [0],
+    'jsx-a11y/click-events-have-key-events': 0,
+    'jsx-a11y/no-static-element-interactions': 0,
     'react/jsx-filename-extension': [1, { extensions: ['.js', '.jsx'] }],
     'react/jsx-one-expression-per-line': 'off',
     'react/prop-types': 0,

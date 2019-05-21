@@ -1,13 +1,8 @@
 import React from 'react';
-import { useStaticQuery, graphql } from 'gatsby'
-import BackgroundImage from 'gatsby-background-image'
+import { useStaticQuery, graphql } from 'gatsby';
+import BackgroundImage from 'gatsby-background-image';
 
-const ContactBackgroundSection = ({
-  className,
-  children,
-  tag = 'section',
-  backgroundColor = '#040e18',
-}) => {
+const ContactBackgroundSection = ({ className, children, tag = 'section', backgroundColor = '#040e18' }) => {
   const data = useStaticQuery(graphql`
     query {
       desktop: file(relativePath: { eq: "Televenture-69.jpg" }) {
@@ -18,20 +13,13 @@ const ContactBackgroundSection = ({
         }
       }
     }
-  `)
-  const imageData = data.desktop.childImageSharp.fluid
+  `);
+  const imageData = data.desktop.childImageSharp.fluid;
   return (
-    <BackgroundImage
-      Tag={tag}
-      className={className}
-      fluid={imageData}
-      backgroundColor={backgroundColor}
-    >
+    <BackgroundImage Tag={tag} className={className} fluid={imageData} backgroundColor={backgroundColor}>
       {children}
     </BackgroundImage>
-  )
-}
+  );
+};
 
-export default ContactBackgroundSection
-
-
+export default ContactBackgroundSection;

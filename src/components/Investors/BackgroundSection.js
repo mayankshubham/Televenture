@@ -1,15 +1,9 @@
-import React from 'react'
-import { useStaticQuery, graphql } from 'gatsby'
-import BackgroundImage from 'gatsby-background-image'
-import WithBackgroundCover from '../WithBackgroundCover'
+import React from 'react';
+import { useStaticQuery, graphql } from 'gatsby';
+import BackgroundImage from 'gatsby-background-image';
+import WithBackgroundCover from '../WithBackgroundCover';
 
-const BackgroundSection = ({
-  className,
-  children,
-  style,
-  tag = 'section',
-  backgroundColor = '#040e18',
-}) => {
+const BackgroundSection = ({ className, children, style, tag = 'section', backgroundColor = '#040e18' }) => {
   const data = useStaticQuery(graphql`
     query {
       desktop: file(relativePath: { eq: "Televenture-148.jpg" }) {
@@ -20,19 +14,13 @@ const BackgroundSection = ({
         }
       }
     }
-  `)
-  const imageData = data.desktop.childImageSharp.fluid
+  `);
+  const imageData = data.desktop.childImageSharp.fluid;
   return (
-    <BackgroundImage
-      Tag={tag}
-      style={style}
-      className={className}
-      fluid={imageData}
-      backgroundColor={backgroundColor}
-    >
+    <BackgroundImage Tag={tag} style={style} className={className} fluid={imageData} backgroundColor={backgroundColor}>
       {children}
     </BackgroundImage>
-  )
-}
+  );
+};
 
-export default WithBackgroundCover(BackgroundSection, 'InvestorsCoverImage')
+export default WithBackgroundCover(BackgroundSection, 'InvestorsCoverImage');

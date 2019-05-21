@@ -1,24 +1,18 @@
-import React from "react";
-import TeleventureIcon from "../TeleventureIcon";
-import styles from "./index.module.scss";
-import classNames from "classnames";
+import React from 'react';
+import classNames from 'classnames';
+import TeleventureIcon from '../TeleventureIcon';
+import styles from './index.module.scss';
 
 const WithBackgroundCover = (Background, displayName) => {
   const coverComponent = props => {
     const { content, ...rest } = props;
     return (
       <div className={styles.withBackgroundCover}>
-        <Background
-          {...rest}
-          className={classNames("backgroundImage", styles.investorBackground)}
-        >
-          <div className={"imageOverlay dark"} />
+        <Background {...rest} className={classNames('backgroundImage', styles.investorBackground)}>
+          <div className="imageOverlay dark" />
           <div className={styles.imageContent}>{content}</div>
         </Background>
-        <TeleventureIcon
-          style={{ position: "absolute" }}
-          className={styles.televentureIcon}
-        />
+        <TeleventureIcon style={{ position: 'absolute' }} className={styles.televentureIcon} />
       </div>
     );
   };

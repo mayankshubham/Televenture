@@ -1,10 +1,10 @@
-import React from "react";
-import { useStaticQuery, graphql } from "gatsby";
-import classnames from "classnames";
-import BackgroundImage from "gatsby-background-image";
-import TeleventureIconGold from "../TeleventureIconGold";
-import Tab from "../Tab";
-import styles from "./fundCards.module.scss";
+import React from 'react';
+import { useStaticQuery, graphql } from 'gatsby';
+import classnames from 'classnames';
+import BackgroundImage from 'gatsby-background-image';
+import TeleventureIconGold from '../TeleventureIconGold';
+import Tab from '../Tab';
+import styles from './fundCards.module.scss';
 
 const FundCards = () => {
   const data = useStaticQuery(graphql`
@@ -14,6 +14,7 @@ const FundCards = () => {
           node {
             shortName
             fullName
+            id
             background {
               fluid(quality: 70, maxWidth: 450) {
                 ...GatsbyContentfulFluid_withWebp
@@ -29,18 +30,17 @@ const FundCards = () => {
     <div className={styles.fundsDetailContainer}>
       <div className={styles.cardsWrapper}>
         {funds.map(({ node: fund }, index) => {
-          console.log({ fund });
           return (
-            <div className={styles.card}>
+            <div key={`fund-${fund.id}`} className={styles.card}>
               {fund.background ? (
                 <BackgroundImage
                   Tag="div"
                   fluid={fund.background.fluid}
-                  className={classnames("backgroundImage", {
-                    [styles.cardBackgroundImage]: true
+                  className={classnames('backgroundImage', {
+                    [styles.cardBackgroundImage]: true,
                   })}
                 >
-                  <div className={classnames("imageOverlay", "dark")} />
+                  <div className={classnames('imageOverlay', 'dark')} />
                 </BackgroundImage>
               ) : (
                 <div className={styles.backgroundDiv} />
@@ -52,16 +52,13 @@ const FundCards = () => {
                   <div
                     className={classnames({
                       [styles.fundLabel]: true,
-                      [styles.light]: index % 2 == 0
+                      [styles.light]: index % 2 == 0,
                     })}
                   >
                     FUND
                   </div>
                 </div>
-                <Tab
-                  className={styles.tabButton}
-                  slug={`/Funds/${fund.shortName.replace(/\s+/g, "-")}`}
-                >
+                <Tab className={styles.tabButton} slug={`/Funds/${fund.shortName.replace(/\s+/g, '-')}`}>
                   Explore {fund.shortName} Funds &gt;&gt;
                 </Tab>
               </div>

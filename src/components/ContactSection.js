@@ -1,10 +1,10 @@
-import React from 'react'
-import { useStaticQuery, graphql } from 'gatsby'
-import styles from './contactSection.module.scss'
-import ContactBackgroundSection from './ContactBackgroundSection'
+import React from 'react';
+import { useStaticQuery, graphql } from 'gatsby';
+import styles from './contactSection.module.scss';
+import ContactBackgroundSection from './ContactBackgroundSection';
 
 const ContactSection = props => {
-  const thisPage = React.createRef()
+  const thisPage = React.createRef();
 
   const data = useStaticQuery(graphql`
     query ContactSection {
@@ -15,17 +15,17 @@ const ContactSection = props => {
         orgNr
       }
     }
-  `)
-  const { contentfulContact } = data
-
+  `);
+  const { contentfulContact } = data;
+  const { scrollToFooter } = props;
   return (
     <div ref={thisPage} className={styles.contactSection}>
-      <ContactBackgroundSection className={'backgroundImage'}>
-        <div className={'imageOverlay'} />
+      <ContactBackgroundSection className="backgroundImage">
+        <div className="imageOverlay" />
       </ContactBackgroundSection>
       <div className={styles.card}>
-        <div className={styles.header}>{'CONTACT'}</div>
-        <div className={styles.info}>{'TELEVENTURE MANAGEMENT AS'}</div>
+        <div className={styles.header}>CONTACT</div>
+        <div className={styles.info}>TELEVENTURE MANAGEMENT AS</div>
         <div>
           <div className={styles.listItem}>
             <a
@@ -41,29 +41,25 @@ const ContactSection = props => {
           <div className={styles.listItem}>
             <span className={styles.cardKey}>
               EMAIL:&nbsp;
-              <a href={`mailto:${contentfulContact.email}`}>
-                {contentfulContact.email}
-              </a>
+              <a href={`mailto:${contentfulContact.email}`}>{contentfulContact.email}</a>
             </span>
           </div>
           <div className={styles.listItem}>
             <span className={styles.cardKey}>TEL:&nbsp;</span>
-            <a href={`tel:${contentfulContact.phone.replace(/\(|\)/g, '')}`}>
-              {contentfulContact.phone}
-            </a>
+            <a href={`tel:${contentfulContact.phone.replace(/\(|\)/g, '')}`}>{contentfulContact.phone}</a>
           </div>
           <div className={styles.listItem}>
             <span className={styles.cardKey}>ORG NR:&nbsp;</span>
             <span>{contentfulContact.orgNr}</span>
           </div>
         </div>
-        <div className={styles.fillFormInfo} onClick={props.scrollToFooter}>
+        <div className={styles.fillFormInfo} onClick={scrollToFooter}>
           YOU ARE WELCOME TO FILL IN OUR CONTACT FORM BELOW >
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
-ContactSection.displayName = 'ContactSection'
-export default ContactSection
+ContactSection.displayName = 'ContactSection';
+export default ContactSection;
