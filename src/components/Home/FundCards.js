@@ -1,5 +1,5 @@
 import React from 'react';
-import { useStaticQuery, graphql } from 'gatsby';
+import { useStaticQuery, graphql, Link } from 'gatsby';
 import classnames from 'classnames';
 import BackgroundImage from 'gatsby-background-image';
 import TeleventureIconGold from '../TeleventureIconGold';
@@ -31,38 +31,45 @@ const FundCards = () => {
       <div className={styles.cardsWrapper}>
         {funds.map(({ node: fund }, index) => {
           return (
-            <div key={`fund-${fund.id}`} className={styles.card}>
-              {fund.background ? (
-                <BackgroundImage
-                  Tag="div"
-                  fluid={fund.background.fluid}
-                  className={classnames('backgroundImage', {
-                    [styles.cardBackgroundImage]: true,
-                  })}
-                >
-                  <div className={classnames('imageOverlay', 'dark')} />
-                </BackgroundImage>
-              ) : (
-                <div className={styles.backgroundDiv} />
-              )}
-              <div className={styles.cardInner}>
-                <div className={styles.title}>
-                  <TeleventureIconGold className={styles.icon} />
-                  <h2 className={styles.label}>{fund.shortName}</h2>
-                  <div
-                    className={classnames({
-                      [styles.fundLabel]: true,
-                      [styles.light]: index % 2 == 0,
+            <Link key={`fund-${fund.id}`} to={`/Funds/${fund.shortName.replace(/\s+/g, '-')}`} className={styles.link}>
+              <div className={styles.card}>
+                {fund.background ? (
+                  <BackgroundImage
+                    Tag="div"
+                    fluid={fund.background.fluid}
+                    className={classnames('backgroundImage', {
+                      [styles.cardBackgroundImage]: true,
                     })}
                   >
-                    FUND
+                    <div className={classnames('imageOverlay', 'dark')} />
+                  </BackgroundImage>
+                ) : (
+                  <div className={styles.backgroundDiv} />
+                )}
+                <div className={styles.cardInner}>
+                  <div className={styles.title}>
+                    <TeleventureIconGold className={styles.icon} />
+                    <h2 className={styles.label}>{fund.shortName}</h2>
+                    <div
+                      className={classnames({
+                        [styles.fundLabel]: true,
+                        [styles.light]: index % 2 == 0,
+                      })}
+                    >
+                      FUND
+                    </div>
                   </div>
                 </div>
-                <Tab className={styles.tabButton} slug={`/Funds/${fund.shortName.replace(/\s+/g, '-')}`}>
-                  Explore {fund.shortName} Funds &gt;&gt;
-                </Tab>
+                <div className={styles.hoverDiv}>
+                  <h2 className={styles.fundName}>{fund.fullName}</h2>
+                </div>
+                <div className={styles.tabWrapper}>
+                  <Tab className={styles.tabButton} slug={`/Funds/${fund.shortName.replace(/\s+/g, '-')}`}>
+                    Explore {fund.shortName} Funds &gt;&gt;
+                  </Tab>
+                </div>
               </div>
-            </div>
+            </Link>
           );
         })}
       </div>

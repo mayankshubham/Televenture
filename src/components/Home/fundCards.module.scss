@@ -10,67 +10,114 @@
     position: relative;
     justify-content: center;
 
-    .card {
-      position: relative;
-      width: 284px;
+    .link {
+      .card {
+        position: relative;
+        width: 284px;
+        height: 100%;
 
-      .backgroundDiv {
-        position: absolute;
-        top: 0;
-        bottom: 0;
-        right: 0;
-        left: 0;
-        background-color: #010024;
-      }
-
-      .cardInner {
-        position: absolute;
-        top: 0;
-        bottom: 0;
-        right: 0;
-        left: 0;
-        z-index: 2;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-around;
-
-        .title {
-          width: 219px;
-          min-height: 21px;
+        .hoverDiv {
+          visibility: hidden;
           pointer-events: none;
-          visibility: inherit;
-          position: relative;
-          margin: 0px 0px 10px 0;
-          left: 28px;
+          opacity: 0;
+        }
 
-          .icon {
-            width: 30px;
-            height: 20px;
-          }
+        &:hover {
+          .hoverDiv {
+            visibility: visible;
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            right: 0;
+            left: 0;
+            z-index: 4;
+            display: flex;
+            justify-content: center;
+            background-color: rgb(188, 155, 93);
+            opacity: 1;
+            transition: visibility 0s, opacity 1s;
 
-          .label {
-            font-size: 45px;
-            line-height: 1.2em;
-            letter-spacing: 0.15em;
-            color: rgb(188, 155, 93);
-          }
-
-          .fundLabel {
-            font-size: 22px;
-            line-height: 1.2em;
-            font-family: worksans-extralight, work sans, sans-serif;
-            letter-spacing: 0.15em;
-            color: white;
-
-            &.light {
-              color: #40667c;
+            .fundName {
+              position: absolute;
+              top: 24%;
+              line-height: 1.7;
+              width: 230px;
+              min-height: 21px;
+              /* font: normal normal normal 88px/1.4em worksans-extralight,'work sans',sans-serif; */
+              color: #010025;
+              font-size: 27px;
+              font-family: worksans-extralight, work sans, sans-serif;
+              letter-spacing: 0.15em;
+              text-transform: uppercase;
             }
           }
         }
 
-        .tabButton {
-          align-self: center;
-          margin: 0 auto;
+        .backgroundDiv {
+          position: absolute;
+          top: 0;
+          bottom: 0;
+          right: 0;
+          left: 0;
+          background-color: #010024;
+        }
+
+        .cardInner {
+          position: absolute;
+          top: 0;
+          bottom: 0;
+          right: 0;
+          left: 0;
+          z-index: 2;
+          top: 20%;
+
+          .title {
+            width: 219px;
+            min-height: 21px;
+            pointer-events: none;
+            visibility: inherit;
+            position: relative;
+            margin: 0px 0px 10px 0;
+            left: 28px;
+
+            .icon {
+              width: 30px;
+              height: 20px;
+            }
+
+            .label {
+              font-size: 45px;
+              line-height: 1.2em;
+              letter-spacing: 0.15em;
+              color: rgb(188, 155, 93);
+            }
+
+            .fundLabel {
+              font-size: 22px;
+              line-height: 1.2em;
+              font-family: worksans-extralight, work sans, sans-serif;
+              letter-spacing: 0.15em;
+              color: white;
+
+              &.light {
+                color: #40667c;
+              }
+            }
+          }
+        }
+
+        .tabWrapper {
+          z-index: 5;
+          position: absolute;
+          display: flex;
+          bottom: 20%;
+          width: 100%;
+
+          .tabButton {
+            position: relative;
+            align-self: center;
+            margin: 0 auto;
+          }
         }
       }
     }
