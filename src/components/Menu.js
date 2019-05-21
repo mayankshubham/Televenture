@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'gatsby';
 import classnames from 'classnames';
 import styles from './menu.module.scss';
@@ -39,7 +39,7 @@ const SlideBox = () => {
       onClick={() => setVisibility(prevState => !prevState)}
       style={{ color: 'white', fontWeight: 'bold', fontSize: '40px' }}
     >
-      Drag me
+      <span className={styles.hamburger}>Drag me</span>
       {slideboxopen && (
         <div className={styles.sideMenu}>
           <ul>
@@ -62,22 +62,42 @@ const SlideBox = () => {
   );
 };
 
+const MOBILE_WIDTH = 425;
 const Menu = ({ className }) => {
-  const isMobile = window.innerWidth < 1000;
-  console.log(window.innerWidth);
+  const [isCollaped, setIsCollapsed] = useState(() => window.outerWidth < MOBILE_WIDTH);
+  useEffect(() => {
+    const handleResize = e => {
+      const { outerWidth } = e.target;
+      setIsCollapsed(prev => {
+        if (outerWidth <= MOBILE_WIDTH && prev !== true) {
+          return true;
+        }
+        if (outerWidth > MOBILE_WIDTH && prev !== false) {
+          return false;
+        }
+      });
+    };
+    window.addEventListener('resize', handleResize);
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
+
   return (
     <header
       className={classnames(styles.header, {
         [className]: className,
       })}
     >
-      <nav className={classnames(styles.nav, { [styles.isMobile]: isMobile })}>
+      <nav className={classnames(styles.nav)}>
         <Link to="/">
           <TeleventureLogo className={styles.televentureLogo} />
         </Link>
-        {isMobile ? (
-          <SlideBox />
-        ) : (
+        <div
+          className={classnames(styles.navbar, {
+            [styles.collaped]: isCollaped,
+          })}
+        >
           <ul className={styles.topList}>
             {menuTabs.map(tab => {
               return (
@@ -89,7 +109,7 @@ const Menu = ({ className }) => {
               );
             })}
           </ul>
-        )}
+        </div>
       </nav>
     </header>
   );

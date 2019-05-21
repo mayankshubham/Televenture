@@ -16,24 +16,30 @@
   padding: 0 1.5em;
   display: flex;
   align-items: center;
+  flex: 1 1 auto;
 
-  ul.topList {
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    li {
-      display: inline-block;
-      margin-left: 1em;
-      text-transform: uppercase;
-    }
-  
-    a {
-      text-decoration: none;
-      color: #eef3f6;
-      transition: all 0.2s;
-      border-bottom: 2px solid #050733;
-      &:hover {
-        color: white;
+  .navbar {
+    flex: 1 1 auto;
+
+    ul.topList {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      li {
+        padding: 1em;
+        display: inline-block;
+        margin-left: 1em;
+        text-transform: uppercase;
+      }
+
+      a {
+        text-decoration: none;
+        color: #eef3f6;
+        transition: all 0.2s;
+        border-bottom: 2px solid #050733;
+        &:hover {
+          color: white;
+        }
       }
     }
   }
@@ -49,6 +55,11 @@
   }
 }
 
+.hamburger {
+  position: absolute;
+  right: 0;
+}
+
 .sideMenu {
   height: 100vh;
   width: 300px;
@@ -59,9 +70,9 @@
   text-align: right;
   li {
     a {
-    color: #414141;
-    font-family: worksans-extralight, "work sans", sans-serif;
-    text-decoration: none;
+      color: #414141;
+      font-family: worksans-extralight, "work sans", sans-serif;
+      text-decoration: none;
     }
     padding: 30px 20px 30px 30px;
     font-size: 24px;
