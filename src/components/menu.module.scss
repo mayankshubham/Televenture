@@ -17,31 +17,58 @@
   display: flex;
   align-items: center;
 
-  ul {
+  ul.topList {
     width: 100%;
     display: flex;
     justify-content: space-between;
-  }
-
-  li {
-    display: inline-block;
-    margin-left: 1em;
-    text-transform: uppercase;
-  }
-
-  a {
-    text-decoration: none;
-    color: #eef3f6;
-    transition: all 0.2s;
-    border-bottom: 2px solid #050733;
-    &:hover {
-      color: white;
+    li {
+      display: inline-block;
+      margin-left: 1em;
+      text-transform: uppercase;
+    }
+  
+    a {
+      text-decoration: none;
+      color: #eef3f6;
+      transition: all 0.2s;
+      border-bottom: 2px solid #050733;
+      &:hover {
+        color: white;
+      }
     }
   }
+
   .televentureLogo {
     width: 169px;
     height: 15px;
     margin-right: 100px;
     object-fit: fill;
+  }
+  &.isMobile {
+    justify-content: space-between;
+  }
+}
+
+.sideMenu {
+  height: 100vh;
+  width: 300px;
+  right: 0;
+  top: 82px;
+  background-color: #d1a756;
+  position: absolute;
+  text-align: right;
+  li {
+    a {
+    color: #414141;
+    font-family: worksans-extralight, "work sans", sans-serif;
+    text-decoration: none;
+    }
+    padding: 30px 20px 30px 30px;
+    font-size: 24px;
+  }
+  .separator {
+    border-top: solid 1px rgba(237, 217, 178, 0.5);
+    margin: 0 20px 0 20px;
+    width: 236px;
   }
 }
