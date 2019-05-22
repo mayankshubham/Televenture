@@ -1,12 +1,8 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { Link } from 'gatsby';
 import classnames from 'classnames';
 import styles from './menu.module.scss';
 import TeleventureLogo from './TeleventureLogo';
-
-const activeLinkStyle = {
-  color: '#D2A756',
-};
 
 const menuTabs = [
   {
@@ -31,57 +27,28 @@ const menuTabs = [
   },
 ];
 
-const SlideBox = () => {
-  const [slideboxopen, setVisibility] = useState(false);
-
+const HamburgerIcon = ({ isOpen }) => {
   return (
     <div
-      onClick={() => setVisibility(prevState => !prevState)}
-      style={{ color: 'white', fontWeight: 'bold', fontSize: '40px' }}
+      className={classnames({
+        [styles.navIcon]: true,
+        [styles.open]: isOpen,
+      })}
     >
-      <span className={styles.hamburger}>Drag me</span>
-      {slideboxopen && (
-        <div className={styles.sideMenu}>
-          <ul>
-            {menuTabs.map((tab, index) => {
-              return (
-                <div key={tab.title}>
-                  <li>
-                    <Link to={tab.link} activeStyle={{ color: ' #F9F9F9' }}>
-                      {tab.title}
-                    </Link>
-                  </li>
-                  {index !== menuTabs.length - 1 && <div className={styles.separator} />}
-                </div>
-              );
-            })}
-          </ul>
-        </div>
-      )}
+      <span />
+      <span />
+      <span />
+      <span />
     </div>
   );
 };
 
-const MOBILE_WIDTH = 425;
 const Menu = ({ className }) => {
-  const [isCollaped, setIsCollapsed] = useState(() => window.outerWidth < MOBILE_WIDTH);
-  useEffect(() => {
-    const handleResize = e => {
-      const { outerWidth } = e.target;
-      setIsCollapsed(prev => {
-        if (outerWidth <= MOBILE_WIDTH && prev !== true) {
-          return true;
-        }
-        if (outerWidth > MOBILE_WIDTH && prev !== false) {
-          return false;
-        }
-      });
-    };
-    window.addEventListener('resize', handleResize);
-    return () => {
-      window.removeEventListener('resize', handleResize);
-    };
-  }, []);
+  const [isOpen, setOpen] = useState(false);
+
+  const toggleOpen = () => {
+    setOpen(prevOpen => !prevOpen);
+  };
 
   return (
     <header
@@ -89,28 +56,40 @@ const Menu = ({ className }) => {
         [className]: className,
       })}
     >
-      <nav className={classnames(styles.nav)}>
-        <Link to="/">
+      <div
+        className={classnames({
+          [styles.navbarIcon]: true,
+          [styles.open]: isOpen,
+        })}
+        onClick={toggleOpen}
+      >
+        <HamburgerIcon isOpen={isOpen} />
+      </div>
+      <div className={styles.navContainer}>
+        <Link to="/" className={styles.logoLink}>
           <TeleventureLogo className={styles.televentureLogo} />
         </Link>
-        <div
-          className={classnames(styles.navbar, {
-            [styles.collaped]: isCollaped,
+        <nav
+          className={classnames({
+            [styles.nav]: true,
+            [styles.open]: isOpen,
           })}
         >
-          <ul className={styles.topList}>
-            {menuTabs.map(tab => {
-              return (
-                <li key={tab.title}>
-                  <Link to={tab.link} activeStyle={activeLinkStyle}>
-                    {tab.title}
-                  </Link>
-                </li>
-              );
-            })}
-          </ul>
-        </div>
-      </nav>
+          <div className={styles.navbar}>
+            <ul className={styles.topList}>
+              {menuTabs.map(tab => {
+                return (
+                  <li key={tab.title}>
+                    <Link to={tab.link} activeClassName={styles.activeLink}>
+                      {tab.title}
+                    </Link>
+                  </li>
+                );
+              })}
+            </ul>
+          </div>
+        </nav>
+      </div>
     </header>
   );
 };
