@@ -5,7 +5,7 @@ import Helmet from 'react-helmet';
 import PageTitle from '../components/PageTitle';
 import Container from '../components/Container';
 import Layout from '../components/Layout';
-import Image from '../images/404.svg';
+import Image from '../images/404.png';
 
 const TextHeader = styled.div`
   margin-top: 62px;
@@ -14,6 +14,17 @@ const TextHeader = styled.div`
   font-family: HelveticaNeueW01-45Ligh;
   letter-spacing: 1px;
   line-height: 90px;
+  text-align: center;
+
+  @media (max-width: 612px) and (min-width: 380px) {
+    margin-top: 10vw;
+    font-size: 10vw;
+    line-height: 13vw;
+  }
+
+  @media (max-width: 380px) {
+    font-size: 31px;
+    line-height: 50px;
 `;
 
 const Description = styled.div`
@@ -23,10 +34,24 @@ const Description = styled.div`
   font-size: 20px;
   line-height: 39px;
   color: #184a56;
+  text-align: center;
+
+  @media (max-width: 612px) and (min-width: 380px) {
+    font-size: 3.4vw;
+    line-height: 6.8vw;
+  }
+
+  @media (max-width: 380px) {
+    font-size: 14px;
+    line-height: 24px;
+  }
 `;
 
 const Wrapper = styled.div`
-  margin: 84px auto 0;
+  margin: 50px auto 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 `;
 
 const Button = styled.button`
@@ -53,6 +78,20 @@ const Button = styled.button`
   }
 `;
 
+const ImageWrapper = styled.div`
+  width: 318px;
+  margin-left: -20px;
+
+  @media (max-width: 612px) and (min-width: 380px) {
+    margin-left: -2.9vw;
+    width: 52vw;
+  }
+
+  @media (max-width: 380px) {
+    width: 216px;
+  }
+`;
+
 const NotFoundPage = () => (
   <div>
     <Helmet>
@@ -61,6 +100,9 @@ const NotFoundPage = () => (
     </Helmet>
 
     <Wrapper>
+      <ImageWrapper>
+        <img width="100%" height="100%" src={Image} alt="" />
+      </ImageWrapper>
       <TextHeader>PAGE NOT FOUND</TextHeader>
       <Description>
         We looked everywhere for this page. Are you sure the website URL is correct? Get in touch with the site owner.
