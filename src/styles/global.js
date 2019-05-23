@@ -1,4 +1,4 @@
-import { createGlobalStyle } from "styled-components";
+import { createGlobalStyle } from 'styled-components';
 
 const GlobalStyle = createGlobalStyle`
   /* http://meyerweb.com/eric/tools/css/reset/
@@ -121,6 +121,12 @@ const GlobalStyle = createGlobalStyle`
     position: absolute;
     height: 100%;
     width: 100%;
+  }
+
+  @media only screen and (min-width: 769px) {
+    .backgroundImage.parallaxFixed:after {
+      background-attachment: fixed;
+    }
   }
   
   .imageOverlay {

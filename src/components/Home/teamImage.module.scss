@@ -1,3 +1,15 @@
 .teamImage {
   height: 645px;
 }
+
+@media only screen and (max-width: 425px) {
+  .teamImage {
+    height: 250px;
+  }
+}
+
+@media only screen and (min-width: 425px) and (max-width: 768px) {
+  .teamImage {
+    height: 415px;
+  }
+}

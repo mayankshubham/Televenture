@@ -1,7 +1,7 @@
-import React from "react";
-import { useStaticQuery, graphql } from "gatsby";
-import Image from "gatsby-image";
-import styles from "./tagLine.module.scss";
+import React from 'react';
+import { useStaticQuery, graphql } from 'gatsby';
+import Image from 'gatsby-image';
+import styles from './tagLine.module.scss';
 
 const TagLine = () => {
   const data = useStaticQuery(graphql`
@@ -18,15 +18,17 @@ const TagLine = () => {
   const imageData = data.desktop.childImageSharp.fluid;
   return (
     <div className={styles.tagLineContainer}>
-      <Image fluid={imageData} tag={"div"} className={styles.iconImg} />
-      <div className={styles.text}>
-        Making
-        <span className={styles.highlight}>Venture</span>
-        Happen
+      <div className={styles.tagLineWrapper}>
+        <Image fluid={imageData} tag="div" className={styles.iconImg} />
+        <div className={styles.text}>
+          Making
+          <span className={styles.highlight}>Venture</span>
+          Happen
+        </div>
       </div>
     </div>
   );
 };
 
-TagLine.displayName = "TagLine";
+TagLine.displayName = 'TagLine';
 export default TagLine;

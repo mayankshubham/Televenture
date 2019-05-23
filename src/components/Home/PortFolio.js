@@ -1,17 +1,15 @@
-import React from "react";
-import BackgroundSection from "../ContactBackgroundSection";
+import React from 'react';
 import classnames from "classnames";
-import styles from "./portFolio.module.scss";
-import TeleventureLogo from "../TeleventureLogo";
-import TeleventureIcon from "../TeleventureIcon";
+import BackgroundSection from "../ContactBackgroundSection";
+import styles from './portFolio.module.scss';
+import TeleventureLogo from '../TeleventureLogo';
+import TeleventureIcon from '../TeleventureIcon';
 
 const PortFolio = () => {
   return (
     <div className={styles.portFolioContainer}>
-      <BackgroundSection
-        className={("backgroundImage", styles.portFolioBackground)}
-      >
-        <div className={classnames("imageOverlay", "green")} />
+      <BackgroundSection className={('backgroundImage', styles.portFolioBackground)}>
+        <div className={classnames('imageOverlay', 'green')} />
       </BackgroundSection>
       <div className={styles.backgroundTriangle} />
       <div className={styles.contentWrapper}>
@@ -19,9 +17,8 @@ const PortFolio = () => {
         <div className={styles.content}>
           <div className={styles.textContent}>
             <div className={styles.contentDescription}>
-              Televenture is one of the leading venture capital companies in
-              Norway. Televenture currently manages an extensive portfolio of
-              companies focusing on:
+              Televenture is one of the leading venture capital companies in Norway. Televenture currently manages an
+              extensive portfolio of companies focusing on:
             </div>
             <div className={styles.fields}>
               <p className={styles.titleField}>INDUSTRIALS / SOFTWARE</p>

@@ -83,3 +83,27 @@
     }
   }
 }
+
+@media only screen and (max-width: 768px) {
+  .portFolioContainer {
+    height: 715px;
+    .backgroundTriangle {
+      border-top: 715px solid #010025;
+    }
+    .contentWrapper {
+      .content {
+        padding: 1em;
+
+        .textContent {
+          .contentDescription {
+            font-size: 19px;
+            line-height: 1.5em;
+          }
+        }
+      }
+    }
+    .logoIcon {
+      top: 2em;
+    }
+  }
+}

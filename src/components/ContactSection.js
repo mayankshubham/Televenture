@@ -1,5 +1,6 @@
 import React from 'react';
 import { useStaticQuery, graphql } from 'gatsby';
+import classnames from 'classnames';
 import styles from './contactSection.module.scss';
 import ContactBackgroundSection from './ContactBackgroundSection';
 
@@ -20,7 +21,7 @@ const ContactSection = props => {
   const { scrollToFooter } = props;
   return (
     <div ref={thisPage} className={styles.contactSection}>
-      <ContactBackgroundSection className="backgroundImage">
+      <ContactBackgroundSection className={classnames('backgroundImage')}>
         <div className="imageOverlay" />
       </ContactBackgroundSection>
       <div className={styles.card}>

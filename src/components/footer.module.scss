@@ -64,6 +64,7 @@
       .contactForm {
         top: 3em;
         position: relative;
+        padding-right: 1em;
       }
     }
   }
@@ -101,5 +102,39 @@
     &:hover {
       color: white;
     }
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .contactContainer {
+    height: 845px;
+
+    .innerContainer {
+      .contentBox {
+        flex-direction: column;
+        align-items: center;
+        height: auto;
+
+        .contactForm {
+          width: 280px;
+          padding: none;
+        }
+      }
+
+      .logoLink {
+        width: 280px;
+        align-self: center;
+        .televentureLogo {
+          position: relative;
+          overflow: hidden;
+          display: flex;
+          justify-content: flex-start;
+          margin: 84px auto 0 0;
+        }
+      }
+    }
+  }
+  .header {
+    display: none;
   }
 }
