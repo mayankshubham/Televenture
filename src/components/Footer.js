@@ -80,7 +80,7 @@ const NavigationMenu = () => {
 const Footer = React.forwardRef((props, ref) => {
   return (
     <div ref={ref} className={styles.contactContainer}>
-      <BackgroundSection className="backgroundImage">
+      <BackgroundSection className="backgroundImage parallaxFixed">
         <div className="imageOverlay dark" />
       </BackgroundSection>
       <div className={styles.innerContainer}>
