@@ -123,3 +123,24 @@
     }
   }
 }
+
+@media only screen and (max-width: 768px) {
+  .fundsDetailContainer {
+    .cardsWrapper {
+      flex-direction: column;
+      width: 100%;
+      .link {
+        height: 320px;
+        .card {
+          width: 100%;
+
+          .cardInner {
+            .title {
+              margin: 0 auto;
+            }
+          }
+        }
+      }
+    }
+  }
+}

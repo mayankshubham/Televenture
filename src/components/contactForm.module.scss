@@ -54,14 +54,14 @@
 
     .name {
       width: 100%;
-      @media (min-width: 35em) {
+      @media (min-width: 769px) {
         width: 50%;
       }
     }
 
     .email {
       width: 100%;
-      @media (min-width: 35em) {
+      @media (min-width: 769px) {
         width: 50%;
       }
     }
@@ -82,7 +82,7 @@
 }
 
 .submit {
-  font: normal normal 700 15px/1.4em worksans-extralight, 'work sans',
+  font: normal normal 700 15px/1.4em worksans-extralight, "work sans",
     sans-serif;
   font-weight: 400;
   background-color: rgba(210, 167, 86, 1);
@@ -93,4 +93,18 @@
   max-width: calc(50% - 30px);
   min-height: 36px;
   padding: 15px;
+}
+
+@media only screen and (max-width: 768px) {
+  .form {
+    .contactDetails {
+      position: relative;
+      width: 100%;
+      flex-direction: column;
+
+      .name {
+        margin-bottom: 12px;
+      }
+    }
+  }
 }

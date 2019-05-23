@@ -1,10 +1,10 @@
-import React from 'react';
-import HomeTagLine from './HomeTagLine';
-import PortFolio from './PortFolio';
-import TeamImage from './TeamImage';
-import CompanyDescription from './CompanyDescription';
-import FundCards from './FundCards';
-import styles from './index.module.scss';
+import React from "react";
+import HomeTagLine from "./HomeTagLine";
+import PortFolio from "./PortFolio";
+import TeamImage from "./TeamImage";
+import CompanyDescription from "./CompanyDescription";
+import FundCards from "./FundCards";
+import styles from "./index.module.scss";
 
 const Home = () => {
   return (
@@ -18,5 +18,5 @@ const Home = () => {
   );
 };
 
-Home.displayName = 'HomeSection';
+Home.displayName = "HomeSection";
 export default Home;

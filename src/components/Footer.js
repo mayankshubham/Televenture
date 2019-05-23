@@ -1,9 +1,9 @@
-import React from 'react'
-import { useStaticQuery, graphql, Link } from 'gatsby'
-import styles from './footer.module.scss'
-import ContactForm from './ContactForm'
-import BackgroundSection from './FooterBackground'
-import TeleventureLogo from './TeleventureLogo'
+import React from 'react';
+import { useStaticQuery, graphql, Link } from 'gatsby';
+import styles from './footer.module.scss';
+import ContactForm from './ContactForm';
+import BackgroundSection from './FooterBackground';
+import TeleventureLogo from './TeleventureLogo';
 
 const ContactDetails = () => {
   const data = useStaticQuery(graphql`
@@ -13,44 +13,34 @@ const ContactDetails = () => {
         phone
       }
     }
-  `)
+  `);
 
-  const { email, phone } = data.contentfulContact
+  const { email, phone } = data.contentfulContact;
   return (
     <div className={styles.contactDetails}>
       <div className={styles.title}>Contact Us:</div>
       <div className={styles.details}>
         <div className={styles.label}>
           <span>Email:</span>
-          <a
-            href={`mailto:${email}`}
-            target="_self"
-            data-content={email}
-            data-type="mail"
-          >
+          <a href={`mailto:${email}`} target="_self" data-content={email} data-type="mail">
             {email}
           </a>
         </div>
         <div className={styles.label}>
           <span>Telephone:</span>
-          <a
-            href={`tel:${phone}`}
-            target="_self"
-            data-content={phone}
-            data-type="phone"
-          >
+          <a href={`tel:${phone}`} target="_self" data-content={phone} data-type="phone">
             {phone}
           </a>
         </div>
       </div>
       <div className={styles.title}>Making Venture Happen</div>
     </div>
-  )
-}
+  );
+};
 
 const activeLinkStyle = {
   color: '#D2A756',
-}
+};
 
 const NavigationMenu = () => {
   return (
@@ -85,16 +75,16 @@ const NavigationMenu = () => {
         </ul>
       </nav>
     </header>
-  )
-}
+  );
+};
 const Footer = React.forwardRef((props, ref) => {
   return (
     <div ref={ref} className={styles.contactContainer}>
-      <BackgroundSection className={'backgroundImage'}>
-        <div className={'imageOverlay dark'} />
+      <BackgroundSection className="backgroundImage">
+        <div className="imageOverlay dark" />
       </BackgroundSection>
       <div className={styles.innerContainer}>
-        <Link to="/">
+        <Link to="/" className={styles.logoLink}>
           <TeleventureLogo className={styles.televentureLogo} />
         </Link>
         <div className={styles.contentBox}>
@@ -107,8 +97,8 @@ const Footer = React.forwardRef((props, ref) => {
         </div>
       </div>
     </div>
-  )
-})
+  );
+});
 
-Footer.displayName = 'Footer'
-export default Footer
+Footer.displayName = 'Footer';
+export default Footer;
