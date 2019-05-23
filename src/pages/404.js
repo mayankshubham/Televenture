@@ -14,6 +14,7 @@ const TextHeader = styled.div`
   font-family: HelveticaNeueW01-45Ligh;
   letter-spacing: 1px;
   line-height: 90px;
+  text-align: center;
 
   @media (max-width: 612px) and (min-width: 380px) {
     margin-top: 10vw;
@@ -33,6 +34,7 @@ const Description = styled.div`
   font-size: 20px;
   line-height: 39px;
   color: #184a56;
+  text-align: center;
 
   @media (max-width: 612px) and (min-width: 380px) {
     font-size: 3.4vw;
@@ -77,7 +79,17 @@ const Button = styled.button`
 `;
 
 const ImageWrapper = styled.div`
-  width: 50vh;
+  width: 318px;
+  margin-left: -20px;
+
+  @media (max-width: 612px) and (min-width: 380px) {
+    margin-left: -2.9vw;
+    width: 52vw;
+  }
+
+  @media (max-width: 380px) {
+    width: 216px;
+  }
 `;
 
 const NotFoundPage = () => (
