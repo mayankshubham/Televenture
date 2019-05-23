@@ -1,53 +1,54 @@
-import React, { Component } from 'react'
-import Helmet from 'react-helmet'
-import config from '../utils/siteConfig'
+/* eslint-disable react/prefer-stateless-function */
+import React, { Component } from 'react';
+import Helmet from 'react-helmet';
+import config from '../utils/siteConfig';
 
 class SEO extends Component {
   render() {
-    const { postNode, pagePath, postSEO, pageSEO, customTitle } = this.props
-    let title
-    let description
-    let image
-    let imgWidth
-    let imgHeight
-    let pageUrl
-    let keywords
-    let siteName
-    let formatDetection
-    let siteUrl
+    const { postNode, pagePath, postSEO, pageSEO, customTitle } = this.props;
+    let title;
+    let description;
+    let image;
+    let imgWidth;
+    let imgHeight;
+    let pageUrl;
+    let keywords;
+    let siteName;
+    let formatDetection;
+    let siteUrl;
 
     // Set Default OpenGraph Parameters for Fallback
-    title = config.siteTitle
-    description = config.siteDescription
-    siteName = config.siteName
-    image = config.siteUrl + config.shareImage
-    imgWidth = config.shareImageWidth
-    imgHeight = config.shareImageHeight
-    pageUrl = config.siteUrl
-    keywords = config.siteKeywords
-    formatDetection = config.formatDetection
-    siteUrl = config.siteUrl
+    title = config.siteTitle;
+    description = config.siteDescription;
+    siteName = config.siteName;
+    image = config.siteUrl + config.shareImage;
+    imgWidth = config.shareImageWidth;
+    imgHeight = config.shareImageHeight;
+    pageUrl = config.siteUrl;
+    keywords = config.siteKeywords;
+    formatDetection = config.formatDetection;
+    siteUrl = config.siteUrl;
 
     if (customTitle) {
-      title = postNode.title
-      pageUrl = config.siteUrl + '/' + pagePath + '/'
+      title = postNode.title;
+      pageUrl = `${config.siteUrl}/${pagePath}/`;
     }
 
     // Replace with Page Parameters if post or page
     if (postSEO || pageSEO) {
-      title = postNode.title
+      title = postNode.title;
       description =
         postNode.metaDescription === null
           ? postNode.body.childMarkdownRemark.excerpt
-          : postNode.metaDescription.internal.content
+          : postNode.metaDescription.internal.content;
 
-      pageUrl = config.siteUrl + '/' + pagePath + '/'
+      pageUrl = `${config.siteUrl}/${pagePath}/`;
     }
     // Use Hero Image for OpenGraph
     if (postSEO) {
-      image = 'https:' + postNode.heroImage.ogimg.src
-      imgWidth = postNode.heroImage.ogimg.width
-      imgHeight = postNode.heroImage.ogimg.height
+      image = 'https:' + postNode.heroImage.ogimg.src;
+      imgWidth = postNode.heroImage.ogimg.width;
+      imgHeight = postNode.heroImage.ogimg.height;
     }
 
     // Default Website Schema
@@ -59,7 +60,7 @@ class SEO extends Component {
         name: config.siteTitle,
         alternateName: config.siteTitleAlt ? config.siteTitleAlt : '',
       },
-    ]
+    ];
 
     // Blog Post Schema
     if (postSEO) {
@@ -112,7 +113,7 @@ class SEO extends Component {
           datePublished: postNode.publishDateISO,
           mainEntityOfPage: pageUrl,
         }
-      )
+      );
     }
 
     // Page SEO Schema
@@ -122,7 +123,7 @@ class SEO extends Component {
         '@type': 'WebPage',
         url: pageUrl,
         name: title,
-      })
+      });
     }
 
     return (
@@ -134,11 +135,6 @@ class SEO extends Component {
         <link rel="shortcut icon" href={image} type="image/png" />
         <link rel="apple-touch-icon" href={image} type="image/png" />
         <meta name="format-detection" content={formatDetection} />
-        <meta
-          id="mobileViewport"
-          name="viewport"
-          content="width=980, user-scalable=yes"
-        />
         <meta name="fragment" content="!" />
         <meta name="description" content={description} />
 
@@ -148,9 +144,7 @@ class SEO extends Component {
         <meta name="description" content={description} />
 
         {/* Schema.org tags */}
-        <script type="application/ld+json">
-          {JSON.stringify(schemaOrgJSONLD)}
-        </script>
+        <script type="application/ld+json">{JSON.stringify(schemaOrgJSONLD)}</script>
 
         {/* OpenGraph tags */}
         <meta property="og:type" content="website" />
@@ -162,8 +156,8 @@ class SEO extends Component {
         <meta property="og:site_name" content={siteName} />
         <meta property="og:description" content={description} />
       </Helmet>
-    )
+    );
   }
 }
 
-export default SEO
+export default SEO;
