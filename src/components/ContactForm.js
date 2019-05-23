@@ -100,6 +100,7 @@ class ContactForm extends React.Component {
     this.setState({
       name: '',
       email: '',
+      phone: '',
       message: '',
       showModal: true,
     });
