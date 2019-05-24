@@ -46,7 +46,7 @@ const TeamWrapper = styled.section`
 const About = () => {
   const data = useStaticQuery(graphql`
     query TeamMembersData {
-      allContentfulTeamMembers {
+      allContentfulTeamMembers(sort: { fields: [order], order: ASC }) {
         totalCount
         nodes {
           id
