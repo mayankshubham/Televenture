@@ -25,6 +25,7 @@ const TextHeader = styled.div`
   @media (max-width: 380px) {
     font-size: 31px;
     line-height: 50px;
+  }
 `;
 
 const Description = styled.div`

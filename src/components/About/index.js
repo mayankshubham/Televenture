@@ -1,42 +1,47 @@
 import React from 'react';
 import classNames from 'classnames';
 import { Link, useStaticQuery, graphql } from 'gatsby';
+import styled from 'styled-components';
 import Background from './BackgroundSection';
 import TeamMembersBackground from './TeamMembersImage';
 import styles from './index.module.scss';
-import styled from 'styled-components';
 import TeamMemberDetail from './TeamMemberDetail';
 
 const Wrapper = styled.div`
   position: relative;
   width: 100%;
   background-color: #d5dee3;
-`
+`;
 
 const Description = styled.section`
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    font-size: 18px;
-    line-height: 32px;
-    .mainDescription {
-      font-weight: bold;
-      padding-top: 50px;
-    }
-    p {
-      margin-top: 40px;
-      max-width: 840px;
-    }
-`
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  font-size: 18px;
+  line-height: 32px;
+  .mainDescription {
+    font-weight: bold;
+    padding-top: 50px;
+  }
+  p {
+    margin-top: 40px;
+    max-width: 840px;
+  }
+
+  @media (max-width: 612px) {
+    text-align: center;
+    margin: 4vw;
+  }
+`;
 
 const TeamWrapper = styled.section`
-    position: relative;
-    width: 100%;
-    background-color: #010025;
-    display: flex;
-    flex-direction: column;
-    margin-top: 80px;
-`
+  position: relative;
+  width: 100%;
+  background-color: #010025;
+  display: flex;
+  flex-direction: column;
+  margin-top: 80px;
+`;
 
 const About = () => {
   const data = useStaticQuery(graphql`
@@ -95,7 +100,7 @@ const About = () => {
       <TeamMembersBackground className={styles.teamMembersBackground}>
         <div className="imageOverlay" />
       </TeamMembersBackground>
-      </Wrapper>
+    </Wrapper>
   );
 };
 
