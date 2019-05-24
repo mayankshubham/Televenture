@@ -1,15 +1,52 @@
 import React from 'react';
 import classNames from 'classnames';
 import { Link, useStaticQuery, graphql } from 'gatsby';
+import styled from 'styled-components';
 import Background from './BackgroundSection';
 import TeamMembersBackground from './TeamMembersImage';
 import styles from './index.module.scss';
 import TeamMemberDetail from './TeamMemberDetail';
 
+const Wrapper = styled.div`
+  position: relative;
+  width: 100%;
+  background-color: #d5dee3;
+`;
+
+const Description = styled.section`
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  font-size: 18px;
+  line-height: 32px;
+  .mainDescription {
+    font-weight: bold;
+    padding-top: 50px;
+  }
+  p {
+    margin-top: 40px;
+    max-width: 840px;
+  }
+
+  @media (max-width: 612px) {
+    text-align: center;
+    margin: 4vw;
+  }
+`;
+
+const TeamWrapper = styled.section`
+  position: relative;
+  width: 100%;
+  background-color: #010025;
+  display: flex;
+  flex-direction: column;
+  margin-top: 80px;
+`;
+
 const About = () => {
   const data = useStaticQuery(graphql`
     query TeamMembersData {
-      allContentfulTeamMembers {
+      allContentfulTeamMembers(sort: { fields: [order], order: ASC }) {
         totalCount
         nodes {
           id
@@ -32,9 +69,9 @@ const About = () => {
   const { allContentfulTeamMembers } = data;
   const { nodes: teamMembers } = allContentfulTeamMembers;
   return (
-    <div className={styles.aboutContainer}>
-      <Background className={styles.aboutPageBackground} content="ABOUT" />
-      <section className={classNames(styles.description)}>
+    <Wrapper>
+      <Background content="ABOUT" />
+      <Description>
         <p className={styles.mainDescription}>
           Televenture is an Oslo based Nordic Venture Capital firm and was established in 1993 by Rune Rinnan. During
           the period from 1993-2010, Televenture managed 8 Telenor Venture funds. In 2010, Televenture and our
@@ -54,16 +91,16 @@ const About = () => {
           success, previous senior business leaders and persons with significant international operational experience,
           including work in the US, and Asia the Middle-East.
         </p>
-      </section>
-      <section className={styles.teamWrapper}>
+      </Description>
+      <TeamWrapper>
         {teamMembers.map((teamData, index) => (
           <TeamMemberDetail key={`team-member-${teamData.id}`} index={index} {...teamData} />
         ))}
-      </section>
+      </TeamWrapper>
       <TeamMembersBackground className={styles.teamMembersBackground}>
         <div className="imageOverlay" />
       </TeamMembersBackground>
-    </div>
+    </Wrapper>
   );
 };
 

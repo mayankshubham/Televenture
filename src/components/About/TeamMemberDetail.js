@@ -1,9 +1,18 @@
 import React from 'react';
 import classNames from 'classnames';
 import Image from 'gatsby-image';
+import styled from 'styled-components';
 import TeleventureIconGold from '../TeleventureIconGold';
 import MessageIcon from '../../images/messageIcon.svg';
 import styles from './teamMemberDetail.module.scss';
+
+const Info = styled.p`
+  max-width: 538px;
+  font-size: 19px;
+  line-height: 38px;
+  font-family: din-next-w01-light, din-next-w02-light, din-next-w10-light, sans-serif;
+  padding-bottom: 60px;
+`;
 
 const colors = [
   {
@@ -35,26 +44,29 @@ const TeamMemberDetail = props => {
       })}
     >
       <div
+        className={classNames(styles.subContainer)}
         style={{
           backgroundColor: colorData.backgroundColor,
           position: 'relative',
         }}
       >
         <Image tag="div" fluid={heroImage.fluid} className={styles.image} />
-        <div className={styles.iconContainer}>
-          <a href={`mailto:post@televenture.no?subject=Til ${name}`}>
-            <img className={styles.messageIcon} src={MessageIcon} alt="" />
-          </a>
-          <TeleventureIconGold style={{ position: 'absolute' }} className={styles.televentureIcon} />
-        </div>
-        <div className={styles.description}>
-          <div className={styles.header}>
-            <h6 className={styles.name}>{name}</h6>
-            <h6 style={{ color: colorData.color }} className={styles.designation}>
-              {designation}
-            </h6>
+        <div style={{ position: 'relative' }}>
+          <div className={styles.iconContainer}>
+            <a href={`mailto:post@televenture.no?subject=Til ${name}`}>
+              <img className={styles.messageIcon} src={MessageIcon} alt="" />
+            </a>
+            <TeleventureIconGold style={{ position: 'absolute' }} className={styles.televentureIcon} />
           </div>
-          <p className={styles.info}>{selfDescription.selfDescription}</p>
+          <div className={styles.description}>
+            <div className={styles.header}>
+              <h6 className={styles.name}>{name}</h6>
+              <h6 style={{ color: colorData.color }} className={styles.designation}>
+                {designation}
+              </h6>
+            </div>
+            <Info>{selfDescription.selfDescription}</Info>
+          </div>
         </div>
       </div>
     </div>
