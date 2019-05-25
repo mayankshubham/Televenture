@@ -5,7 +5,7 @@ import Image from 'gatsby-image';
 const TeleventureIconGold = ({ className, children, style, tag = 'div' }) => {
   const data = useStaticQuery(graphql`
     query {
-      desktop: file(relativePath: { eq: "Televenture_v_icon_gold.webp" }) {
+      desktop: file(relativePath: { eq: "Televenture_v_icon_gold.png" }) {
         childImageSharp {
           fluid(quality: 100, maxWidth: 100) {
             ...GatsbyImageSharpFluid_withWebp

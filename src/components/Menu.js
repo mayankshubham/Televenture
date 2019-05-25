@@ -16,6 +16,7 @@ const menuTabs = [
   {
     title: 'Funds',
     link: '/Funds/',
+    partiallyActive: true,
   },
   {
     title: 'Investors',
@@ -80,7 +81,11 @@ const Menu = ({ className }) => {
               {menuTabs.map(tab => {
                 return (
                   <li key={tab.title}>
-                    <Link to={tab.link} activeClassName={styles.activeLink}>
+                    <Link
+                      to={tab.link}
+                      activeClassName={styles.activeLink}
+                      partiallyActive={Boolean(tab.partiallyActive)}
+                    >
                       {tab.title}
                     </Link>
                   </li>

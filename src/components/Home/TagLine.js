@@ -6,7 +6,7 @@ import styles from './tagLine.module.scss';
 const TagLine = () => {
   const data = useStaticQuery(graphql`
     query {
-      desktop: file(relativePath: { eq: "Televenture_v_icon_gold.webp" }) {
+      desktop: file(relativePath: { eq: "Televenture_v_icon_gold.png" }) {
         childImageSharp {
           fluid(quality: 90, maxWidth: 80) {
             ...GatsbyImageSharpFluid_withWebp

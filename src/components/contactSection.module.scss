@@ -3,6 +3,14 @@
   height: 678px;
   width: 100%;
 
+  @media only screen and (max-width: 768px) and (min-width: 426px) {
+    height: 800px;
+  }
+
+  @media only screen and (max-width: 768px) {
+    display: flex;
+    flex-direction: column;
+  }
   .card {
     position: absolute;
     left: 20%;
@@ -13,6 +21,26 @@
     height: 75%;
     width: 439px;
     padding: 0 43px;
+
+    @media only screen and (max-width: 768px) {
+      position: relative;
+      width: 100%;
+      left: 0;
+      display: flex;
+      background-color: #050733;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: left;
+      padding: 1em 1em 2em 1em;
+    }
+
+    .logoIcon {
+      width: 43px;
+      height: 30px;
+      margin-top: 3em;
+    }
+
     .listItem {
       color: rgb(191, 191, 191);
       line-height: 34px;

@@ -8,7 +8,7 @@ import styles from "./tabLinks.module.scss";
 export default () => {
   const data = useStaticQuery(graphql`
     query {
-      desktop: file(relativePath: { eq: "V_CIRCLE_blue_televenture.webp" }) {
+      desktop: file(relativePath: { eq: "V_CIRCLE_blue_televenture.png" }) {
         childImageSharp {
           fluid(quality: 100, maxWidth: 40) {
             ...GatsbyImageSharpFluid_withWebp

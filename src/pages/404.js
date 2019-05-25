@@ -2,9 +2,6 @@ import React from 'react';
 import { Link } from 'gatsby';
 import styled from 'styled-components';
 import Helmet from 'react-helmet';
-import PageTitle from '../components/PageTitle';
-import Container from '../components/Container';
-import Layout from '../components/Layout';
 import Image from '../images/404.png';
 
 const TextHeader = styled.div`

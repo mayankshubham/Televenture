@@ -3,6 +3,7 @@ import { useStaticQuery, graphql } from 'gatsby';
 import classnames from 'classnames';
 import styles from './contactSection.module.scss';
 import ContactBackgroundSection from './ContactBackgroundSection';
+import TeleventureIconGold from './TeleventureIconGold';
 
 const ContactSection = props => {
   const thisPage = React.createRef();
@@ -25,6 +26,7 @@ const ContactSection = props => {
         <div className="imageOverlay" />
       </ContactBackgroundSection>
       <div className={styles.card}>
+        <TeleventureIconGold className={styles.logoIcon} />
         <div className={styles.header}>CONTACT</div>
         <div className={styles.info}>TELEVENTURE MANAGEMENT AS</div>
         <div>

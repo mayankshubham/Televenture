@@ -1,16 +1,11 @@
-import React from 'react'
-import { useStaticQuery, graphql } from 'gatsby'
-import BackgroundImage from 'gatsby-background-image'
+import React from 'react';
+import { useStaticQuery, graphql } from 'gatsby';
+import BackgroundImage from 'gatsby-background-image';
 
-const BackgroundSection = ({
-  className,
-  children,
-  tag = 'section',
-  backgroundColor = '#040e18',
-}) => {
+const BackgroundSection = ({ className, children, tag = 'section', backgroundColor = '#040e18' }) => {
   const data = useStaticQuery(graphql`
     query {
-      desktop: file(relativePath: { eq: "televenture_Footer.webp" }) {
+      desktop: file(relativePath: { eq: "televenture_Footer.png" }) {
         childImageSharp {
           fluid(quality: 90, maxWidth: 1500) {
             ...GatsbyImageSharpFluid_withWebp
@@ -18,8 +13,8 @@ const BackgroundSection = ({
         }
       }
     }
-  `)
-  const imageData = data.desktop.childImageSharp.fluid
+  `);
+  const imageData = data.desktop.childImageSharp.fluid;
   return (
     <BackgroundImage
       Tag={tag}
@@ -32,7 +27,7 @@ const BackgroundSection = ({
     >
       {children}
     </BackgroundImage>
-  )
-}
+  );
+};
 
-export default BackgroundSection
+export default BackgroundSection;
