@@ -1,12 +1,12 @@
-import React from 'react';
-import { useStaticQuery, graphql } from 'gatsby';
-import Image from 'gatsby-image';
-import styles from './tagLine.module.scss';
+import React from "react";
+import { useStaticQuery, graphql } from "gatsby";
+import Image from "gatsby-image";
+import styles from "./tagLine.module.scss";
 
 const TagLine = () => {
   const data = useStaticQuery(graphql`
     query {
-      desktop: file(relativePath: { eq: "Televenture_v_icon_gold.webp" }) {
+      desktop: file(relativePath: { eq: "Televenture_v_icon_gold.png" }) {
         childImageSharp {
           fluid(quality: 90, maxWidth: 80) {
             ...GatsbyImageSharpFluid_withWebp
@@ -30,5 +30,5 @@ const TagLine = () => {
   );
 };
 
-TagLine.displayName = 'TagLine';
+TagLine.displayName = "TagLine";
 export default TagLine;
