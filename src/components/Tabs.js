@@ -1,9 +1,19 @@
-import React from 'react'
-import styles from './tabs.module.scss'
+import React from 'react';
+import classnames from 'classnames';
+import styles from './tabs.module.scss';
 
-const FundsTabs = ({ children }) => {
-  return <div className={styles.tabsContainer}>{children}</div>
-}
+const FundsTabs = ({ children, className }) => {
+  return (
+    <div
+      className={classnames({
+        [styles.tabsContainer]: true,
+        [className]: !!className,
+      })}
+    >
+      {children}
+    </div>
+  );
+};
 
-FundsTabs.displayName = 'FundTabs'
-export default FundsTabs
+FundsTabs.displayName = 'FundTabs';
+export default FundsTabs;
