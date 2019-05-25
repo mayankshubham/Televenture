@@ -1,13 +1,8 @@
-import React from "react";
-import { useStaticQuery, graphql } from "gatsby";
-import BackgroundImage from "gatsby-background-image";
+import React from 'react';
+import { useStaticQuery, graphql } from 'gatsby';
+import BackgroundImage from 'gatsby-background-image';
 
-const BackgroundSection = ({
-  className,
-  children,
-  tag = "section",
-  backgroundColor = "#040e18"
-}) => {
+const BackgroundSection = ({ className, children, tag = 'section', backgroundColor = '#040e18' }) => {
   const data = useStaticQuery(graphql`
     query {
       desktop: file(relativePath: { eq: "televenture_Footer.png" }) {
@@ -26,7 +21,7 @@ const BackgroundSection = ({
       className={className}
       fluid={imageData}
       style={{
-        position: "absolute"
+        position: 'absolute',
       }}
       backgroundColor={backgroundColor}
     >

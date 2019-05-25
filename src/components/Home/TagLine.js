@@ -1,7 +1,7 @@
-import React from "react";
-import { useStaticQuery, graphql } from "gatsby";
-import Image from "gatsby-image";
-import styles from "./tagLine.module.scss";
+import React from 'react';
+import { useStaticQuery, graphql } from 'gatsby';
+import Image from 'gatsby-image';
+import styles from './tagLine.module.scss';
 
 const TagLine = () => {
   const data = useStaticQuery(graphql`
@@ -30,5 +30,5 @@ const TagLine = () => {
   );
 };
 
-TagLine.displayName = "TagLine";
+TagLine.displayName = 'TagLine';
 export default TagLine;

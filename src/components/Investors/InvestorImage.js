@@ -1,8 +1,8 @@
-import React from "react";
-import { useStaticQuery, graphql } from "gatsby";
-import Image from "gatsby-image";
+import React from 'react';
+import { useStaticQuery, graphql } from 'gatsby';
+import Image from 'gatsby-image';
 
-const InvestorImage = ({ className, children, style, tag = "section" }) => {
+const InvestorImage = ({ className, children, style, tag = 'section' }) => {
   const data = useStaticQuery(graphql`
     query {
       desktop: file(relativePath: { eq: "Televenture-Investor.png" }) {
