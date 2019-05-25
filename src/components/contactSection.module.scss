@@ -27,12 +27,20 @@
       width: 100%;
       left: 0;
       display: flex;
+      background-color: #050733;
       flex-direction: column;
       justify-content: center;
       align-items: center;
       text-align: left;
       padding: 1em 1em 2em 1em;
     }
+
+    .logoIcon {
+      width: 43px;
+      height: 30px;
+      margin-top: 3em;
+    }
+
     .listItem {
       color: rgb(191, 191, 191);
       line-height: 34px;
