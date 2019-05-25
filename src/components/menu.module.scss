@@ -43,7 +43,6 @@
       display: flex;
       justify-content: space-between;
       li {
-        padding: 1em;
         display: inline-block;
         margin-left: 1em;
         text-transform: uppercase;
@@ -52,6 +51,7 @@
         color: #d2a756;
       }
       a {
+        padding: 1em;
         text-decoration: none;
         color: #eef3f6;
         transition: all 0.2s;
