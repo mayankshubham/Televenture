@@ -10,8 +10,8 @@ const Wrapper = styled.section`
   top: 82px;
 `;
 
-const Container = props => {
-  return <Wrapper>{props.children}</Wrapper>;
+const Container = ({ children }) => {
+  return <Wrapper>{children}</Wrapper>;
 };
 
 export default Container;
