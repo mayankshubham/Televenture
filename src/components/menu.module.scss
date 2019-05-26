@@ -6,7 +6,12 @@
   padding: 1.5em 0;
   height: 82px;
   z-index: 50;
-  transform: matrix(1, 0, 0, 1, 0, 0);
+  transition: all 0.3s linear;
+
+  &.navUp {
+    transform: translateY(-100%); 
+  }
+
   .navContainer {
     max-width: 1050px;
     display: flex;

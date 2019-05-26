@@ -11,6 +11,22 @@
     display: flex;
     flex-direction: column;
   }
+
+  .backgroundContent {
+    display: none;
+
+    @media only screen and (max-width: 768px) {
+      font-size: 56px;
+      position: absolute;
+      display: flex;
+      height: 100%;
+      width: 100%;
+      justify-content: center;
+      align-items: center;
+      color: #bc9b5d;
+    }
+  }
+
   .card {
     position: absolute;
     left: 20%;
@@ -39,6 +55,10 @@
       width: 43px;
       height: 30px;
       margin-top: 3em;
+
+      @media only screen and (max-width: 768px) {
+        display: none;
+      }
     }
 
     .listItem {
@@ -54,6 +74,10 @@
       color: rgb(210, 167, 86);
       font-size: 42px;
       margin: 27px 0;
+
+      @media only screen and (max-width: 768px) {
+        display: none;
+      }
     }
     .fillFormInfo {
       font-size: 12px;

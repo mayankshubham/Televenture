@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { Link } from 'gatsby';
 import classnames from 'classnames';
 import styles from './menu.module.scss';
@@ -44,17 +44,86 @@ const HamburgerIcon = ({ isOpen }) => {
   );
 };
 
+const DELTA = 20;
+
+const getDocumentHeight = () => {
+  const { body } = document;
+  const html = document.documentElement;
+
+  const height = Math.max(
+    body.scrollHeight,
+    body.offsetHeight,
+    html.clientHeight,
+    html.scrollHeight,
+    html.offsetHeight
+  );
+  return height;
+};
+
 const Menu = ({ className }) => {
   const [isOpen, setOpen] = useState(false);
+  const [menuClass, setMenuClass] = useState('');
+  const navRef = useRef(null);
+  const documentHeight = useRef(0);
+  const scrollFlags = useRef({ didScroll: false, lastScrollTop: 0, navbarHeight: 0 });
 
   const toggleOpen = () => {
     setOpen(prevOpen => !prevOpen);
   };
 
+  useEffect(() => {
+    scrollFlags.current.navbarHeight = navRef.current.clientHeight;
+
+    const hasScrolled = () => {
+      const { lastScrollTop, navbarHeight } = scrollFlags.current;
+      const st = window.scrollY;
+
+      // Make sure they scroll more than delta
+      if (Math.abs(lastScrollTop - st) <= DELTA) {
+        return;
+      }
+      // If they scrolled down and are past the navbar, add class .nav-up.
+      // This is necessary so you never see what is "behind" the navbar.
+      if (st > lastScrollTop && st > navbarHeight) {
+        // Scroll Down
+        setMenuClass('navUp');
+      } else if (st + window.innerHeight < documentHeight.current) {
+        setMenuClass('navDown');
+      }
+
+      scrollFlags.current.lastScrollTop = st;
+    };
+
+    documentHeight.current = getDocumentHeight();
+    const timer = setInterval(() => {
+      if (scrollFlags.current.didScroll) {
+        hasScrolled();
+        scrollFlags.current.didScroll = false;
+      }
+    }, 400);
+
+    return () => {
+      clearInterval(timer);
+    };
+  }, []);
+
+  useEffect(() => {
+    const scrollHandler = () => {
+      scrollFlags.current.didScroll = true;
+    };
+    window.addEventListener('scroll', scrollHandler);
+
+    return () => {
+      window.removeEventListener('scroll', scrollHandler);
+    };
+  }, []);
+
   return (
     <header
+      ref={navRef}
       className={classnames(styles.header, {
         [className]: className,
+        [styles[menuClass]]: menuClass,
       })}
     >
       <div

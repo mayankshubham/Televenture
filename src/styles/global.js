@@ -40,6 +40,7 @@ const GlobalStyle = createGlobalStyle`
     display: flex;
     flex-direction: column;
     flex: 1 0 auto;
+    background: #050733;
   }
   footer {
     width: 100%;
