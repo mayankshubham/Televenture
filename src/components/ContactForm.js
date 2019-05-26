@@ -1,5 +1,4 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import styles from './contactForm.module.scss';
 
@@ -111,6 +110,7 @@ class ContactForm extends React.Component {
   };
 
   render() {
+    const { name, showModal, email, phone, message } = this.state;
     return (
       <form
         className={styles.form}
@@ -118,7 +118,7 @@ class ContactForm extends React.Component {
         onSubmit={this.handleSubmit}
         data-netlify="true"
         data-netlify-honeypot="bot"
-        overlay={this.state.showModal}
+        overlay={showModal}
         onClick={this.closeModal}
       >
         <input type="hidden" name="form-name" value="contact" />
@@ -130,20 +130,22 @@ class ContactForm extends React.Component {
 
         <div className={styles.contactDetails}>
           <input
+            autoComplete="off"
             className={styles.name}
             name="name"
             type="text"
             placeholder="Full Name"
-            value={this.state.name}
+            value={name}
             onChange={this.handleInputChange}
             required
           />
           <input
+            autoComplete="off"
             className={styles.email}
             name="email"
             type="email"
             placeholder="Email"
-            value={this.state.email}
+            value={email}
             onChange={this.handleInputChange}
             required
           />
@@ -153,7 +155,7 @@ class ContactForm extends React.Component {
           name="phone"
           type="phone"
           placeholder="Phone"
-          value={this.state.phone}
+          value={phone}
           onChange={this.handleInputChange}
           required
         />
@@ -162,7 +164,7 @@ class ContactForm extends React.Component {
           className={styles.textarea}
           name="message"
           placeholder="Write your query here"
-          value={this.state.message}
+          value={message}
           onChange={this.handleInputChange}
           required
         />
@@ -171,7 +173,7 @@ class ContactForm extends React.Component {
           Send
         </button>
 
-        <Modal visible={this.state.showModal}>
+        <Modal visible={showModal}>
           <p>Thank you for reaching out. I will get back to you as soon as possible.</p>
           <Button onClick={this.closeModal}>Okay</Button>
         </Modal>
@@ -179,9 +181,5 @@ class ContactForm extends React.Component {
     );
   }
 }
-
-ContactForm.propTypes = {
-  data: PropTypes.object,
-};
 
 export default ContactForm;
