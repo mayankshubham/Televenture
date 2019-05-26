@@ -1,22 +1,21 @@
-const config = require("./src/utils/siteConfig");
-const path = require("path");
+const path = require('path');
+const config = require('./src/utils/siteConfig');
+
 let contentfulConfig;
 
 try {
-  contentfulConfig = require("./.contentful");
+  contentfulConfig = require('./.contentful');
 } catch (e) {
   contentfulConfig = {
     production: {
       spaceId: process.env.SPACE_ID,
-      accessToken: process.env.ACCESS_TOKEN
-    }
+      accessToken: process.env.ACCESS_TOKEN,
+    },
   };
 } finally {
   const { spaceId, accessToken } = contentfulConfig.production;
   if (!spaceId || !accessToken) {
-    throw new Error(
-      "Contentful space ID and access token need to be provided."
-    );
+    throw new Error('Contentful space ID and access token need to be provided.');
   }
 }
 
@@ -30,84 +29,81 @@ module.exports = {
       description: config.siteDescription,
       image_url: `${config.siteUrl}${config.siteLogo}`,
       author: config.author,
-      copyright: config.copyright
-    }
+      copyright: config.copyright,
+    },
   },
   plugins: [
     {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `images`,
-        path: path.join(__dirname, `src`, `images`)
-      }
+        path: path.join(__dirname, `src`, `images`),
+      },
     },
     {
-      resolve: "gatsby-plugin-canonical-urls",
+      resolve: 'gatsby-plugin-canonical-urls',
       options: {
-        siteUrl: config.siteUrl
-      }
+        siteUrl: config.siteUrl,
+      },
     },
     `gatsby-plugin-sharp`,
     `gatsby-transformer-sharp`,
-    "gatsby-plugin-styled-components",
-    "gatsby-plugin-sass",
-    "gatsby-plugin-react-helmet",
+    'gatsby-plugin-styled-components',
+    'gatsby-plugin-sass',
+    'gatsby-plugin-react-helmet',
     {
       resolve: `gatsby-transformer-remark`,
       options: {
         plugins: [
           {
-            resolve: `gatsby-remark-prismjs`
+            resolve: `gatsby-remark-prismjs`,
           },
           `gatsby-remark-autolink-headers`,
           {
             resolve: `gatsby-remark-images-contentful`,
             options: {
               maxWidth: 650,
-              backgroundColor: "white",
-              linkImagesToOriginal: false
-            }
-          }
-        ]
-      }
+              backgroundColor: 'white',
+              linkImagesToOriginal: false,
+            },
+          },
+        ],
+      },
     },
     `gatsby-plugin-catch-links`,
     {
-      resolve: "gatsby-source-contentful",
-      options:
-        process.env.NODE_ENV === "development"
-          ? contentfulConfig.development
-          : contentfulConfig.production
+      resolve: 'gatsby-source-contentful',
+      options: process.env.NODE_ENV === 'development' ? contentfulConfig.development : contentfulConfig.production,
     },
     {
-      resolve: "gatsby-plugin-google-analytics",
+      resolve: 'gatsby-plugin-google-analytics',
       options: {
         trackingId: process.env.GOOGLE_ANALYTICS,
-        head: true
-      }
+        head: true,
+      },
     },
-    "gatsby-plugin-sitemap",
+    'gatsby-plugin-sitemap',
     {
-      resolve: "gatsby-plugin-manifest",
+      resolve: 'gatsby-plugin-manifest',
       options: {
         name: config.siteTitle,
         short_name: config.shortTitle,
         description: config.siteDescription,
-        start_url: "/",
+        start_url: '/',
         background_color: config.backgroundColor,
         theme_color: config.themeColor,
-        display: "minimal-ui",
-        icon: `static${config.siteLogo}`
-      }
+        display: 'minimal-ui',
+        icon: `static${config.siteLogo}`,
+      },
     },
-    "gatsby-plugin-offline",
+    'gatsby-plugin-offline',
     {
-      resolve: "gatsby-plugin-feed",
+      resolve: 'gatsby-plugin-feed',
       options: {
         setup(ref) {
           const ret = ref.query.site.siteMetadata.rssMetadata;
           ret.allMarkdownRemark = ref.query.allMarkdownRemark;
-          ret.generator = "GatsbyJS GCN Starter";
+          ret.generator = 'GatsbyJS GCN Starter';
           return ret;
         },
         query: `
@@ -130,51 +126,32 @@ module.exports = {
         feeds: [
           {
             serialize(ctx) {
-              const rssMetadata = ctx.query.site.siteMetadata.rssMetadata;
+              const { rssMetadata } = ctx.query.site.siteMetadata;
               return ctx.query.allContentfulPost.edges.map(edge => ({
                 date: edge.node.publishDate,
                 title: edge.node.title,
                 description: edge.node.body.childMarkdownRemark.excerpt,
 
-                url: rssMetadata.site_url + "/" + edge.node.slug,
-                guid: rssMetadata.site_url + "/" + edge.node.slug,
+                url: `${rssMetadata.site_url}/${edge.node.slug}`,
+                guid: `${rssMetadata.site_url}/${edge.node.slug}`,
                 custom_elements: [
                   {
-                    "content:encoded": edge.node.body.childMarkdownRemark.html
-                  }
-                ]
+                    'content:encoded': edge.node.body.childMarkdownRemark.html,
+                  },
+                ],
               }));
             },
-            query: `
-              {
-            allContentfulPost(limit: 1000, sort: {fields: [publishDate], order: DESC}) {
-               edges {
-                 node {
-                   title
-                   slug
-                   publishDate(formatString: "MMMM DD, YYYY")
-                   body {
-                     childMarkdownRemark {
-                       html
-                       excerpt(pruneLength: 80)
-                     }
-                   }
-                 }
-               }
-             }
-           }
-      `,
-            output: "/rss.xml"
-          }
-        ]
-      }
+            output: '/rss.xml',
+          },
+        ],
+      },
     },
     {
-      resolve: "gatsby-plugin-nprogress",
+      resolve: 'gatsby-plugin-nprogress',
       options: {
-        color: config.themeColor
-      }
+        color: config.themeColor,
+      },
     },
-    "gatsby-plugin-netlify"
-  ]
+    'gatsby-plugin-netlify',
+  ],
 };
