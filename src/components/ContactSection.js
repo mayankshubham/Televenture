@@ -24,6 +24,7 @@ const ContactSection = props => {
     <div ref={thisPage} className={styles.contactSection}>
       <ContactBackgroundSection className={classnames('backgroundImage')}>
         <div className="imageOverlay" />
+        <div className={styles.backgroundContent}>CONTACT</div>
       </ContactBackgroundSection>
       <div className={styles.card}>
         <TeleventureIconGold className={styles.logoIcon} />
