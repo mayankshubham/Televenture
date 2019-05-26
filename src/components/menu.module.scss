@@ -6,10 +6,11 @@
   padding: 1.5em 0;
   height: 82px;
   z-index: 50;
-  transition: all 0.3s linear;
+  top: 0;
+  transition: top 0.3s ease-in-out;
 
   &.navUp {
-    transform: translateY(-100%); 
+    top: -82px;
   }
 
   .navContainer {
@@ -86,6 +87,8 @@
 
   &.open {
     background-color: rgba(237, 217, 178, 1);
+    position: fixed;
+
     .navIcon {
       span {
         background: rgba(210, 167, 86, 1);
@@ -186,7 +189,7 @@
     width: 100%;
     right: 0;
     top: 0;
-    position: absolute;
+    position: fixed;
     text-align: right;
     -webkit-transform: translateX(100%);
     -moz-transform: translateX(100%);
