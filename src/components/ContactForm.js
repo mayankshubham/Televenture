@@ -130,26 +130,36 @@ class ContactForm extends React.Component {
         </p>
 
         <div className={styles.contactDetails}>
-          <input
-            autoComplete="off"
-            className={styles.name}
-            name="name"
-            type="text"
-            placeholder="Full Name"
-            value={name}
-            onChange={this.handleInputChange}
-            required
-          />
-          <input
-            autoComplete="off"
-            className={styles.email}
-            name="email"
-            type="email"
-            placeholder="Email"
-            value={email}
-            onChange={this.handleInputChange}
-            required
-          />
+          <label
+            className={classNames(styles.nameLabel, {
+              [styles.inputLabel]: true,
+            })}
+          >
+            <input
+              autoComplete="off"
+              className={styles.name}
+              name="name"
+              type="text"
+              placeholder="Full Name"
+              value={name}
+              onChange={this.handleInputChange}
+              required
+            />
+            <div className={styles.inputCover}>Name</div>
+          </label>
+          <label className={styles.inputLabel}>
+            <input
+              autoComplete="off"
+              className={styles.email}
+              name="email"
+              type="email"
+              placeholder="Email"
+              value={email}
+              onChange={this.handleInputChange}
+              required
+            />
+            <div className={styles.inputCover}>Email *</div>
+          </label>
         </div>
         <label
           className={classNames(styles.phone, {

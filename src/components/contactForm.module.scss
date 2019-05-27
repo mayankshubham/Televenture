@@ -17,18 +17,6 @@
     transition: transform 0.5s;
     background-color: rgba(64, 102, 124, 0.33);
 
-    &::-webkit-input-placeholder {
-      color: gray;
-    }
-    &::-moz-placeholder {
-      color: gray;
-    }
-    &:-ms-input-placeholder {
-      color: gray;
-    }
-    &:-moz-placeholder {
-      color: gray;
-    }
     &:required {
       box-shadow: none;
     }
@@ -89,16 +77,10 @@
 
     .name {
       width: 100%;
-      @media (min-width: 769px) {
-        width: 50%;
-      }
     }
 
     .email {
       width: 100%;
-      @media (min-width: 769px) {
-        width: 50%;
-      }
     }
   }
 
@@ -139,7 +121,7 @@
       width: 100%;
       flex-direction: column;
 
-      .name {
+      .nameLabel {
         margin-bottom: 12px;
       }
     }
