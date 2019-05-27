@@ -1,5 +1,7 @@
 import React from 'react';
 import { useStaticQuery, graphql, Link } from 'gatsby';
+import classnames from 'classnames';
+import { Parallax } from 'react-scroll-parallax';
 import styles from './footer.module.scss';
 import ContactForm from './ContactForm';
 import BackgroundSection from './FooterBackground';
@@ -80,9 +82,16 @@ const NavigationMenu = () => {
 const Footer = React.forwardRef((props, ref) => {
   return (
     <footer ref={ref} className={styles.contactContainer}>
-      <BackgroundSection className="backgroundImage parallaxFixed">
-        <div className="imageOverlay dark" />
-      </BackgroundSection>
+      <Parallax className={styles.footerParallax} y={[-60, 60]} tagOuter="figure">
+        <BackgroundSection
+          className={classnames('backgroundImage', {
+            [styles.footerBgImage]: true,
+          })}
+        >
+          <div className="imageOverlay dark" />
+        </BackgroundSection>
+      </Parallax>
+      {/* <Parallax className="custom-class" y={[-40, 40]} tagOuter="figure"> */}
       <div className={styles.innerContainer}>
         <Link to="/" className={styles.logoLink}>
           <TeleventureLogo className={styles.televentureLogo} />
@@ -96,6 +105,7 @@ const Footer = React.forwardRef((props, ref) => {
           </div>
         </div>
       </div>
+      {/* </Parallax> */}
     </footer>
   );
 });

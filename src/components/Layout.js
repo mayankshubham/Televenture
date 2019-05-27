@@ -1,6 +1,7 @@
 import React from 'react';
 import { ThemeProvider } from 'styled-components';
 import Helmet from 'react-helmet';
+import { ParallaxProvider, Parallax } from 'react-scroll-parallax';
 import favicon from '../images/favicon.ico';
 import GlobalStyle from '../styles/global';
 import theme from '../styles/theme';
@@ -19,13 +20,13 @@ const Layout = React.forwardRef(({ children }, footerRef) => {
       </Helmet>
 
       <ThemeProvider theme={theme}>
-        <>
+        <ParallaxProvider>
           <div className="siteContent">
             <Menu />
             {children}
             <Footer ref={footerRef} />
           </div>
-        </>
+        </ParallaxProvider>
       </ThemeProvider>
       <GlobalStyle />
     </div>

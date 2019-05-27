@@ -8,6 +8,7 @@ const Wrapper = styled.section`
   position: relative;
   overflow: hidden;
   margin-top: 82px;
+  z-index: 2;
 `;
 
 const Container = ({ children }) => {
