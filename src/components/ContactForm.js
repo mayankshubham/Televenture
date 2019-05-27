@@ -133,6 +133,7 @@ class ContactForm extends React.Component {
           <label
             className={classNames(styles.nameLabel, {
               [styles.inputLabel]: true,
+              [styles.hasValue]: !!name,
             })}
           >
             <input
@@ -147,13 +148,17 @@ class ContactForm extends React.Component {
             />
             <div className={styles.inputCover}>Name</div>
           </label>
-          <label className={styles.inputLabel}>
+          <label
+            className={classNames(styles.inputLabel, {
+              [styles.hasValue]: !!email,
+            })}
+          >
             <input
               autoComplete="off"
               className={styles.email}
               name="email"
               type="email"
-              placeholder="Email"
+              placeholder="Email *"
               value={email}
               onChange={this.handleInputChange}
               required
@@ -164,6 +169,7 @@ class ContactForm extends React.Component {
         <label
           className={classNames(styles.phone, {
             [styles.inputLabel]: true,
+            [styles.hasValue]: !!phone,
           })}
         >
           <input
@@ -179,6 +185,7 @@ class ContactForm extends React.Component {
         <label
           className={classNames(styles.textarea, {
             [styles.inputLabel]: true,
+            [styles.hasValue]: !!message,
           })}
         >
           <textarea
