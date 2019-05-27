@@ -7,7 +7,7 @@ const Wrapper = styled.section`
   flex-grow: 1;
   position: relative;
   overflow: hidden;
-  top: 82px;
+  margin-top: 82px;
 `;
 
 const Container = ({ children }) => {

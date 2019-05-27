@@ -5,6 +5,8 @@
   .innerContainer {
     display: flex;
     flex-direction: column;
+    max-width: 1100px;
+    margin: 0 auto;
     .televentureLogo {
       width: 169px;
       height: 15px;
