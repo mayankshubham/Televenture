@@ -4,7 +4,6 @@ import Helmet from 'react-helmet';
 import Layout from '../components/Layout';
 import Container from '../components/Container';
 import SEO from '../components/SEO';
-import Footer from '../components/Footer';
 import FundSection from '../components/Funds';
 
 const FundsTemplate = ({ data, pageContext }) => {
@@ -20,7 +19,6 @@ const FundsTemplate = ({ data, pageContext }) => {
 
       <Container>
         <FundSection tabs={pages} fundDetails={fundDetails} />
-        <Footer />
       </Container>
     </Layout>
   );
