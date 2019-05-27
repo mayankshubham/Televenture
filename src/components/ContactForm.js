@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import classNames from 'classnames';
 import styles from './contactForm.module.scss';
 
 /*
@@ -129,46 +130,79 @@ class ContactForm extends React.Component {
         </p>
 
         <div className={styles.contactDetails}>
-          <input
-            autoComplete="off"
-            className={styles.name}
-            name="name"
-            type="text"
-            placeholder="Full Name"
-            value={name}
-            onChange={this.handleInputChange}
-            required
-          />
-          <input
-            autoComplete="off"
-            className={styles.email}
-            name="email"
-            type="email"
-            placeholder="Email"
-            value={email}
-            onChange={this.handleInputChange}
-            required
-          />
+          <label
+            className={classNames(styles.nameLabel, {
+              [styles.inputLabel]: true,
+              [styles.hasValue]: !!name,
+            })}
+          >
+            <input
+              autoComplete="off"
+              className={styles.name}
+              name="name"
+              type="text"
+              placeholder="Full Name"
+              value={name}
+              onChange={this.handleInputChange}
+              required
+            />
+            <div className={styles.inputCover}>Name</div>
+          </label>
+          <label
+            className={classNames(styles.inputLabel, {
+              [styles.hasValue]: !!email,
+            })}
+          >
+            <input
+              autoComplete="off"
+              className={styles.email}
+              name="email"
+              type="email"
+              placeholder="Email *"
+              value={email}
+              onChange={this.handleInputChange}
+              required
+            />
+            <div className={styles.inputCover}>Email *</div>
+          </label>
         </div>
-        <input
-          className={styles.phone}
-          name="phone"
-          type="phone"
-          placeholder="Phone"
-          value={phone}
-          onChange={this.handleInputChange}
-          required
-        />
-
-        <textarea
-          className={styles.textarea}
-          name="message"
-          placeholder="Write your query here"
-          value={message}
-          onChange={this.handleInputChange}
-          required
-        />
-
+        <label
+          className={classNames(styles.phone, {
+            [styles.inputLabel]: true,
+            [styles.hasValue]: !!phone,
+          })}
+        >
+          <input
+            name="phone"
+            type="phone"
+            placeholder="Phone"
+            value={phone}
+            onChange={this.handleInputChange}
+            required
+          />
+          <div className={styles.inputCover}>Phone No.</div>
+        </label>
+        <label
+          className={classNames(styles.textarea, {
+            [styles.inputLabel]: true,
+            [styles.hasValue]: !!message,
+          })}
+        >
+          <textarea
+            name="message"
+            placeholder="Write your query here"
+            value={message}
+            onChange={this.handleInputChange}
+            required
+          />
+          <div
+            className={classNames(styles.inputCover, {
+              [styles.textareaCover]: true,
+            })}
+          >
+            Write your query here
+          </div>
+        </label>
         <button className={styles.submit} name="submit" type="submit">
           Send
         </button>
