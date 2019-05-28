@@ -12,8 +12,8 @@ const parallaxData = [
     duration: '100vh',
     properties: [
       {
-        startValue: 0.8,
-        endValue: 1.3,
+        startValue: 1,
+        endValue: 1.5,
         property: 'scale',
       },
     ],
