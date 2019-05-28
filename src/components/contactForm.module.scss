@@ -42,14 +42,14 @@
       position: absolute;
       padding: 1em;
       border: 0;
-      width: 80%;
+      width: 100%;
       transition: transform 0.5s;
       right: 100%;
       &:focus {
         transform: translateX(100%);
       }
       &:focus + .inputCover {
-        transform: translateX(80%)
+        transform: translateX(100%)
       }
     }
 
@@ -58,7 +58,7 @@
         transform: translateX(100%);
       }
       .inputCover {
-        transform: translateX(80%)
+        transform: translateX(100%);
       }
     }
 
@@ -119,7 +119,6 @@
       position: relative;
       width: 100%;
       flex-direction: column;
-
       .nameLabel {
         margin-bottom: 12px;
       }
