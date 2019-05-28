@@ -1,6 +1,4 @@
 import React from 'react';
-import classNames from 'classnames';
-import Plx from 'react-plx';
 import { Link, useStaticQuery, graphql } from 'gatsby';
 import styled from 'styled-components';
 import { Parallax } from 'react-scroll-parallax';
@@ -8,21 +6,6 @@ import Background from './BackgroundSection';
 import TeamMembersBackground from './TeamMembersImage';
 import styles from './index.module.scss';
 import TeamMemberDetail from './TeamMemberDetail';
-
-// const parallaxData = [
-//   {
-//     start: 0,
-//     end: 500,
-//     properties: [
-//       {
-//         startValue: 0,
-//         endValue: -200,
-//         unit: '%',
-//         property: 'translateY',
-//       },
-//     ],
-//   },
-// ];
 
 const Wrapper = styled.div`
   position: relative;
