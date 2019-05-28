@@ -1,17 +1,36 @@
 import React from 'react';
 import classNames from 'classnames';
+import Plx from 'react-plx';
 import TeleventureIcon from '../TeleventureIcon';
 import styles from './index.module.scss';
+
+const parallaxData = [
+  {
+    start: 0,
+    end: 500,
+    properties: [
+      {
+        startValue: 1,
+        endValue: 1.3,
+        property: 'scale',
+      },
+    ],
+  },
+];
 
 const WithBackgroundCover = (Background, displayName) => {
   const coverComponent = props => {
     const { content, ...rest } = props;
     return (
       <div className={styles.withBackgroundCover}>
-        <Background {...rest} className={classNames('backgroundImage', styles.investorBackground)}>
-          <div className="imageOverlay dark" />
-          <div className={styles.imageContent}>{content}</div>
-        </Background>
+        <div className={styles.bgInner}>
+          <Plx parallaxData={parallaxData}>
+            <Background {...rest} className={classNames('backgroundImage', styles.investorBackground)}>
+              <div className="imageOverlay dark" />
+            </Background>
+          </Plx>
+        </div>
+        <div className={styles.imageContent}>{content}</div>
         <TeleventureIcon style={{ position: 'absolute' }} className={styles.televentureIcon} />
       </div>
     );

@@ -1,5 +1,4 @@
 import React from 'react';
-import classNames from 'classnames';
 import { Link, useStaticQuery, graphql } from 'gatsby';
 import styled from 'styled-components';
 import { Parallax } from 'react-scroll-parallax';
