@@ -1,6 +1,11 @@
 .contactContainer {
   position: relative;
   height: 620px;
+  overflow: hidden;
+
+  .footerBgImage {
+    height: 844px;
+  }
 
   .innerContainer {
     display: flex;

@@ -2,6 +2,7 @@ import React from 'react';
 import classNames from 'classnames';
 import { Link, useStaticQuery, graphql } from 'gatsby';
 import styled from 'styled-components';
+import { Parallax } from 'react-scroll-parallax';
 import Background from './BackgroundSection';
 import TeamMembersBackground from './TeamMembersImage';
 import styles from './index.module.scss';
@@ -97,9 +98,13 @@ const About = () => {
           <TeamMemberDetail key={`team-member-${teamData.id}`} index={index} {...teamData} />
         ))}
       </TeamWrapper>
-      <TeamMembersBackground className={styles.teamMembersBackground}>
-        <div className="imageOverlay" />
-      </TeamMembersBackground>
+      <div className={styles.teamMembersParallaxBg}>
+        <Parallax y={[-60, 50]} tagOuter="figure">
+          <TeamMembersBackground className={styles.teamMembersBackground}>
+            <div className="imageOverlay" />
+          </TeamMembersBackground>
+        </Parallax>
+      </div>
     </Wrapper>
   );
 };
