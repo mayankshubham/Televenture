@@ -16,6 +16,7 @@ const BackgroundSection = ({ className, children, style, tag = 'section', backgr
     }
   `);
   const imageData = data.desktop.childImageSharp.fluid;
+
   return (
     <BackgroundImage Tag={tag} style={style} className={className} fluid={imageData} backgroundColor={backgroundColor}>
       {children}

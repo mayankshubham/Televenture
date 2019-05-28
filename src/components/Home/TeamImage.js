@@ -1,7 +1,24 @@
 import React from 'react';
 import { useStaticQuery, graphql } from 'gatsby';
+import classnames from 'classnames';
 import BackgroundImage from 'gatsby-background-image';
+import Plx from 'react-plx';
+import { Parallax } from 'react-scroll-parallax';
 import styles from './teamImage.module.scss';
+
+const parallaxData = [
+  {
+    start: 'self',
+    duration: '100vh',
+    properties: [
+      {
+        startValue: 0.8,
+        endValue: 1.3,
+        property: 'scale',
+      },
+    ],
+  },
+];
 
 const TeamImage = ({ className, children, style, tag = 'section', backgroundColor = '#040e18' }) => {
   const data = useStaticQuery(graphql`
@@ -17,15 +34,19 @@ const TeamImage = ({ className, children, style, tag = 'section', backgroundColo
   `);
   const imageData = data.desktop.childImageSharp.fluid;
   return (
-    <BackgroundImage
-      Tag={tag}
-      style={style}
-      className={styles.teamImage}
-      fluid={imageData}
-      backgroundColor={backgroundColor}
-    >
-      <div className="imageOverlay dark" />
-    </BackgroundImage>
+    <Parallax y={[-60, 50]} tagOuter="figure" className={styles.teamImageWrapper}>
+      <Plx parallaxData={parallaxData}>
+        <BackgroundImage
+          Tag={tag}
+          style={style}
+          className={classnames('teamImage', { [styles.teamImage]: true })}
+          fluid={imageData}
+          backgroundColor={backgroundColor}
+        >
+          <div className="imageOverlay dark" />
+        </BackgroundImage>
+      </Plx>
+    </Parallax>
   );
 };
 
