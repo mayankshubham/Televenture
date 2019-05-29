@@ -11,6 +11,11 @@
     }
     .investorBackground {
       height: 600px;
+
+      @media only screen and (max-width: 768px) {
+        height: 400px;
+      }
+
     }
   }
   .imageContent {
@@ -26,7 +31,7 @@
     color: #bc9b5d;
 
     @media only screen and (max-width: 768px) {
-      font-size: 56px;
+      font-size: 36px;
     }
   }
   .televentureIcon {
