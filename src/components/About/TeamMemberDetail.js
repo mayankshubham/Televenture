@@ -12,6 +12,7 @@ const Info = styled.p`
   line-height: 38px;
   font-family: din-next-w01-light, din-next-w02-light, din-next-w10-light, sans-serif;
   padding-bottom: 60px;
+  margin: 0 auto;
 `;
 
 const colors = [

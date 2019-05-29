@@ -5,9 +5,23 @@
   overflow: hidden;
   .teamMembersBackground {
     height: 900px;
-    
-    @media only screen and (max-width: 768px) {
-      height: 250px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .teamMembersParallaxBg {
+    height: 350px;
+    .teamMembersBackground {
+      height: 500px;
+    }
+  }
+}
+
+@media only screen and (max-width: 425px) {
+  .teamMembersParallaxBg {
+    height: 250px;
+    .teamMembersBackground {
+      height: 350px;
     }
   }
 }

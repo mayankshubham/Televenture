@@ -10,12 +10,15 @@ const FundsTemplate = ({ data, pageContext }) => {
   const { slug, pages } = pageContext;
   const fundDetails = data.allContentfulFunds.edges;
 
+  const postNode = {
+    title: slug,
+  };
   return (
     <Layout>
       <Helmet>
         <title>{slug}</title>
       </Helmet>
-      <SEO pagePath={slug} />
+      <SEO postNode={postNode} pagePath={slug} customTitle />
 
       <Container>
         <FundSection tabs={pages} fundDetails={fundDetails} />
