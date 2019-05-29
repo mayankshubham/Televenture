@@ -34,18 +34,16 @@ const TeamImage = ({ className, children, style, tag = 'section', backgroundColo
   `);
   const imageData = data.desktop.childImageSharp.fluid;
   return (
-    <Parallax y={[-60, 50]} tagOuter="figure" className={styles.teamImageWrapper}>
-      <Plx parallaxData={parallaxData}>
-        <BackgroundImage
-          Tag={tag}
-          style={style}
-          className={classnames('teamImage', { [styles.teamImage]: true })}
-          fluid={imageData}
-          backgroundColor={backgroundColor}
-        >
-          <div className="imageOverlay dark" />
-        </BackgroundImage>
-      </Plx>
+    <Parallax y={[-50, 40]} tagOuter="figure" className={styles.teamImageWrapper}>
+      <BackgroundImage
+        Tag={tag}
+        style={style}
+        className={classnames('teamImage', { [styles.teamImage]: true })}
+        fluid={imageData}
+        backgroundColor={backgroundColor}
+      >
+        <div className="imageOverlay dark" />
+      </BackgroundImage>
     </Parallax>
   );
 };

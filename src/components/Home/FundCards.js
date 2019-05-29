@@ -41,7 +41,7 @@ const FundCards = () => {
                       [styles.cardBackgroundImage]: true,
                     })}
                   >
-                    <div className={classnames('imageOverlay', 'dark')} />
+                    <div className={classnames('imageOverlay')} />
                   </BackgroundImage>
                 ) : (
                   <div className={styles.backgroundDiv} />

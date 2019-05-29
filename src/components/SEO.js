@@ -46,7 +46,7 @@ class SEO extends Component {
     }
     // Use Hero Image for OpenGraph
     if (postSEO) {
-      image = `https:${  postNode.heroImage.ogimg.src}`;
+      image = `https:${postNode.heroImage.ogimg.src}`;
       imgWidth = postNode.heroImage.ogimg.width;
       imgHeight = postNode.heroImage.ogimg.height;
     }
@@ -129,6 +129,7 @@ class SEO extends Component {
     return (
       <Helmet>
         {/* General tags */}
+        <link href="https://fonts.googleapis.com/css?family=Work+Sans:200,600&display=swap" rel="stylesheet" />
         <meta httpEquiv="X-UA-Compatible" content="IE=Edge" />
         <title>{title}</title>
         <meta charset="utf-8" />
