@@ -1,9 +1,9 @@
-import React from "react";
-import { useStaticQuery, graphql } from "gatsby";
-import Image from "gatsby-image";
-import Tabs from "../Tabs";
-import Tab from "../Tab";
-import styles from "./tabLinks.module.scss";
+import React from 'react';
+import { useStaticQuery, graphql } from 'gatsby';
+import Image from 'gatsby-image';
+import Tabs from '../Tabs';
+import Tab from '../Tab';
+import styles from './tabLinks.module.scss';
 
 export default () => {
   const data = useStaticQuery(graphql`
@@ -22,22 +22,22 @@ export default () => {
   return (
     <div className={styles.tabLinkContainer}>
       <Tabs>
-        <Tab slug={"/Funds/"}>
+        <Tab slug="/Funds/">
           <div className={styles.tabContent}>
             <Image tag="div" fluid={iconData} className={styles.iconImage} />
-            <div>FUNDS</div>
+            <div className={styles.tabText}>FUNDS</div>
           </div>
         </Tab>
-        <Tab slug={"/about/"}>
+        <Tab slug="/about/">
           <div className={styles.tabContent}>
             <Image tag="div" fluid={iconData} className={styles.iconImage} />
-            <div>ABOUT</div>
+            <div className={styles.tabText}>ABOUT</div>
           </div>
         </Tab>
-        <Tab slug={"/contact/"}>
+        <Tab slug="/contact/">
           <div className={styles.tabContent}>
             <Image tag="div" fluid={iconData} className={styles.iconImage} />
-            <div>CONTACT</div>
+            <div className={styles.tabText}>CONTACT</div>
           </div>
         </Tab>
       </Tabs>

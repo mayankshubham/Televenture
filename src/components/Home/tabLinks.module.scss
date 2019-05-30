@@ -1,5 +1,8 @@
 .tabLinkContainer {
   margin-top: 6em;
+
+
+
   .tabContent {
     display: flex;
     flex-direction: row;
@@ -15,5 +18,14 @@
       overflow: hidden;
       width: 40px;
     }
+  }
+}
+
+@media only screen and (max-width: 425px) {
+  .tabLinkContainer {
+    margin-top: 2em;
+  }
+  .tabText {
+    font: normal normal normal 25px/1.4em worksans-extralight,'work sans',sans-serif;
   }
 }

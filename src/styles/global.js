@@ -142,6 +142,9 @@ const GlobalStyle = createGlobalStyle`
     &.dark {
       background-color: rgba(1, 0, 37, 0.85);
     }
+    &.mediumDark {
+      background-color: rgba(1, 0, 37, 0.75);
+    }
     &.hovereffect:hover {
       background-color: rgba(1, 0, 37, 0.6);
     }
