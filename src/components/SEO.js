@@ -129,7 +129,6 @@ class SEO extends Component {
     return (
       <Helmet>
         {/* General tags */}
-        <link href="https://fonts.googleapis.com/css?family=Work+Sans:200,600&display=swap" rel="stylesheet" />
         <meta httpEquiv="X-UA-Compatible" content="IE=Edge" />
         <title>{title}</title>
         <meta charset="utf-8" />
