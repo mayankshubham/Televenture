@@ -45,3 +45,22 @@
     }
   }
 }
+
+@media only screen and (max-width: 425px) {
+  .descriptionContainer {
+    height: 445px;
+    
+    .contentWrapper {
+      .description {
+        font-size: 18px;
+        padding-top: 2em;
+      }
+
+      .companyLogo {
+        width: 155px;
+        height: 14px;
+        top: 0.8em;
+      }
+    }
+  }
+}

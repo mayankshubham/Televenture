@@ -144,3 +144,37 @@
     }
   }
 }
+
+@media only screen and (max-width: 425px) {
+  .fundsDetailContainer {
+    .cardsWrapper {
+      .link {
+        height: 240px;
+        .card {
+          .cardInner {
+            .title {
+              left: 0;
+              text-align: center;
+
+              .icon {
+                margin: 0 auto 0.8em;
+              }
+              .label {
+                font-size: 29px;
+              }
+              .fundLabel {
+                font-size: 20px;
+              }
+            }
+          }
+          .tabWrapper {
+            bottom: 2em;
+            .tabButton {
+              height: 48px;
+            }
+          }
+        }
+      }
+    }
+  }
+}

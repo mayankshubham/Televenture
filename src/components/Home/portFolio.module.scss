@@ -107,3 +107,15 @@
     }
   }
 }
+
+@media only screen and (max-width: 425px) {
+  .portFolioContainer {
+    height: 650px;
+
+    .backgroundTriangle {
+      border-top: 650px solid #010025;
+      border-left: 300px solid transparent;
+      border-right: 300px solid transparent;
+    }
+  }
+}

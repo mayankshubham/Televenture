@@ -11,5 +11,18 @@
   .tagBackground {
     position: absolute !important;
     height: 951px;
+
+    @media only screen and (max-width: 425px) {
+      height: 705px;
+    }
+  }
+}
+
+@media only screen and (max-width: 425px) {
+  .taglineContainer {
+    min-height: 640px;
+    .tagBackground {
+      height: 705px;
+    }
   }
 }
