@@ -114,6 +114,7 @@
           width: 100%;
 
           .tabButton {
+            text-transform: uppercase;
             position: relative;
             align-self: center;
             margin: 0 auto;
@@ -148,7 +149,7 @@
 @media only screen and (max-width: 425px) {
   .fundsDetailContainer {
     .cardsWrapper {
-      .link {
+      .link { 
         height: 240px;
         .card {
           .cardInner {
