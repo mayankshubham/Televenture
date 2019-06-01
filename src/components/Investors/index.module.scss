@@ -40,6 +40,8 @@
         padding: 2em 4em;
         max-width: 750px;
         .header {
+          font-family: worksans-semibold,work sans,sans-serif;
+          font-weight: 600;
           color: #40667c;
           font-size: 17px;
         }
@@ -94,6 +96,28 @@
         }
         &.selected {
           background-color: rgb(230, 230, 230);
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 425px) {
+  .investorsContainer {
+    .description {
+      font-size: 18px;
+      line-height: 1.8em;
+      padding: 2em 0;
+      text-align: center;
+    }
+
+    .investorQueriesContainer {
+      padding: 50px 1em 100px;
+
+      .box {
+        .detailsSection {
+          padding: 1em;
+          text-align: center;
         }
       }
     }
