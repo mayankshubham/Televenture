@@ -7,7 +7,7 @@ import GlobalStyle from '../styles/global';
 import theme from '../styles/theme';
 import config from '../utils/siteConfig';
 import Menu from './Menu';
-import Footer from './Footer';
+import Footer from './Footer/Footer';
 import SEO from './SEO';
 
 const Layout = React.forwardRef(({ children }, footerRef) => {
