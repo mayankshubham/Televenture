@@ -9,7 +9,11 @@ import styles from './index.module.scss';
 import TeamMemberDetail from './TeamMemberDetail';
 
 const RelativeLink = ({ children, href }) => {
-  return <Link to={href}>{children}</Link>;
+  return (
+    <Link to={href} className={styles.pageLink}>
+      {children}
+    </Link>
+  );
 };
 
 const renderAst = new RehypeReact({
