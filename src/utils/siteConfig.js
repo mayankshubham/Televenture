@@ -2,8 +2,7 @@ module.exports = {
   siteTitle: 'Televenture I Norsk Innovasjonskapital I Norway',
   siteTitleAlt: 'Televenture', // This allows an alternative site title for SEO schema.
   publisher: 'Televenture', // Organization name used for SEO schema
-  siteDescription:
-    'Making Venture Happen. Televenture is one of the leading venture capital companies in Norway.',
+  siteDescription: 'Making Venture Happen. Televenture is one of the leading venture capital companies in Norway.',
   siteUrl: 'http://localhost:8000', // Site domain. Do not include a trailing slash! If you wish to use a path prefix you can read more about that here: https://www.gatsbyjs.org/docs/path-prefix/
   siteKeywords: 'commerce, investments, oslo, televenture',
   siteName: 'Televenture',
@@ -19,4 +18,4 @@ module.exports = {
   backgroundColor: '#e9e9e9', // Used for Offline Manifest
   themeColor: '#121212', // Used for Offline Manifest
   copyright: 'Copyright © 2018', // Copyright string for the RSS feed
-}
+};
