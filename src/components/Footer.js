@@ -35,7 +35,7 @@ const ContactDetails = () => {
           </a>
         </div>
       </div>
-      <div className={styles.title}>Making Venture Happen</div>
+      <div style={{ marginTop: '16px' }} className={styles.title}>Making Venture Happen</div>
     </div>
   );
 };

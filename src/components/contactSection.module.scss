@@ -10,6 +10,7 @@
   @media only screen and (max-width: 768px) {
     display: flex;
     flex-direction: column;
+    height: 500px;
   }
 
   .backgroundContent {
@@ -24,6 +25,11 @@
       justify-content: center;
       align-items: center;
       color: #bc9b5d;
+    }
+
+    @media only screen and (max-width: 425px) {
+      font-size: 33px;
+      letter-spacing: 0.1em;
     }
   }
 
@@ -62,9 +68,10 @@
     }
 
     .listItem {
-      color: rgb(191, 191, 191);
+      color: #D5DEE3;
       line-height: 34px;
       font-size: 17px;
+      letter-spacing: 0.15em;
     }
     a {
       color: inherit;
@@ -74,11 +81,9 @@
       color: rgb(210, 167, 86);
       font-size: 42px;
       margin: 27px 0;
-
-      @media only screen and (max-width: 768px) {
-        display: none;
-      }
+      letter-spacing: 0.1em;
     }
+
     .fillFormInfo {
       font-size: 12px;
       margin-top: 32px;
@@ -89,11 +94,29 @@
       padding: 16px;
       border: 1px solid rgba(64, 102, 124, 1);
       box-shadow: 0px 3px 7px 0px rgba(0, 0, 0, 0.6);
+      letter-spacing: 0.2em;
     }
+
     .info {
       color: rgb(210, 167, 86);
       font-size: 17px;
-      padding-bottom: 24px;
+      line-height: 2.5em;
+      letter-spacing: 0.15em;
+    }
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .contactSection  {
+    .card {
+      padding: 0;
+      .header {
+        display: none;
+      }
+      .info,
+      .listItem {
+        font-size: 16px;
+      }
     }
   }
 }
