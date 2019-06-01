@@ -14,6 +14,7 @@ const Wrapper = styled.div`
 `;
 
 const Description = styled.section`
+  margin-top: 3em;
   display: flex;
   align-items: center;
   flex-direction: column;
@@ -28,9 +29,13 @@ const Description = styled.section`
     max-width: 840px;
   }
 
-  @media (max-width: 612px) {
+  @media only screen and (max-width: 612px) {
     text-align: center;
     margin: 4vw;
+  }
+
+  @media only screen and (max-width: 425px) {
+    margin-top: 1em;
   }
 `;
 
