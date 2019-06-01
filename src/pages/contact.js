@@ -3,7 +3,7 @@ import Helmet from 'react-helmet';
 import config from '../utils/siteConfig';
 import Layout from '../components/Layout';
 import Container from '../components/Container';
-import ContactSection from '../components/ContactSection';
+import ContactSection from '../components/Contact/ContactSection';
 import SEO from '../components/SEO';
 
 const Contact = ({ data }) => {

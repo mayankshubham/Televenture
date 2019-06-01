@@ -3,7 +3,7 @@ import { useStaticQuery, graphql } from 'gatsby';
 import classnames from 'classnames';
 import styles from './contactSection.module.scss';
 import ContactBackgroundSection from './ContactBackgroundSection';
-import TeleventureIconGold from './TeleventureIconGold';
+import TeleventureIconGold from '../TeleventureIconGold';
 
 const ContactSection = props => {
   const thisPage = React.createRef();
