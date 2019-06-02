@@ -5,7 +5,7 @@ import { Parallax } from 'react-scroll-parallax';
 import styles from './footer.module.scss';
 import ContactForm from './ContactForm';
 import BackgroundSection from './FooterBackground';
-import TeleventureLogo from './TeleventureLogo';
+import TeleventureLogo from '../TeleventureLogo';
 
 const ContactDetails = () => {
   const data = useStaticQuery(graphql`
@@ -35,7 +35,9 @@ const ContactDetails = () => {
           </a>
         </div>
       </div>
-      <div style={{ marginTop: '16px' }} className={styles.title}>Making Venture Happen</div>
+      <div style={{ marginTop: '16px' }} className={styles.title}>
+        Making Venture Happen
+      </div>
     </div>
   );
 };
