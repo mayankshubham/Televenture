@@ -5,7 +5,7 @@ import BackgroundImage from 'gatsby-background-image';
 const BackgroundSection = ({ className, children, style, tag = 'section', backgroundColor = '#040e18' }) => {
   const data = useStaticQuery(graphql`
     query {
-      desktop: file(relativePath: { eq: "Televenture-145.png" }) {
+      desktop: file(relativePath: { eq: "Televenture-145.jpg" }) {
         childImageSharp {
           fluid(quality: 90, maxWidth: 1500) {
             ...GatsbyImageSharpFluid_withWebp
