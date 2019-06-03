@@ -3,7 +3,7 @@ module.exports = {
   siteTitleAlt: 'Televenture', // This allows an alternative site title for SEO schema.
   publisher: 'Televenture', // Organization name used for SEO schema
   siteDescription: 'Making Venture Happen. Televenture is one of the leading venture capital companies in Norway.',
-  siteUrl: 'http://localhost:8000', // Site domain. Do not include a trailing slash! If you wish to use a path prefix you can read more about that here: https://www.gatsbyjs.org/docs/path-prefix/
+  siteUrl: 'https://televenture.netlify.com', // Site domain. Do not include a trailing slash! If you wish to use a path prefix you can read more about that here: https://www.gatsbyjs.org/docs/path-prefix/
   siteKeywords: 'commerce, investments, oslo, televenture',
   siteName: 'Televenture',
   author: 'Shubham Khatri', // Author for RSS author segment and SEO schema
