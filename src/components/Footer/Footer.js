@@ -93,7 +93,6 @@ const Footer = React.forwardRef((props, ref) => {
           <div className="imageOverlay dark" />
         </BackgroundSection>
       </Parallax>
-      {/* <Parallax className="custom-class" y={[-40, 40]} tagOuter="figure"> */}
       <div className={styles.innerContainer}>
         <Link to="/" className={styles.logoLink}>
           <TeleventureLogo className={styles.televentureLogo} />
@@ -107,7 +106,7 @@ const Footer = React.forwardRef((props, ref) => {
           </div>
         </div>
       </div>
-      {/* </Parallax> */}
+      <div className={styles.credits}>TELEVENTURE WEBSITE By SHUBHAM KHATRI</div>
     </footer>
   );
 });
