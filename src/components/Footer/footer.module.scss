@@ -76,6 +76,18 @@
       }
     }
   }
+
+  .credits {
+    position: absolute;
+    bottom: 2em;
+    width: 100%;
+    text-align: center;
+    color: rgb(64, 102, 124);
+    font-weight: 600;
+    font-size: 11px;
+    pointer-events: none;
+    letter-spacing: 0.1125em;
+  }
 }
 
 .header {
