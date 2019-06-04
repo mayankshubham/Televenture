@@ -135,9 +135,23 @@
         .card {
           width: 100%;
 
+          &:hover {
+            .hoverDiv {
+              .fundName {
+                top: 14%;
+                width: 280px;
+              }
+            }
+          }
           .cardInner {
             .title {
               margin: 0 auto;
+            }
+          }
+
+          .tabWrapper {
+            .tabButton {
+              width: 350px;
             }
           }
         }
