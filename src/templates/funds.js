@@ -29,7 +29,7 @@ const FundsTemplate = ({ data, pageContext }) => {
 
 export const query = graphql`
   query($slug: String!) {
-    allContentfulFunds(sort: { fields: [order] }, filter: { fundName: { eq: $slug } }) {
+    allContentfulFunds(filter: { fundName: { eq: $slug } }, sort: { fields: [order] }) {
       edges {
         node {
           id

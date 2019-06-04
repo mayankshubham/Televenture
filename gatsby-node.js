@@ -1,5 +1,3 @@
-const config = require('./src/utils/siteConfig');
-
 const path = require(`path`);
 
 exports.createPages = ({ graphql, actions }) => {
@@ -9,13 +7,15 @@ exports.createPages = ({ graphql, actions }) => {
   const getRedirects = new Promise((resolve, reject) => {
     graphql(`
       {
-        allContentfulFunds(sort: { fields: [fundSequence] }) {
-          distinct(field: fundName)
+        allContentfulFundsDetails(sort: { fields: [order] }) {
+          nodes {
+            shortName
+          }
         }
       }
     `).then(result => {
-      const [slug] = result.data.allContentfulFunds.distinct;
-      const fundRedirect = `/Funds/${slug.replace(/\s+/g, '-')}`;
+      const [slug] = result.data.allContentfulFundsDetails.nodes;
+      const fundRedirect = `/Funds/${slug.shortName.replace(/\s+/g, '-')}`;
 
       const redirectPaths = [
         {
@@ -43,19 +43,21 @@ exports.createPages = ({ graphql, actions }) => {
   const loadFunds = new Promise(resolve => {
     graphql(`
       {
-        allContentfulFunds(sort: { fields: [fundSequence] }) {
-          distinct(field: fundName)
+        allContentfulFundsDetails(sort: { fields: [order] }) {
+          nodes {
+            shortName
+          }
         }
       }
     `).then(res => {
-      const pages = res.data.allContentfulFunds.distinct;
-      pages.map(slug => {
+      const pages = res.data.allContentfulFundsDetails.nodes;
+      pages.map(({ shortName: slug }) => {
         createPage({
           path: `Funds/${slug.replace(/\s+/, '-')}/`,
           component: path.resolve('./src/templates/funds.js'),
           context: {
             slug,
-            pages,
+            pages: pages.map(item => item.shortName),
           },
         });
       });

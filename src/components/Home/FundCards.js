@@ -9,7 +9,7 @@ import styles from './fundCards.module.scss';
 const FundCards = () => {
   const data = useStaticQuery(graphql`
     query {
-      allContentfulFundsDetails(sort: { fields: [shortName] }) {
+      allContentfulFundsDetails(sort: { fields: [order] }) {
         edges {
           node {
             shortName
