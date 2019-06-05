@@ -8,12 +8,24 @@
   .cardsWrapper {
     display: flex;
     position: relative;
-    justify-content: center;
+    flex-wrap: wrap;
+    max-width: 1050px;
+    justify-content: flex-start;
 
     .link {
+      @media only screen and (min-width: 769px) {
+        flex: 0 1 calc(50% - 2.5em);
+        height: 500px;
+        margin: 2em 1em;
+        box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+      }
+
+      @media only screen and (min-width: 940px) {
+        flex: 0 1 calc(33% - 2em);
+      }
+
       .card {
         position: relative;
-        width: 284px;
         height: 100%;
 
         .hoverDiv {
@@ -64,6 +76,8 @@
 
         .cardInner {
           position: absolute;
+          display: flex;
+          justify-content: center;  
           top: 0;
           bottom: 0;
           right: 0;
@@ -80,6 +94,10 @@
             margin: 0px 0px 10px 0;
             left: 28px;
 
+            @media only screen and (min-width: 769px) and (max-width: 940px) {
+              width: 230px;
+              left: 0;
+            }
             .icon {
               width: 30px;
               height: 20px;
@@ -193,6 +211,7 @@
             bottom: 2em;
             .tabButton {
               height: 48px;
+              width: 280px;
             }
           }
         }
