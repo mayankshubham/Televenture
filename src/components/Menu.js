@@ -23,6 +23,10 @@ const menuTabs = [
     link: '/investors/',
   },
   {
+    title: 'News',
+    link: '/news/',
+  },
+  {
     title: 'Contact',
     link: '/contact/',
   },
