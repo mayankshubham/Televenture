@@ -1,5 +1,5 @@
 .descriptionContainer {
-  height: 810px;
+  height: 610px;
   background-color: #050733;
   display: flex;
   justify-content: center;
@@ -11,10 +11,13 @@
     align-items: center;
     flex-direction: column;
     max-width: 585px;
+    width: 100%;
     min-height: 67px;
     font-size: 21px;
 
     .description {
+      position: relative;
+      width: 100%;
       padding-top: 3em;
       text-align: center;
       line-height: 1.8em;

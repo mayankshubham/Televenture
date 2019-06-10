@@ -10,6 +10,7 @@
     position: relative;
     flex-wrap: wrap;
     max-width: 1050px;
+    width: 100%;
     justify-content: flex-start;
 
     .link {
@@ -54,6 +55,7 @@
             .fundName {
               position: absolute;
               top: 24%;
+              left: 14%;
               line-height: 1.7;
               width: 230px;
               min-height: 21px;

@@ -6,6 +6,7 @@
   "author": "Ryan Wiemer <ryan@ryanwiemer.com>",
   "dependencies": {
     "babel-plugin-styled-components": "^1.10.0",
+    "babel-polyfill": "^6.26.0",
     "chalk": "^2.4.2",
     "classnames": "^2.2.6",
     "contentful-import": "^7.5.0",

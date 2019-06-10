@@ -8,6 +8,7 @@ import styles from './teamMemberDetail.module.scss';
 
 const Info = styled.p`
   max-width: 538px;
+  width: 100%;
   font-size: 19px;
   line-height: 38px;
   font-family: din-next-w01-light, din-next-w02-light, din-next-w10-light, sans-serif;
