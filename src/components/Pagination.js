@@ -6,14 +6,16 @@ const Wrapper = styled.div`
   position: relative;
   display: flex;
   justify-content: space-between;
-  margin: -2em auto 0;
+  margin: 0 auto 0;
   width: 100%;
   max-width: ${props => props.theme.sizes.maxWidth};
-  padding: 0 1.5em 2em;
+  padding: 1.5em 0;
+  font-family: worksans-extralight, work sans, sans-serif;
+
   a {
     background: ${props => props.theme.colors.base};
     color: #010025;
-    padding: 1em;
+    padding: 0.5em;
     border-radius: 2px;
     text-decoration: none;
     transition: 0.2s;
@@ -54,7 +56,7 @@ const Pagination = ({ context }) => {
   const prevPageNum = currentPage - 1 === 1 ? `` : currentPage - 1;
   const nextPageNum = currentPage + 1;
 
-  const pathPrefix = typeof slug === 'string' ? `/tag/${slug}` : '';
+  const pathPrefix = typeof slug === 'string' ? `/tag/${slug}` : '/news';
   const prevPageLink = isFirst ? null : `${pathPrefix}/${prevPageNum}/`;
   const nextPageLink = isLast ? null : `${pathPrefix}/${nextPageNum}/`;
 
