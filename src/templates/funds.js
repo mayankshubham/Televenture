@@ -8,7 +8,7 @@ import FundSection from '../components/Funds';
 
 const FundsTemplate = ({ data, pageContext }) => {
   const { slug, pages } = pageContext;
-  const fundDetails = data.allContentfulFunds.edges;
+  const fundDetails = data.allContentfulFundDetails.edges;
 
   const postNode = {
     title: slug,
@@ -29,7 +29,7 @@ const FundsTemplate = ({ data, pageContext }) => {
 
 export const query = graphql`
   query($slug: String!) {
-    allContentfulFunds(filter: { fundName: { eq: $slug } }, sort: { fields: [order] }) {
+    allContentfulFundDetails(filter: { fundName: { eq: $slug } }, sort: { fields: [order] }) {
       edges {
         node {
           id

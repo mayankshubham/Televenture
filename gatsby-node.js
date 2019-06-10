@@ -8,14 +8,14 @@ exports.createPages = ({ graphql, actions }) => {
   const getRedirects = new Promise((resolve, reject) => {
     graphql(`
       {
-        allContentfulFundsDetails(sort: { fields: [order] }) {
+        allContentfulFunds(sort: { fields: [order] }) {
           nodes {
             shortName
           }
         }
       }
     `).then(result => {
-      const [slug] = result.data.allContentfulFundsDetails.nodes;
+      const [slug] = result.data.allContentfulFunds.nodes;
       const fundRedirect = `/Funds/${slug.shortName.replace(/\s+/g, '-')}`;
 
       const redirectPaths = [
@@ -44,14 +44,14 @@ exports.createPages = ({ graphql, actions }) => {
   const loadFunds = new Promise(resolve => {
     graphql(`
       {
-        allContentfulFundsDetails(sort: { fields: [order] }) {
+        allContentfulFunds(sort: { fields: [order] }) {
           nodes {
             shortName
           }
         }
       }
     `).then(res => {
-      const pages = res.data.allContentfulFundsDetails.nodes;
+      const pages = res.data.allContentfulFunds.nodes;
       pages.map(({ shortName: slug }) => {
         createPage({
           path: `Funds/${slug.replace(/\s+/, '-')}/`,
@@ -83,10 +83,9 @@ exports.createPages = ({ graphql, actions }) => {
       const postsPerFirstPage = config.postsPerHomePage;
       const { postsPerPage } = config;
       const numPages = Math.ceil(posts.slice(postsPerFirstPage).length / postsPerPage);
-
       // Create main home page
       createPage({
-        path: `news/`,
+        path: `/news/`,
         component: path.resolve(`./src/templates/news.js`),
         context: {
           limit: postsPerFirstPage,
@@ -99,7 +98,7 @@ exports.createPages = ({ graphql, actions }) => {
       // Create additional pagination on home page if needed
       Array.from({ length: numPages }).forEach((_, i) => {
         createPage({
-          path: `news/${i + 2}/`,
+          path: `/news/${i + 2}/`,
           component: path.resolve(`./src/templates/news.js`),
           context: {
             limit: postsPerPage,
