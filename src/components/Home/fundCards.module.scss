@@ -17,7 +17,9 @@
         flex: 0 1 calc(50% - 2.5em);
         height: 500px;
         margin: 2em 1em;
-        box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+        &:hover {
+          box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+        }
       }
 
       @media only screen and (min-width: 940px) {

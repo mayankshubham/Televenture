@@ -22,16 +22,16 @@ export default () => {
   return (
     <div className={styles.tabLinkContainer}>
       <Tabs>
-        <Tab slug="/Funds/">
-          <div className={styles.tabContent}>
-            <Image tag="div" fluid={iconData} className={styles.iconImage} />
-            <div className={styles.tabText}>FUNDS</div>
-          </div>
-        </Tab>
         <Tab slug="/about/">
           <div className={styles.tabContent}>
             <Image tag="div" fluid={iconData} className={styles.iconImage} />
             <div className={styles.tabText}>ABOUT</div>
+          </div>
+        </Tab>
+        <Tab slug="/Funds/">
+          <div className={styles.tabContent}>
+            <Image tag="div" fluid={iconData} className={styles.iconImage} />
+            <div className={styles.tabText}>FUNDS</div>
           </div>
         </Tab>
         <Tab slug="/contact/">

@@ -17,5 +17,7 @@ module.exports = {
   formatDetection: 'telephone=no',
   backgroundColor: '#e9e9e9', // Used for Offline Manifest
   themeColor: '#121212', // Used for Offline Manifest
-  copyright: 'Copyright © 2018', // Copyright string for the RSS feed
+  copyright: 'Copyright © 2019', // Copyright string for the RSS feed,
+  postsPerHomePage: 6, // Number of posts shown on the 1st page of of the index.js template (home page)
+  postsPerPage: 6, // Number of posts shown on paginated pages
 };
