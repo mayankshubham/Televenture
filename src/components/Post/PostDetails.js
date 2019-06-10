@@ -17,12 +17,16 @@ const ReadingTime = styled.p`
   display: inline-block;
 `;
 
-const PostDetails = props => {
+const PostDetails = ({ date, timeToRead }) => {
   return (
     <Wrapper>
-      <Date>📅 {props.date}</Date>
-      <span>•</span>
-      <ReadingTime>{`⏱️${props.timeToRead} min read `}</ReadingTime>
+      {date && <Date>📅 {date}</Date>}
+      {timeToRead && (
+        <React.Fragment>
+          <span>•</span>
+          <ReadingTime>{`⏱️ ${timeToRead} min read `}</ReadingTime>
+        </React.Fragment>
+      )}
     </Wrapper>
   );
 };
