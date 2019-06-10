@@ -6,6 +6,10 @@ require('prismjs/themes/prism.css');
 const Body = styled.div`
   margin: 0 auto;
   max-width: ${props => props.theme.sizes.maxWidthCentered};
+
+  @media only screen and (max-width: 768px) {
+    padding: 0 1em;
+  }
   h1,
   h2,
   h3 {
