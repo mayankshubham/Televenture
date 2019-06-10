@@ -9,7 +9,7 @@ import styles from './homeTagLine.module.scss';
 const HomeTagline = () => {
   return (
     <div className={styles.taglineContainer}>
-      <Parallax y={[-60, 60]} tagOuter="figure">
+      <Parallax y={[-120, 40]} tagOuter="figure">
         <Background className={classnames('backgroundImage', styles.tagBackground)}>
           <div className="imageOverlay dark" />
         </Background>

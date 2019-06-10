@@ -38,9 +38,13 @@
     }
 
     .subContainer {
-        max-width: 1200px;
+        max-width: 70%;
         flex-grow: 1;
         display: flex;
+
+        @media (max-width: 768px) {
+            max-width: 1200px;
+        }
     }
 
     &.left {
