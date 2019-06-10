@@ -3,20 +3,14 @@ import { graphql } from 'gatsby';
 import Helmet from 'react-helmet';
 import config from '../utils/siteConfig';
 import Layout from '../components/Layout';
-import Hero from '../components/Hero';
+import PostSection from '../components/Post';
 import Container from '../components/Container';
-import PageBody from '../components/PageBody';
-import PostLinks from '../components/PostLinks';
-
-import PostDetails from '../components/PostDetails';
 import SEO from '../components/SEO';
 
 const PostTemplate = ({ data, pageContext }) => {
-  const { title, slug, heroImage, body, publishDate } = data.contentfulPost;
+  const { title, slug } = data.contentfulPost;
   const postNode = data.contentfulPost;
-
-  const previous = pageContext.prev;
-  const { next } = pageContext;
+  const { next, prev: previous } = pageContext;
 
   return (
     <Layout>
@@ -24,14 +18,9 @@ const PostTemplate = ({ data, pageContext }) => {
         <title>{`${title} - ${config.siteTitle}`}</title>
       </Helmet>
       <SEO pagePath={slug} postNode={postNode} postSEO />
-
-      <Hero title={title} image={heroImage} height="50vh" />
-
       <Container>
-        <PostDetails date={publishDate} timeToRead={body.childMarkdownRemark.timeToRead} />
-        <PageBody body={body} />
+        <PostSection {...data.contentfulPost} previous={previous} next={next} />
       </Container>
-      <PostLinks previous={previous} next={next} />
     </Layout>
   );
 };

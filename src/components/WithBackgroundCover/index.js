@@ -20,13 +20,13 @@ const parallaxData = [
 
 const WithBackgroundCover = (Background, displayName) => {
   const coverComponent = props => {
-    const { content, ...rest } = props;
+    const { content, overlayDark = true, ...rest } = props;
     return (
       <div className={styles.withBackgroundCover}>
         <div className={styles.bgInner}>
           <Plx parallaxData={parallaxData}>
             <Background {...rest} className={classNames('backgroundImage', styles.investorBackground)}>
-              <div className="imageOverlay dark" />
+              <div className={classNames('imageOverlay', { dark: overlayDark })} />
             </Background>
           </Plx>
         </div>

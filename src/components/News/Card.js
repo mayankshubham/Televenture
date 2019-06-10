@@ -11,7 +11,6 @@ const Post = styled.li`
   background: white;
   font-family: worksans-extralight, work sans, sans-serif;
   transition: background 0.2s;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.19), 0 1px 6px rgba(0, 0, 0, 0.23);
 
   @media screen and (min-width: ${props => props.theme.responsive.small}) {
     flex: ${props => (props.featured ? '0 0 100%' : '0 0 49%')};
