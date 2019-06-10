@@ -16,7 +16,13 @@ const ContactBackgroundSection = ({ className, children, tag = 'section', backgr
   `);
   const imageData = data.desktop.childImageSharp.fluid;
   return (
-    <BackgroundImage Tag={tag} className={className} fluid={imageData} backgroundColor={backgroundColor}>
+    <BackgroundImage
+      Tag={tag}
+      className={className}
+      fluid={imageData}
+      backgroundColor={backgroundColor}
+      style={{ objectFit: `cover`, objectPosition: `50% 50%` }}
+    >
       {children}
     </BackgroundImage>
   );

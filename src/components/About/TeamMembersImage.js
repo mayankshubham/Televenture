@@ -16,7 +16,13 @@ const TeamMembersImage = ({ className, children, style, tag = 'section', backgro
   `);
   const imageData = data.desktop.childImageSharp.fluid;
   return (
-    <BackgroundImage Tag={tag} style={style} className={className} fluid={imageData} backgroundColor={backgroundColor}>
+    <BackgroundImage
+      Tag={tag}
+      className={className}
+      fluid={imageData}
+      backgroundColor={backgroundColor}
+      style={{ objectFit: `cover`, objectPosition: `50% 50%`, ...style }}
+    >
       {children}
     </BackgroundImage>
   );

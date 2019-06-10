@@ -21,6 +21,8 @@ const BackgroundSection = ({ className, children, tag = 'section', backgroundCol
       className={className}
       fluid={imageData}
       style={{
+        objectFit: `cover`,
+        objectPosition: `50% 50%`,
         position: 'absolute',
       }}
       backgroundColor={backgroundColor}

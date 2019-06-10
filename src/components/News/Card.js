@@ -81,7 +81,11 @@ const Card = ({
   return (
     <Post featured={featured}>
       <Link to={`/${slug}/`}>
-        <Img fluid={heroImage.fluid} backgroundColor="#eeeeee" />
+        <Img
+          fluid={heroImage ? heroImage.fluid : ''}
+          backgroundColor="#eeeeee"
+          imgStyle={{ objectFit: `cover`, objectPosition: `50% 50%` }}
+        />
         <Title>{title}</Title>
         <Date>{publishDate}</Date>
         <ReadingTime>{timeToRead} min read</ReadingTime>

@@ -24,19 +24,34 @@ export default () => {
       <Tabs>
         <Tab slug="/about/">
           <div className={styles.tabContent}>
-            <Image tag="div" fluid={iconData} className={styles.iconImage} />
+            <Image
+              tag="div"
+              fluid={iconData}
+              className={styles.iconImage}
+              imgStyle={{ objectFit: `cover`, objectPosition: `50% 50%` }}
+            />
             <div className={styles.tabText}>ABOUT</div>
           </div>
         </Tab>
         <Tab slug="/Funds/">
           <div className={styles.tabContent}>
-            <Image tag="div" fluid={iconData} className={styles.iconImage} />
+            <Image
+              tag="div"
+              fluid={iconData}
+              className={styles.iconImage}
+              imgStyle={{ objectFit: `cover`, objectPosition: `50% 50%` }}
+            />
             <div className={styles.tabText}>FUNDS</div>
           </div>
         </Tab>
         <Tab slug="/contact/">
           <div className={styles.tabContent}>
-            <Image tag="div" fluid={iconData} className={styles.iconImage} />
+            <Image
+              tag="div"
+              fluid={iconData}
+              className={styles.iconImage}
+              imgStyle={{ objectFit: `cover`, objectPosition: `50% 50%` }}
+            />
             <div className={styles.tabText}>CONTACT</div>
           </div>
         </Tab>

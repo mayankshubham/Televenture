@@ -16,7 +16,13 @@ const InvestorImage = ({ className, children, style, tag = 'section' }) => {
   `);
   const imageData = data.desktop.childImageSharp.fluid;
   return (
-    <Image Tag={tag} style={style} className={className} fluid={imageData}>
+    <Image
+      Tag={tag}
+      style={style}
+      className={className}
+      fluid={imageData}
+      imgStyle={{ objectFit: `cover`, objectPosition: `50% 50%` }}
+    >
       {children}
     </Image>
   );

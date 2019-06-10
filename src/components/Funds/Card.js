@@ -1,9 +1,9 @@
-import React from 'react'
-import Image from 'gatsby-image'
-import styles from './card.module.scss'
+import React from 'react';
+import Image from 'gatsby-image';
+import styles from './card.module.scss';
 
 const Card = ({ details }) => {
-  const { title, founded, sector, description, orgNo, url, img } = details
+  const { title, founded, sector, description, orgNo, url, img } = details;
   return (
     <div className={styles.cardWrapper}>
       <div className={styles.cardContent}>
@@ -23,9 +23,7 @@ const Card = ({ details }) => {
         <div className={styles.cardBody}>
           <div className={styles.cardData}>
             <div className={styles.description}>
-              {description &&
-                <p>BUSINESS DESCRIPTION: {description.description}</p>
-              }
+              {description && <p>BUSINESS DESCRIPTION: {description.description}</p>}
             </div>
             <div className={styles.cardFooter}>
               <h4>
@@ -33,27 +31,25 @@ const Card = ({ details }) => {
                 <span className={styles.orgValue}>{orgNo}</span>
               </h4>
               <h4>
-                <span className={styles.heading}>Website:</span>{' '}
-                <a href={url}>{url}</a>
+                <span className={styles.heading}>Website:</span> <a href={url}>{url}</a>
               </h4>
             </div>
           </div>
           <a className={styles.heroImageContainer} href={url}>
-            {img &&
+            {img && (
               <Image
                 className={styles.heroImage}
                 fixed={img.fixed}
-                objectFit="cover"
-                objectPosition="50% 50%"
+                imgStyle={{ objectFit: 'cover', objectPosition: '50% 50%' }}
                 alt=""
               />
-            }
+            )}
           </a>
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
-Card.displayName = 'Card'
-export default Card
+Card.displayName = 'Card';
+export default Card;

@@ -51,7 +51,12 @@ const TeamMemberDetail = props => {
           position: 'relative',
         }}
       >
-        <Image tag="div" fluid={heroImage.fluid} className={styles.image} />
+        <Image
+          tag="div"
+          fluid={heroImage.fluid}
+          className={styles.image}
+          imgStyle={{ objectFit: `cover`, objectPosition: `50% 50%` }}
+        />
         <div style={{ position: 'relative' }}>
           <div className={styles.iconContainer}>
             <a href={`mailto:post@televenture.no?subject=Til ${name}`}>
