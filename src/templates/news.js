@@ -2,12 +2,10 @@ import React from 'react';
 import { graphql } from 'gatsby';
 import Helmet from 'react-helmet';
 import Layout from '../components/Layout';
-import CardList from '../components/CardList';
-import Card from '../components/Card';
 import Container from '../components/Container';
-import Pagination from '../components/Pagination';
 import SEO from '../components/SEO';
 import config from '../utils/siteConfig';
+import NewsSection from '../components/News';
 
 const News = ({ data, pageContext }) => {
   const posts = data.allContentfulPost.edges;
@@ -23,13 +21,8 @@ const News = ({ data, pageContext }) => {
         </Helmet>
       )}
       <Container>
-        <CardList>
-          {posts.map(({ node: post }) => (
-            <Card key={post.id} {...post} />
-          ))}
-        </CardList>
+        <NewsSection posts={posts} isFirstPage={isFirstPage} pageContext={pageContext} />
       </Container>
-      <Pagination context={pageContext} />
     </Layout>
   );
 };

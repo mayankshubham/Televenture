@@ -12,7 +12,7 @@ const Wrapper = styled.div`
   padding: 0 1.5em 2em;
   a {
     background: ${props => props.theme.colors.base};
-    color: white;
+    color: #010025;
     padding: 1em;
     border-radius: 2px;
     text-decoration: none;
@@ -45,8 +45,8 @@ const PageIndicator = styled.span`
   opacity: 0.7;
 `;
 
-const Pagination = props => {
-  const { numPages, currentPage, slug } = props.context;
+const Pagination = ({ context }) => {
+  const { numPages, currentPage, slug } = context;
   const isFirst = currentPage === 1;
   const isLast = currentPage === numPages;
   const isNotPaginated = isFirst & isLast;
