@@ -37,6 +37,7 @@ const FundCards = () => {
                   <BackgroundImage
                     Tag="div"
                     fluid={fund.background.fluid}
+                    style={{ objectFit: `cover`, objectPosition: `50% 50%` }}
                     className={classnames('backgroundImage', {
                       [styles.cardBackgroundImage]: true,
                     })}

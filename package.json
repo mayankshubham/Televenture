@@ -6,9 +6,11 @@
   "author": "Ryan Wiemer <ryan@ryanwiemer.com>",
   "dependencies": {
     "babel-plugin-styled-components": "^1.10.0",
+    "babel-polyfill": "^6.26.0",
     "chalk": "^2.4.2",
     "classnames": "^2.2.6",
     "contentful-import": "^7.5.0",
+    "es6-promise": "^4.2.8",
     "gatsby": "^2.3.27",
     "gatsby-background-image": "^0.5.5",
     "gatsby-image": "^2.0.40",
@@ -39,6 +41,7 @@
     "lodash": "^4.17.11",
     "moment": "^2.24.0",
     "node-sass": "^4.12.0",
+    "object-fit-images": "^3.2.4",
     "path": "^0.12.7",
     "prismjs": "^1.16.0",
     "react": "^16.8.6",
@@ -54,6 +57,10 @@
   ],
   "license": "MIT",
   "main": "n/a",
+  "browserslist": [
+    ">0.25%",
+    "not dead"
+  ],
   "scripts": {
     "build": "gatsby build",
     "develop": "gatsby develop",

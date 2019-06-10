@@ -6,10 +6,10 @@ const BackgroundSection = ({ className, style, children, tag = 'section', backgr
   return (
     <BackgroundImage
       Tag={tag}
-      style={style}
       className={className}
       fluid={image.fluid}
       backgroundColor={backgroundColor}
+      style={{ objectFit: `cover`, objectPosition: `50% 50%`, ...style }}
     >
       {children}
     </BackgroundImage>

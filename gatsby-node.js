@@ -86,7 +86,7 @@ exports.createPages = ({ graphql, actions }) => {
 
       // Create main home page
       createPage({
-        path: `/news`,
+        path: `news/`,
         component: path.resolve(`./src/templates/news.js`),
         context: {
           limit: postsPerFirstPage,
@@ -99,7 +99,7 @@ exports.createPages = ({ graphql, actions }) => {
       // Create additional pagination on home page if needed
       Array.from({ length: numPages }).forEach((_, i) => {
         createPage({
-          path: `/news/${i + 2}/`,
+          path: `news/${i + 2}/`,
           component: path.resolve(`./src/templates/news.js`),
           context: {
             limit: postsPerPage,

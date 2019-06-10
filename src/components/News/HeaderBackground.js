@@ -3,7 +3,7 @@ import { useStaticQuery, graphql } from 'gatsby';
 import BackgroundImage from 'gatsby-background-image';
 import WithBackgroundCover from '../WithBackgroundCover';
 
-const BackgroundSection = ({ className, children, style, tag = 'section', backgroundColor = '#040e18' }) => {
+const BackgroundSection = ({ className, children, style = {}, tag = 'section', backgroundColor = '#040e18' }) => {
   const data = useStaticQuery(graphql`
     query {
       desktop: file(relativePath: { eq: "Televenture-151.jpg" }) {
@@ -16,9 +16,15 @@ const BackgroundSection = ({ className, children, style, tag = 'section', backgr
     }
   `);
   const imageData = data.desktop.childImageSharp.fluid;
-
+  console.log({ imageData });
   return (
-    <BackgroundImage Tag={tag} style={style} className={className} fluid={imageData} backgroundColor={backgroundColor}>
+    <BackgroundImage
+      Tag={tag}
+      className={className}
+      fluid={imageData}
+      backgroundColor={backgroundColor}
+      style={{ objectFit: `cover`, objectPosition: `50% 50%`, ...style }}
+    >
       {children}
     </BackgroundImage>
   );

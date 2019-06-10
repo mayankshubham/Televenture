@@ -16,6 +16,8 @@
     height: 0;
     width: 0;
     z-index: 1;
+    left: 50%;
+    transform: translateX(-50%);
     border-left: 500px solid transparent;
     border-top: 881px solid #010025;
     border-right: 500px solid transparent;
@@ -23,7 +25,7 @@
 
   .contentWrapper {
     z-index: 2;
-    position: absolute;
+    position: relative;
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -31,7 +33,7 @@
     align-items: center;
     align-self: center;
     flex: 1 1 auto;
-    min-height: 28em;
+    height: 28em;
     transform: translateY(-15%);
 
     .logo {

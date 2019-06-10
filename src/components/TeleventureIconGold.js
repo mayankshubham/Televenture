@@ -15,7 +15,15 @@ const TeleventureIconGold = ({ className, children, style, tag = 'div' }) => {
     }
   `);
   const imageData = data.desktop.childImageSharp.fluid;
-  return <Image Tag={tag} style={style} className={className} fluid={imageData} />;
+  return (
+    <Image
+      Tag={tag}
+      style={style}
+      className={className}
+      fluid={imageData}
+      imgStyle={{ objectFit: `cover`, objectPosition: `50% 50%` }}
+    />
+  );
 };
 
 export default TeleventureIconGold;

@@ -1,3 +1,4 @@
+import 'babel-polyfill';
 import React from 'react';
 import { ThemeProvider } from 'styled-components';
 import Helmet from 'react-helmet';

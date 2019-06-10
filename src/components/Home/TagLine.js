@@ -19,7 +19,12 @@ const TagLine = () => {
   return (
     <div className={styles.tagLineContainer}>
       <div className={styles.tagLineWrapper}>
-        <Image fluid={imageData} tag="div" className={styles.iconImg} />
+        <Image
+          fluid={imageData}
+          tag="div"
+          className={styles.iconImg}
+          imgStyle={{ objectFit: `cover`, objectPosition: `50% 50%` }}
+        />
         <div className={styles.text}>
           Making
           <span className={styles.highlight}>Venture</span>

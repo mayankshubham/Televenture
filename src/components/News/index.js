@@ -2,7 +2,7 @@ import React from 'react';
 import Background from './HeaderBackground';
 import CardList from './CardList';
 import Card from './Card';
-import Pagination from '../Pagination';
+import Pagination from './Pagination';
 import styles from './index.module.scss';
 
 const NewsSection = ({ posts, pageContext }) => {

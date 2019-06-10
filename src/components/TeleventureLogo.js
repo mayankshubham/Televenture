@@ -15,7 +15,16 @@ const TeleventureLogo = ({ className, style, tag = 'div', backgroundColor = '#04
     }
   `);
   const imageData = data.desktop.childImageSharp.fluid;
-  return <Image Tag={tag} style={style} className={className} fluid={imageData} backgroundColor={backgroundColor} />;
+  return (
+    <Image
+      Tag={tag}
+      style={style}
+      className={className}
+      fluid={imageData}
+      backgroundColor={backgroundColor}
+      imgStyle={{ objectFit: `cover`, objectPosition: `50% 50%` }}
+    />
+  );
 };
 
 export default TeleventureLogo;

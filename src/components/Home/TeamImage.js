@@ -2,23 +2,8 @@ import React from 'react';
 import { useStaticQuery, graphql } from 'gatsby';
 import classnames from 'classnames';
 import BackgroundImage from 'gatsby-background-image';
-import Plx from 'react-plx';
 import { Parallax } from 'react-scroll-parallax';
 import styles from './teamImage.module.scss';
-
-const parallaxData = [
-  {
-    start: 'self',
-    duration: '100vh',
-    properties: [
-      {
-        startValue: 1,
-        endValue: 1.5,
-        property: 'scale',
-      },
-    ],
-  },
-];
 
 const TeamImage = ({ className, children, style, tag = 'section', backgroundColor = '#040e18' }) => {
   const data = useStaticQuery(graphql`
@@ -37,7 +22,7 @@ const TeamImage = ({ className, children, style, tag = 'section', backgroundColo
     <Parallax y={[-50, 40]} tagOuter="figure" className={styles.teamImageWrapper}>
       <BackgroundImage
         Tag={tag}
-        style={style}
+        style={{ objectFit: `cover`, objectPosition: `50% 50%`, ...style }}
         className={classnames('teamImage', { [styles.teamImage]: true })}
         fluid={imageData}
         backgroundColor={backgroundColor}
