@@ -3,7 +3,7 @@ import { useStaticQuery, graphql } from 'gatsby';
 import BackgroundImage from 'gatsby-background-image';
 import WithBackgroundCover from '../WithBackgroundCover';
 
-const BackgroundSection = ({ className, children, style, tag = 'section', backgroundColor = '#040e18' }) => {
+const BackgroundSection = ({ className, children, style = {}, tag = 'section', backgroundColor = '#040e18' }) => {
   const data = useStaticQuery(graphql`
     query {
       desktop: file(relativePath: { eq: "LAVERNE_Os-4.jpg" }) {

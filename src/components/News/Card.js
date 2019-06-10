@@ -82,7 +82,7 @@ const Card = ({
     <Post featured={featured}>
       <Link to={`/${slug}/`}>
         <Img
-          fluid={heroImage ? heroImage.fluid : ''}
+          fluid={heroImage.fluid}
           backgroundColor="#eeeeee"
           imgStyle={{ objectFit: `cover`, objectPosition: `50% 50%` }}
         />
