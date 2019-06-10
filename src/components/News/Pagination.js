@@ -4,12 +4,10 @@ import { Link } from 'gatsby';
 
 const Wrapper = styled.div`
   position: relative;
-  display: flex;
-  justify-content: space-between;
   margin: 0 auto 0;
   width: 100%;
   max-width: ${props => props.theme.sizes.maxWidth};
-  padding: 1.5em 0;
+  padding: 2em 0;
   font-family: worksans-extralight, work sans, sans-serif;
 
   a {
@@ -25,41 +23,43 @@ const Wrapper = styled.div`
   }
 `;
 
-const PreviousLink = styled(Link)`
-  margin-right: auto;
-  order: 1;
+const PreviousLink = styled(props => <Link {...props} />)`
+  position: absolute;
+  left: 0;
+  top: 0;
 `;
 
-const NextLink = styled(Link)`
-  margin-left: auto;
-  order: 3;
+const NextLink = styled(props => <Link {...props} />)`
+  position: absolute;
+  right: 0;
+  top: 0;
 `;
 
 const PageIndicator = styled.span`
-  color: gray;
+  color: black;
   position: absolute;
-  left: 0;
-  right: 0;
-  width: 100%;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
   text-align: center;
+  justify-self: center;
   padding: 1em 1.5em;
-  z-index: -1;
+  z-index: 0;
   opacity: 0.7;
 `;
 
 const Pagination = ({ context }) => {
-  const { numPages, currentPage, slug } = context;
+  const { numPages, currentPage } = context;
   const isFirst = currentPage === 1;
   const isLast = currentPage === numPages;
-  const isNotPaginated = isFirst & isLast;
+  const isNotPaginated = isFirst && isLast;
 
   const prevPageNum = currentPage - 1 === 1 ? `` : currentPage - 1;
   const nextPageNum = currentPage + 1;
 
-  const pathPrefix = typeof slug === 'string' ? `/tag/${slug}` : '/news';
+  const pathPrefix = '/news';
   const prevPageLink = isFirst ? null : `${pathPrefix}/${prevPageNum}/`;
   const nextPageLink = isLast ? null : `${pathPrefix}/${nextPageNum}/`;
-
   return (
     <Wrapper>
       {!isFirst && <PreviousLink to={prevPageLink}>&#8592; Prev Page</PreviousLink>}

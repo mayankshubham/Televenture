@@ -86,7 +86,7 @@ exports.createPages = ({ graphql, actions }) => {
 
       // Create main home page
       createPage({
-        path: `news`,
+        path: `news/`,
         component: path.resolve(`./src/templates/news.js`),
         context: {
           limit: postsPerFirstPage,

@@ -88,7 +88,7 @@ const Card = ({
         />
         <Title>{title}</Title>
         <Date>{publishDate}</Date>
-        <ReadingTime>{timeToRead} min read</ReadingTime>
+        {timeToRead && <ReadingTime>{timeToRead} min read</ReadingTime>}
         <Excerpt
           dangerouslySetInnerHTML={{
             __html: body.childMarkdownRemark.excerpt,
