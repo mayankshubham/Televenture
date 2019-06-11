@@ -44,6 +44,17 @@ export default () => {
             <div className={styles.tabText}>FUNDS</div>
           </div>
         </Tab>
+        <Tab slug="/news/">
+          <div className={styles.tabContent}>
+            <Image
+              tag="div"
+              fluid={iconData}
+              className={styles.iconImage}
+              imgStyle={{ objectFit: `cover`, objectPosition: `50% 50%` }}
+            />
+            <div className={styles.tabText}>NEWS</div>
+          </div>
+        </Tab>
         <Tab slug="/contact/">
           <div className={styles.tabContent}>
             <Image
