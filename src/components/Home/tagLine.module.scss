@@ -26,6 +26,7 @@
     color: #fffffe;
     line-height: 0.9em;
     letter-spacing: -0.05em;
+    width: 100%;
 
     .highlight {
       color: #d2a756;
@@ -45,6 +46,7 @@
       flex-direction: column;
       align-items: center;
       width: 250px;
+      margin: 0 auto;
 
       .iconImg {
         align-self: flex-start;
